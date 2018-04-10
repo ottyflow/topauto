@@ -1,0 +1,8 @@
+{
+  "name": "topauto",
+  "app_id": "0797f280",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
