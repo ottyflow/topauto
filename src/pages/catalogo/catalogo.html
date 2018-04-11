@@ -11,28 +11,37 @@
 
 <ion-content padding>
 
-<div class="pantalla-catalogo">
+
 
   <ion-grid>
     <ion-row *ngIf="muestraArticulo">
 
       <ion-col col-6 col-md-4 col-xl-3 *ngFor="let articulo of articulos">
-        <ion-card>
-          <img [src]="articulo.imagen">
+        <ion-card class="card-catalogo">
+          <img [src]="articulo.imagen" width="100%">
           <ion-card-content>
-            <ion-card-title>
-              {{ articulo.descripcion }}
-            </ion-card-title>
-            <p>
-              {{ articulo.descripcionAdicional }}
-            </p>
+            <div>
+              <ion-card-title class="card-title">
+                {{ articulo.descripcion }}
+              </ion-card-title>
+            </div>
+
+            <div>
+              <button ion-button icon-only  clear full color="dark">
+                <ion-icon name="arrow-down"></ion-icon>
+              </button>
+            </div>
+            <div>
+              <button ion-button full color="primary" class="precio-articulo"> ${{ articulo.precio }}</button>
+            </div>
           </ion-card-content>
         </ion-card>
+
       </ion-col>
 
     </ion-row>
   </ion-grid>
 
-</div>
+
 
 </ion-content>
