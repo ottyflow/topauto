@@ -1,47 +1,44 @@
 
 <ion-header>
-
   <ion-toolbar color="dark" src="../assets/imgs/flag.png">
-
-    <ion-title class="titulo">Catálogo</ion-title>
+    <ion-title class="titulo" *ngIf="!isSearchBarOpened">Catálogo</ion-title>
+    <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" [(ngModel)]="queryText" (ionInput)="getItems($event)" (ionCancel)="isSearchBarOpened=false" placeholder=""></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="!isSearchBarOpened" (click)="isSearchBarOpened=true">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="openModalFiltros()" >
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-toolbar>
-
 </ion-header>
-
-
-<ion-content padding>
-
-
-
+<ion-content>
   <ion-grid>
-    <ion-row *ngIf="muestraArticulo">
-
-      <ion-col col-4 col-md-4 col-xl-3 *ngFor="let articulo of articulos">
-        <ion-card class="card-catalogo">
-          <img [src]="articulo.imagen" width="100%">
-          <ion-card-content>
-            <div>
-              <ion-card-title class="card-title">
-                {{ articulo.descripcion }}
-              </ion-card-title>
+    <ion-row>
+      <ion-col col-xs-6 col-sm-6 col-md-4 col-xl-3 *ngFor="let articulo of articulos">
+        <ion-card class="card-catalogo" (click)="openModal()">
+          <div class="container">
+            <img [src]="articulo.imagen">
+          </div>
+          <ion-card-content class="card-content">
+            <div class="info">
+              {{ articulo.descripcion }}
             </div>
-
-            <div>
-              <button ion-button icon-only  clear full color="dark">
-                <ion-icon name="arrow-down"></ion-icon>
-              </button>
-            </div>
-            <div>
-              <button ion-button full color="primary" class="precio-articulo"> ${{ articulo.precio }}</button>
+            <div class="valor">
+              <ion-col col-6 class="codigo">
+                {{ articulo.codigo }}
+              </ion-col>
+              <ion-col col-6 class="precio">
+                ${{ articulo.precio }}
+              </ion-col>
+              <div class="leyenda-iva" center>
+                PRECIO NETO + IVA
+              </div>
             </div>
           </ion-card-content>
         </ion-card>
-
       </ion-col>
-
     </ion-row>
   </ion-grid>
-
-
-
 </ion-content>

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { Articulo } from '../../interfaces/articulo.interface';
 import { ARTICULOS } from '../../data/data.articulos';
+import {Http, Headers} from "@angular/http";
 
 
 @IonicPage()
@@ -11,25 +12,44 @@ import { ARTICULOS } from '../../data/data.articulos';
 })
 export class CatalogoPage {
 
-  articulos:Articulo[] = [];
+  articulos:any = [];
+  queryText : string;
 
-  muestraArticulo (articulo:Articulo){
-    if(articulo.activo = false){
-      
-      return;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController) {
+
+    this.generateItems();
+
+  }
+  openModal(){
+    const myModal =  this.modal.create('SeleccionproductosPage')
+
+    myModal.present();
+  }
+
+  openModalFiltros(){
+    const myModal =  this.modal.create('FiltrosPage')
+
+    myModal.present();
+  }
+
+  generateItems(){
+  this.articulos = ARTICULOS;
+  }
+  getItems(ev: any){
+    this.generateItems();
+    let serVal = ev.target.value;
+    if(serVal&& serVal.trim() !='') {
+      this.articulos = this.articulos.filter((item) => {
+        return (item.descripcion.toLowerCase().indexOf(serVal.toLowerCase()) > -1 );
+      })
     }
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-    this.articulos = ARTICULOS;
-
-  }
-
-
+  public isSearchBarOpened = false;
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CatalogoPage');
   }
-
 }

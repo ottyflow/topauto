@@ -1,0 +1,100 @@
+<ion-content padding>
+  <ion-title class="titulo">
+    Selección de  productos
+  </ion-title>
+  <div class="producto">
+    <ion-row>
+      <ion-col col-5>
+        <div class="container">
+          <img src="assets/imgarticulos/04993.jpg">
+        </div>
+      </ion-col>
+      <ion-col col-7>
+        <div class="info">
+          PERFUME AMBIENTAL EN GEL NACIONAL
+          POTE DE 100GR
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-list>
+    <ion-item>
+      LIMON
+      <button ion-button item-end class="suma" (click)="decrement1()" style="height:32px;">
+        <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
+      </button>
+      <div item-end>
+        {{currentNumber1}}
+      </div>
+      <button ion-button item-end class="resta"  (click)="increment1()" style="height:32px;">
+        <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      VAINILLA
+      <button ion-button item-end class="suma" (click)="decrement2()" style="height:32px;">
+        <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
+      </button>
+      <div item-end>
+        {{currentNumber2}}
+      </div>
+      <button ion-button item-end class="resta" (click)="increment2()" style="height:32px;">
+        <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      COCO
+      <button ion-button item-end class="suma" (click)="decrement3()" style="height:32px;">
+        <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
+      </button>
+      <div item-end>
+        {{currentNumber3}}
+      </div>
+      <button ion-button item-end class="resta" (click)="increment3()" style="height:32px;">
+        <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      RALLY
+      <button ion-button item-end class="suma" (click)="decrement4()" style="height:32px;">
+        <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
+      </button>
+      <div item-end>
+        {{currentNumber4}}
+      </div>
+      <button ion-button item-end class="resta" (click)="increment4()" style="height:32px;">
+        <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      NEW CAR
+      <button ion-button item-end class="suma"  (click)="decrement5()" style="height:32px;">
+        <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
+      </button>
+      <div item-end>
+        {{currentNumber5}}
+      </div>
+      <button ion-button item-end class="resta" (click)="increment5()" style="height:32px;">
+        <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      AQUA SPORT
+      <button ion-button item-end class="suma" (click)="decrement6()" style="height:32px;">
+        <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
+      </button>
+      <div item-end>
+        {{currentNumber6}}
+      </div>
+      <button ion-button item-end class="resta" (click)="increment6()" style="height:32px;">
+        <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+  <ion-footer>
+    <ion-toolbar class="Botones">
+      <button class="cancelar" ion-button color="light" (click)="closeModal()" outline>CANCELAR</button>
+      <button class="aceptar" ion-button color="light"  (click)="closeModal()" outline>ACEPTAR</button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

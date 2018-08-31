@@ -14,3 +14,20 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.modal-wrapper {
+  border-radius: 8px!important;
+  width: 616px;
+  height: 610px;
+}
+
+.tabs-md .tab-button[aria-selected=true]  {
+    color: #ffd400!important;
+}
+
+.tab-button[aria-selected=true] .tab-button-icon {
+    color: #ffd400!important;
+}
+
+.enable-hover a:hover {
+    opacity: 1;
+}

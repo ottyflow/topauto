@@ -1,33 +1,98 @@
 page-catalogo {
 
-
-  .imagen{
-    position: absolute;
-    width: 100%;
-
-  }
   .titulo{
-    text-align: center;
+    text-align: left;
 
   }
-
-
-  .card-catalogo{
-    height: 100%;
-    width: 100%;
-
+  .container{
+    height: 50%;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .card-title{
+    text-align: left;
+    padding-left: 16px;
+    padding-right: 16px;
+
+  }
+  .card-catalogo{
+    border-radius: 3%;
+  }
+  .card-content{
+    padding: 0;
+  }
+  .info{
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     text-align: center;
-    font-size: 100%;
-
+    font-size: 16px;
+    height: 105px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
-  .precio-articulo{
-    font-size: 25px;
+  .leyenda-iva{
+    color: #B49916;
+    font-weight: 300;
+    font-size: 12px;
   }
-
-
-
+  .valor{
+    background-color: #ffd400;
+    height: 15%;
+    padding: 0;
+    text-align: center;
+  }
+  .codigo{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .precio{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  ion-content{
+    background-image: url(../assets/imgs/granPrix17.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  @media(max-width:570px){
+    .container{
+      height: 72.5px;
+      width: 72.5px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .info{
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      text-align: center;
+      font-size: 12px;
+      height: 105px;
+      width: 145px;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .precio{
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .codigo{
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .leyenda-iva{
+      color: #B49916;
+      font-weight: 300;
+      font-size: 8px;
+    }
+  }
 }

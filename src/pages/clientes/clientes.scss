@@ -1,3 +1,29 @@
 page-clientes {
-
+  .listadoclientes{
+    width: 50%;
+    height: 100%;
+    background-color: #FFFFFF;
+  }
+  .content-md{
+    background-color: #F5F5F5;
+  }
+  .containercuit{
+    margin-right: auto;
+    margin-left: auto;
+    vertical-align: middle;
+  }
+  .cliente{
+    height: 56px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .cuit{
+    align-items: center;
+  }
+  ion-content{
+    background-image: url(../assets/imgs/granPrix17.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 }

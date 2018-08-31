@@ -1,0 +1,51 @@
+export const CLIENTES =[
+  {
+    nombre:  "Pirulo",
+    cuit: "20-35336556-09",
+    ciudad: "Mar del plata",
+    provincia: "Buenos Aires",
+    pais : "Argentina",
+  },
+  {
+    nombre: "Culero",
+    cuit: "20-35336556-09",
+    ciudad: "Mar del plata",
+    provincia: "Buenos Aires",
+    pais : "Argentina",
+  },
+  {
+    nombre: "Caquero",
+    cuit: "20-35336556-09",
+    ciudad: "Mar del plata",
+    provincia: "Buenos Aires",
+    pais : "Argentina",
+  },
+  {
+    nombre: "Tetero",
+    cuit: "20-35336556-09",
+    ciudad: "Mar del plata",
+    provincia: "Buenos Aires",
+    pais : "Argentina",
+  },
+  {
+    nombre: "Hijo de puta",
+    cuit: "20-35336556-09",
+    ciudad: "Mar del plata",
+    provincia: "Buenos Aires",
+    pais : "Argentina",
+  },
+  {
+    nombre:  "Prueba12",
+    cuit: "20-35336556-09",
+    ciudad: "Mar del plata",
+    provincia: "Buenos Aires",
+    pais : "Argentina",
+  },
+  {
+    nombre:  "ARELOCO",
+    cuit: "20-35336556-09",
+    ciudad: "Mar del plata",
+    provincia: "Buenos Aires",
+    pais : "Argentina",
+  },
+]

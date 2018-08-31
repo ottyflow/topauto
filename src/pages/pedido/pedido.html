@@ -1,18 +1,147 @@
-<!--
-  Generated template for the PedidoPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-toolbar color="dark">
-    <ion-title>Pedido</ion-title>
+    <ion-title>Nota de pedido - </ion-title>
   </ion-toolbar>
-
 </ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+  <ion-grid class="CuerpoGrid">
+    <ion-row class="Cuerpo">
+      <ion-col col-5>
+        <div class="Titulos">
+          <ion-title class="Tituloscolumnas">
+            Productos
+          </ion-title>
+        </div>
+          <ion-scroll direction="y" class="theroot">
+            <div *ngFor="let articulo of articulos">
+              <ion-row class="Items">
+                <ion-col col-2>
+                  <div class="container">
+                    <img [src]="articulo.imagen" class="FotoArti">
+                  </div>
+                </ion-col>
+                <ion-col col-10>
+                  <div class="info">
+                    {{ articulo.descripcion }}
+                  </div>
+                  <div class="precio">
+                    ${{ articulo.precio }}
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ion-scroll>
+        <ion-footer>
+          <ion-toolbar class="CargarCodigo">
+            <button class="CargaCodigo" ion-button color="dark" outline>CARGAR POR CÓDIGO</button>
+          </ion-toolbar>
+        </ion-footer>
+      </ion-col>
+      <ion-col col-4>
+        <div class="Titulos">
+          <ion-title class="Tituloscolumnas">
+            Datos
+          </ion-title>
+        </div>
+        <div class="Cliente">
+          <ion-row>
+            <ion-title class="CondicionTitulo">
+              Cliente
+            </ion-title>
+            <button class="BotonAddPersona" style="background-color: #fff; margin-top: 14px; margin-right: 25px; height: 19px!important;">
+              <ion-icon class="AddPersona" name="person-add"></ion-icon>
+            </button>
+          </ion-row>
+          <ion-title class="NombreCliente">
+            Consumidor final
+          </ion-title>
+        </div>
+        <div class="CondPago">
+          <ion-title class="CondicionTitulo">
+            Condicion de pago
+          </ion-title>
+          <ion-item>
+            <ion-label></ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="s">Sin seleccionar</ion-option>
+              <ion-option value="f">Facturado</ion-option>
+              <ion-option value="c">Cuenta corriente</ion-option>
+            </ion-select>
+          </ion-item>
+        </div>
+        <div class="OtroDatos">
+          <ion-title class="CondicionTitulo">
+            Otros datos
+          </ion-title>
+          <ion-item>
+            <ion-textarea placeholder="Observaciones" style="margin-top: 32px; height: 40px;"></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col col-3>
+        <div class="Titulos">
+          <ion-title class="Tituloscolumnas">
+            Totales
+          </ion-title>
+        </div>
+        <div class="Cantidad">
+          <ion-title class="TituloCantidad">
+            Cantidad de productos
+          </ion-title>
+          <ion-title class="Cantidades">
+            40
+          </ion-title>
+        </div>
+        <div class="Subtotal">
+          <ion-title class="TituloSubtotal">
+            Subtotal
+          </ion-title>
+          <ion-row>
+            <button ion-button clear item-start (click)='showHide1()' style="height:32px;">
+              <ion-icon *ngIf="hideMe1"name="eye" style="font-size:32px;"></ion-icon>
+              <ion-icon *ngIf="!hideMe1"name="eye-off" style="font-size:32px;"></ion-icon>
+            </button>
+            <ion-title *ngIf="hideMe1" class="Cantidades">
+              $ 2.000
+            </ion-title>
+          </ion-row>
+        </div>
+        <div class="Descuento">
+          <ion-title class="TituloDescuento">
+            Descuento
+          </ion-title>
+          <ion-row>
+            <button ion-button clear item-start (click)='showHide2()' style="height:32px;">
+              <ion-icon *ngIf="hideMe2"name="eye" style="font-size:32px;"></ion-icon>
+              <ion-icon *ngIf="!hideMe2"name="eye-off" style="font-size:32px;"></ion-icon>
+            </button>
+            <ion-title *ngIf="hideMe2" class="Cantidades">
+              30%
+            </ion-title>
+          </ion-row>
+        </div>
+        <div class="Total">
+          <ion-title class="TituloTotal">
+            Total
+          </ion-title>
+          <ion-row>
+            <button ion-button clear item-start (click)='showHide3()' style="height:32px;">
+              <ion-icon *ngIf="hideMe3"name="eye" style="font-size:32px;"></ion-icon>
+              <ion-icon *ngIf="!hideMe3"name="eye-off" style="font-size:32px;"></ion-icon>
+            </button>
+            <ion-title *ngIf="hideMe3" class="Cantidades">
+              $ 1.570
+            </ion-title>
+          </ion-row>
+        </div>
+        <ion-footer class="Footer">
+          <ion-toolbar class="BotonesPedido">
+            <button class="CancelarPedido" ion-button color="dark" outline>CANCELAR PEDIDO</button>
+            <button class="RealizarPedido" ion-button color="light">REALIZAR PEDIDO</button>
+          </ion-toolbar>
+        </ion-footer>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
