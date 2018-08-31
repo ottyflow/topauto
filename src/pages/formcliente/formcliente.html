@@ -6,15 +6,21 @@
 -->
 <ion-header>
   <ion-toolbar class="cabeza">
-    <ion-title class="titulo">
+    <ion-title class="titulo" *ngIf="accion == 0">
       Nuevo cliente
+    </ion-title>
+    <ion-title class="titulo" *ngIf="accion == 1">
+      Visualizar Cliente
+    </ion-title>
+    <ion-title class="titulo" *ngIf="accion == 3">
+      Modificar Cliente
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-grid>
     <ion-col col-12>
-      <ion-list>
+      <ion-list *ngIf="accion == 0">
         <ion-item>
           <ion-label floating>Denominacion Legal *</ion-label>
           <ion-input type="text"></ion-input>
@@ -32,11 +38,15 @@
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Direccion</ion-label>
+          <ion-label floating>Telefono 2</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>E-Mail *</ion-label>
+          <ion-label floating>Direccion *</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>E-Mail</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
@@ -51,13 +61,54 @@
           <ion-label floating>CUIT *</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
+        <ion-item>
+          <ion-label floating>NOTAS</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngIf="accion == 1">
+        <ion-item>
+          <ion-input type="text" [readonly]=true></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [readonly]=true></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [readonly]=true></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [readonly]=true></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [readonly]=true></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [readonly]=true></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [readonly]=true></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [readonly]=true></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [readonly]=true></ion-input>
+        </ion-item>
       </ion-list>
     </ion-col>
   </ion-grid>
 </ion-content>
 <ion-footer>
-  <ion-toolbar class="Botones">
+  <ion-toolbar class="Botones" *ngIf="accion == 0">
     <button class="cancelar" ion-button color="light" (click)="closeModal()" outline>CANCELAR</button>
     <button class="aceptar" ion-button color="light"  (click)="closeModal()" outline>CREAR</button>
+  </ion-toolbar>
+  <ion-toolbar class="Botones" *ngIf="accion == 1">
+    <button class="cancelar" ion-button color="light" (click)="closeModal()" outline>CANCELAR</button>
+    <button class="aceptar" ion-button color="light"  (click)="modificar(3)" outline>MODIFICAR</button>
+  </ion-toolbar>
+  <ion-toolbar class="Botones" *ngIf="accion == 3">
+    <button class="cancelar" ion-button color="light" (click)="closeModal()" outline>CANCELAR</button>
+    <button class="aceptar" ion-button color="light"  (click)="modificar(3)" outline>GUARDAR</button>
   </ion-toolbar>
 </ion-footer>

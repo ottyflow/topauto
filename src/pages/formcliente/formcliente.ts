@@ -15,15 +15,19 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class FormclientePage {
 
+  accion:any = 0;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
+    console.log(this.accion);
+    this.accion = this.navParams.get("accion");
+    console.log(this.accion);
   }
 
   closeModal(){
     this.view.dismiss();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FormclientePage');
+  modificar(accion:any){
+    this.accion=accion;
   }
-
 }

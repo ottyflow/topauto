@@ -4,6 +4,7 @@ import { ProveedorProvider } from '../../providers/proveedor/proveedor';
 import {Http, Headers} from "@angular/http";
 import { Cliente } from '../../interfaces/clientes.interface';
 import { CLIENTES } from '../../data/data.cliente';
+import { FormclientePage} from '../formcliente/formcliente';
 
 /**
  * Generated class for the ClientesPage page.
@@ -20,6 +21,7 @@ import { CLIENTES } from '../../data/data.cliente';
 export class ClientesPage {
 
   clientes:any = [];
+  accion:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public proveedor:ProveedorProvider, private modal: ModalController) {
 
@@ -40,14 +42,10 @@ export class ClientesPage {
     }
   }
 
-  openModal(int){
-    const myModal =  this.modal.create('FormclientePage', int)
-
+  openModal( accion:any ){
+    const myModal =  this.modal.create('FormclientePage', { accion })
+    console.log(accion);
     myModal.present();
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ClientesPage');
   }
 
 }
