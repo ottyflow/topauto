@@ -10,10 +10,10 @@
       <ion-row class="cliente" (click)="openModal(1)">
         <ion-col col-5>
           <div class="container">
-            <ion-row>
-              {{ cliente.nombre }} - {{ cliente.cuenta }} 
+            <ion-row class="nombre">
+              {{ cliente.nombre }} - {{ cliente.cuenta }}
             </ion-row>
-            <ion-row>
+            <ion-row class="localidad">
               {{ cliente.direccion }}, {{ cliente.ciudad }}
             </ion-row>
           </div>
@@ -21,7 +21,7 @@
         <ion-col col-4>
         </ion-col>
         <ion-col col-3 align-items: center>
-          <div class="containercuit" >
+          <div class="telefono" >
             {{ cliente.telefono }}
           </div>
         </ion-col>
