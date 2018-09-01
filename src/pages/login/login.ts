@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
-import { LoginPage } from '../login/login';
+import { CatalogoPage } from '../catalogo/catalogo';
 
 /**
- * Generated class for the PerfilPage page.
+ * Generated class for the LoginPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,18 +12,16 @@ import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
-  selector: 'page-perfil',
-  templateUrl: 'perfil.html',
+  selector: 'page-login',
+  templateUrl: 'login.html',
 })
-export class PerfilPage {
-  app: any;
+export class LoginPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  logOut() : void
+  logIn() : void
    {
-     this.navCtrl.parent.parent.setRoot(LoginPage);
+         this.navCtrl.setRoot(TabsPage);
    }
-
 }
