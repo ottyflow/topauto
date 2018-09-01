@@ -93,8 +93,14 @@
   </ion-list>
   <ion-footer>
     <ion-toolbar class="Botones">
-      <button class="cancelar" ion-button color="light" (click)="closeModal()" outline>CANCELAR</button>
-      <button class="aceptar" ion-button color="light"  (click)="closeModal()" outline>ACEPTAR</button>
+      <ion-row>
+        <ion-item class="divprecio">
+          <ion-input type="number" class="precio"></ion-input>
+        </ion-item>
+        <div style="width:30%;"></div>
+        <button class="cancelar" ion-button color="light" (click)="closeModal()" outline>CANCELAR</button>
+        <button class="aceptar" ion-button color="light"  (click)="closeModal()" outline>ACEPTAR</button>
+      </ion-row>
     </ion-toolbar>
   </ion-footer>
 </ion-content>

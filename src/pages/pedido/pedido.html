@@ -21,9 +21,14 @@
                     <img [src]="articulo.imagen" class="FotoArti">
                   </div>
                 </ion-col>
-                <ion-col col-10>
+                <ion-col col-8>
                   <div class="info">
                     {{ articulo.descripcion }}
+                  </div>
+                </ion-col>
+                <ion-col col-2>
+                  <div class="alerta">
+                    <ion-icon name="alert"></ion-icon>
                   </div>
                   <div class="precio">
                     ${{ articulo.precio }}
@@ -85,14 +90,14 @@
             Totales
           </ion-title>
         </div>
-        <div class="Cantidad">
-          <ion-title class="TituloCantidad">
+        <!-- <div class="Cantidad"> -->
+          <!-- <ion-title class="TituloCantidad">
             Cantidad de productos
-          </ion-title>
-          <ion-title class="Cantidades">
+          </ion-title> -->
+          <!-- <ion-title class="Cantidades">
             40
-          </ion-title>
-        </div>
+          </ion-title> -->
+        <!-- </div> -->
         <div class="Subtotal">
           <ion-title class="TituloSubtotal">
             Subtotal
