@@ -5,14 +5,46 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-toolbar color="dark">
     <ion-title>Perfil</ion-title>
   </ion-toolbar>
-
 </ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+  <ion-grid class="CuerpoGrid">
+    <ion-row class="Cuerpo">
+      <ion-col col-6 class="vendedor">
+        <div class="Titulos">
+          <ion-title class="Tituloscolumnas">
+            Vendedor
+          </ion-title>
+        </div>
+        <ion-card class="perfilimage">
+        </ion-card>
+        <div class="vendedornombre"> Quito, Armando Esteban</div>
+        <ion-row class="zonas">
+          <div class="titulozona">
+            Zonas asignadas:
+          </div>
+          <div class="zona">
+             ZONA 1; ZONA2; ZONA3.
+          </div>
+        </ion-row>
+        <ion-footer>
+          <ion-toolbar class="cerrarsesion">
+            <ion-row>
+              <ion-icon class="iconosesion" name="walk" style="font-size:32px;"></ion-icon>
+              <div class="cerrarsesiontext"> Cerrar sesión </div>
+            </ion-row>
+          </ion-toolbar>
+        </ion-footer>
+      </ion-col>
+      <ion-col col-6 class="pedidos">
+        <div class="Titulos">
+          <ion-title class="Tituloscolumnas">
+            Pedidos
+          </ion-title>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
