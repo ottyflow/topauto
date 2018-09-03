@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { ProveedorProvider } from '../../providers/proveedor/proveedor';
-import {Http, Headers} from "@angular/http";
-import { Cliente } from '../../interfaces/clientes.interface';
 import { CLIENTES } from '../../data/data.cliente';
-import { FormclientePage} from '../formcliente/formcliente';
 
 /**
  * Generated class for the ClientesPage page.
@@ -23,7 +19,7 @@ export class ClientesPage {
   clientes:any = [];
   accion:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public proveedor:ProveedorProvider, private modal: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController) {
 
         this.generateClientes();
 

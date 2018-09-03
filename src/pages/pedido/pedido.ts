@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Articulo } from '../../interfaces/articulo.interface';
 import { ARTICULOS } from '../../data/data.articulos';
 
 /**
