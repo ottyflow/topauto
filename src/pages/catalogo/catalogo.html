@@ -1,13 +1,12 @@
-
 <ion-header>
-  <ion-toolbar color="dark" src="../assets/imgs/flag.png">
+  <ion-toolbar color="dark">
     <ion-title class="titulo" *ngIf="!isSearchBarOpened">Catálogo</ion-title>
     <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" [(ngModel)]="queryText" (ionInput)="getItems($event)" (ionCancel)="isSearchBarOpened=false" placeholder=""></ion-searchbar>
     <ion-buttons end>
-      <button ion-button icon-only *ngIf="!isSearchBarOpened" (click)="isSearchBarOpened=true">
+      <button ion-button icon-only *ngIf="!isSearchBarOpened" (tap)="isSearchBarOpened=true">
         <ion-icon name="search"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="openModalFiltros()" >
+      <button ion-button icon-only (tap)="openModalFiltros()" >
         <ion-icon name="options"></ion-icon>
       </button>
     </ion-buttons>
@@ -17,7 +16,7 @@
   <ion-grid>
     <ion-row>
       <ion-col col-xs-6 col-sm-6 col-md-4 col-xl-3 *ngFor="let articulo of articulos">
-        <ion-card class="card-catalogo" (click)="openModal()">
+        <ion-card class="card-catalogo" (tap)="openModal()">
           <div class="container">
             <img [src]="articulo.imagen">
           </div>

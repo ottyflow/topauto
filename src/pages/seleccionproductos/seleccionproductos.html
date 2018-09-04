@@ -20,73 +20,73 @@
   <ion-list>
     <ion-item>
       LIMON
-      <button ion-button item-end class="suma" (click)="decrement1()" style="height:32px;">
+      <button ion-button item-end class="suma" (tap)="decrement1()" style="height:32px;">
         <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
       </button>
       <div item-end>
         {{currentNumber1}}
       </div>
-      <button ion-button item-end class="resta"  (click)="increment1()" style="height:32px;">
+      <button ion-button item-end class="resta"  (tap)="increment1()" style="height:32px;">
         <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
       </button>
     </ion-item>
     <ion-item>
       VAINILLA
-      <button ion-button item-end class="suma" (click)="decrement2()" style="height:32px;">
+      <button ion-button item-end class="suma" (tap)="decrement2()" style="height:32px;">
         <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
       </button>
       <div item-end>
         {{currentNumber2}}
       </div>
-      <button ion-button item-end class="resta" (click)="increment2()" style="height:32px;">
+      <button ion-button item-end class="resta" (tap)="increment2()" style="height:32px;">
         <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
       </button>
     </ion-item>
     <ion-item>
       COCO
-      <button ion-button item-end class="suma" (click)="decrement3()" style="height:32px;">
+      <button ion-button item-end class="suma" (tap)="decrement3()" style="height:32px;">
         <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
       </button>
       <div item-end>
         {{currentNumber3}}
       </div>
-      <button ion-button item-end class="resta" (click)="increment3()" style="height:32px;">
+      <button ion-button item-end class="resta" (tap)="increment3()" style="height:32px;">
         <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
       </button>
     </ion-item>
     <ion-item>
       RALLY
-      <button ion-button item-end class="suma" (click)="decrement4()" style="height:32px;">
+      <button ion-button item-end class="suma" (tap)="decrement4()" style="height:32px;">
         <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
       </button>
       <div item-end>
         {{currentNumber4}}
       </div>
-      <button ion-button item-end class="resta" (click)="increment4()" style="height:32px;">
+      <button ion-button item-end class="resta" (tap)="increment4()" style="height:32px;">
         <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
       </button>
     </ion-item>
     <ion-item>
       NEW CAR
-      <button ion-button item-end class="suma"  (click)="decrement5()" style="height:32px;">
+      <button ion-button item-end class="suma"  (tap)="decrement5()" style="height:32px;">
         <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
       </button>
       <div item-end>
         {{currentNumber5}}
       </div>
-      <button ion-button item-end class="resta" (click)="increment5()" style="height:32px;">
+      <button ion-button item-end class="resta" (tap)="increment5()" style="height:32px;">
         <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
       </button>
     </ion-item>
     <ion-item>
       AQUA SPORT
-      <button ion-button item-end class="suma" (click)="decrement6()" style="height:32px;">
+      <button ion-button item-end class="suma" (tap)="decrement6()" style="height:32px;">
         <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
       </button>
       <div item-end>
         {{currentNumber6}}
       </div>
-      <button ion-button item-end class="resta" (click)="increment6()" style="height:32px;">
+      <button ion-button item-end class="resta" (tap)="increment6()" style="height:32px;">
         <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
       </button>
     </ion-item>
@@ -98,8 +98,8 @@
           <ion-input type="number" class="precio"></ion-input>
         </ion-item>
         <div style="width:30%;"></div>
-        <button class="cancelar" ion-button color="light" (click)="closeModal()" outline>CANCELAR</button>
-        <button class="aceptar" ion-button color="light"  (click)="closeModal()" outline>ACEPTAR</button>
+        <button class="cancelar" ion-button color="light" (tap)="closeModal()" outline>CANCELAR</button>
+        <button class="aceptar" ion-button color="light"  (tap)="closeModal()" outline>ACEPTAR</button>
       </ion-row>
     </ion-toolbar>
   </ion-footer>

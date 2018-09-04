@@ -1,15 +1,14 @@
-
 <ion-header>
   <ion-toolbar color="dark">
       <ion-title>Clientes</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-row style="height: 24px; background-color:#FFFFFF;width: 50%;margin-left: auto; margin-right: auto;"></ion-row>
+  <ion-row ></ion-row>
   <ion-grid class="listadoclientes">
     <div *ngFor="let cliente of clientes">
-      <ion-row class="cliente" (click)="openModal(1)">
-        <ion-col col-5>
+      <ion-row class="cliente" (tap)="openModal(1)">
+        <ion-col col-7>
           <div class="container">
             <ion-row class="nombre">
               {{ cliente.nombre }} - {{ cliente.cuenta }}
@@ -19,9 +18,7 @@
             </ion-row>
           </div>
         </ion-col>
-        <ion-col col-4>
-        </ion-col>
-        <ion-col col-3 align-items: center>
+        <ion-col col-5 align-items: center>
           <div class="telefono" >
             {{ cliente.telefono }}
           </div>

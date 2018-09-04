@@ -10,18 +10,15 @@ page-clientes {
   .telefono{
     margin-right: auto;
     margin-left: auto;
-    vertical-align: middle;
-    font-size: 16px;
+    text-align: right;
+    font-size: 14px;
     color: #263238;
     font-weight: 500;
   }
   .cliente{
-    height: 56px;
+    height: max-content;
     margin-top: auto;
     margin-bottom: auto;
-  }
-  .cuit{
-    align-items: center;
   }
   ion-content{
     background-image: url(../assets/imgs/granPrix17.png);
@@ -30,11 +27,15 @@ page-clientes {
     background-position: center;
   }
   .nombre{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
+    margin: 0px;
   }
   .localidad{
     font-size: 14px;
     color: rgba(38,50,56,0.6);
+  }
+  .container{
+    text-align: left;
   }
 }

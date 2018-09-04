@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 
+import { CatalogoPageModule} from '../pages/catalogo/catalogo.module';
 import { CatalogoPage} from '../pages/catalogo/catalogo';
 import { PedidoPage } from '../pages/pedido/pedido';
 import { ClientesPage } from '../pages/clientes/clientes';
@@ -20,7 +21,6 @@ import { LoginPage } from '../pages/login/login';
 @NgModule({
   declarations: [
     MyApp,
-    CatalogoPage,
     PedidoPage,
     ClientesPage,
     PerfilPage,
@@ -30,7 +30,8 @@ import { LoginPage } from '../pages/login/login';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    CatalogoPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
