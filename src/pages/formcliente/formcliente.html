@@ -20,53 +20,53 @@
 <ion-content>
   <ion-grid>
     <ion-col col-12>
-      <ion-list *ngIf="accion == 0">
+      <ion-list *ngIf="accion == 0 || accion == 3 ">
         <ion-item>
-          <ion-label floating>Denominacion Legal *</ion-label>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Denominacion Legal *</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Nombre de fantasia</ion-label>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Nombre de fantasia</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Cuenta</ion-label>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Cuenta</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Telefono *</ion-label>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Telefono *</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Telefono 2</ion-label>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Telefono 2</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Direccion *</ion-label>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Direccion *</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>E-Mail</ion-label>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">E-Mail</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Pagina web</ion-label>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Pagina web</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Situacion ante el IVA *</ion-label>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Situacion ante el IVA *</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>CUIT *</ion-label>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">CUIT *</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>NOTAS</ion-label>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">NOTAS</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
       </ion-list>
-      <ion-list *ngIf="accion == 1">
+      <!-- <ion-list *ngIf="accion == 1">
         <ion-item>
           <ion-input type="text" [readonly]=true></ion-input>
         </ion-item>
@@ -94,7 +94,7 @@
         <ion-item>
           <ion-input type="text" [readonly]=true></ion-input>
         </ion-item>
-      </ion-list>
+      </ion-list> -->
     </ion-col>
   </ion-grid>
 </ion-content>

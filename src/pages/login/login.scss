@@ -11,12 +11,15 @@ page-login {
     margin-right: auto;
     border-radius: 8px;
     box-shadow: 0 6px 12px 0 rgba(0,0,0,0.24);
-
+  }
+  .error .toolbar-title-md{
+    color: #ff5e5e!important;
+    text-align: center;
   }
   .logo{
     background-image: url(../assets/imgs/logotopauto.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: center;
     background-position: center;
     height: 30%;
     width: 30%;
