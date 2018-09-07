@@ -1,6 +1,6 @@
 export const CLIENTES =[
   {
-    nombre:  "Pirulo",
+    nombre:  "Juan",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -10,7 +10,7 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre: "Culero",
+    nombre: "Felipe",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -20,7 +20,7 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre: "Caquero",
+    nombre: "Miguel",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -30,7 +30,7 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre: "Tetero",
+    nombre: "Claudio",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -40,7 +40,7 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre: "Hijo de puta",
+    nombre: "Ramiro",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -50,7 +50,7 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre:  "Prueba12",
+    nombre:  "Carlos",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -60,7 +60,7 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre:  "ARELOCO",
+    nombre:  "Rodrigo",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -70,7 +70,7 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre:  "Pirulo",
+    nombre:  "Julian",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -80,7 +80,7 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre:  "Pirulo",
+    nombre:  "Nicolas",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -90,7 +90,7 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre:  "Pirulo",
+    nombre:  "Pablo",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -100,7 +100,7 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre:  "Pirulo",
+    nombre:  "Daniel",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -110,7 +110,7 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre:  "Pirulo",
+    nombre:  "Cristian",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -120,7 +120,7 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre:  "Pirulo",
+    nombre:  "Ezequiel",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",
@@ -130,7 +130,47 @@ export const CLIENTES =[
     pais : "Argentina",
   },
   {
-    nombre:  "Pirulo",
+    nombre:  "Eduardo",
+    cuenta: 89273423,
+    telefono: "0223155993050",
+    cuit: "20-35336556-09",
+    direccion: "Gral Rivas 4788 pb1",
+    ciudad: "Mar del plata",
+    provincia: "Buenos Aires",
+    pais : "Argentina",
+  },
+  {
+    nombre:  "Juan",
+    cuenta: 89273423,
+    telefono: "0223155993050",
+    cuit: "20-35336556-09",
+    direccion: "Gral Rivas 4788 pb1",
+    ciudad: "Mar del plata",
+    provincia: "Buenos Aires",
+    pais : "Argentina",
+  },
+  {
+    nombre: "Felipe",
+    cuenta: 89273423,
+    telefono: "0223155993050",
+    cuit: "20-35336556-09",
+    direccion: "Gral Rivas 4788 pb1",
+    ciudad: "Mar del plata",
+    provincia: "Buenos Aires",
+    pais : "Argentina",
+  },
+  {
+    nombre: "Miguel",
+    cuenta: 89273423,
+    telefono: "0223155993050",
+    cuit: "20-35336556-09",
+    direccion: "Gral Rivas 4788 pb1",
+    ciudad: "Mar del plata",
+    provincia: "Buenos Aires",
+    pais : "Argentina",
+  },
+  {
+    nombre: "Claudio",
     cuenta: 89273423,
     telefono: "0223155993050",
     cuit: "20-35336556-09",

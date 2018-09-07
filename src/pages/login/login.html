@@ -13,6 +13,11 @@ git<!--
         ¡Bienvenido!
       </ion-title>
     </div>
+    <div class="error" *ngIf="error == 1">
+      <ion-title class="error">
+        ¡Datos incorrectos!
+      </ion-title>
+    </div>
     <ion-list class="form">
       <ion-item>
         <ion-label floating>Usuario</ion-label>

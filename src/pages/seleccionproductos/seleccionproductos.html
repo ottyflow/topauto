@@ -1,7 +1,11 @@
+<ion-header>
+  <ion-toolbar class="cabeza">
+    <ion-title class="titulo">
+      Selección de  productos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content padding>
-  <ion-title class="titulo">
-    Selección de  productos
-  </ion-title>
   <div class="producto">
     <ion-row>
       <ion-col col-5>
@@ -10,10 +14,7 @@
         </div>
       </ion-col>
       <ion-col col-7>
-        <div class="info">
-          PERFUME AMBIENTAL EN GEL NACIONAL
-          POTE DE 100GR
-        </div>
+          PERFUME AMBIENTAL EN GEL NACIONALPOTE DE 100GR
       </ion-col>
     </ion-row>
   </div>
@@ -91,16 +92,14 @@
       </button>
     </ion-item>
   </ion-list>
-  <ion-footer>
-    <ion-toolbar class="Botones">
-      <ion-row>
-        <ion-item class="divprecio">
-          <ion-input type="number" class="precio"></ion-input>
-        </ion-item>
-        <div style="width:30%;"></div>
-        <button class="cancelar" ion-button color="light" (tap)="closeModal()" outline>CANCELAR</button>
-        <button class="aceptar" ion-button color="light"  (tap)="closeModal()" outline>ACEPTAR</button>
-      </ion-row>
-    </ion-toolbar>
-  </ion-footer>
 </ion-content>
+<ion-footer>
+  <ion-row class="botones">
+    <ion-item class="divprecio">
+      <ion-input type="number" class="precio"></ion-input>
+    </ion-item>
+    <div style="width:20%;"></div>
+    <button class="cancelar" ion-button color="light" (tap)="closeModal()" outline>CANCELAR</button>
+    <button class="aceptar" ion-button color="light"  (tap)="closeModal()" outline>ACEPTAR</button>
+  </ion-row>
+</ion-footer>

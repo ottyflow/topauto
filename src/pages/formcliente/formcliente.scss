@@ -6,7 +6,6 @@ page-formcliente {
       line-height: 24px;
       font-weight: normal;
   }
-
   .cancelar{
     color: #FBC02D;
     border: none;
@@ -15,6 +14,12 @@ page-formcliente {
     height: 40px;
     font-family: Roboto;
     width: 95px;
+  }
+  .grid{
+    padding-top: 0px;
+  }
+  .col{
+    padding-top: 0px;
   }
   .aceptar{
     border-radius: 24px;
@@ -38,5 +43,9 @@ page-formcliente {
   .header-md::after{
     background-image: none;
     height: 0px;
+  }
+  .list-md{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
   }
 }
