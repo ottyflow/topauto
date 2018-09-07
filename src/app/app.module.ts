@@ -2,14 +2,14 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
-
-import { CatalogoPageModule} from '../pages/catalogo/catalogo.module';
+import { HttpModule } from '@angular/http';
+import { Storage, IonicStorageModule}  from '@ionic/storage';
 import { CatalogoPage} from '../pages/catalogo/catalogo';
 import { PedidoPage } from '../pages/pedido/pedido';
 import { ClientesPage } from '../pages/clientes/clientes';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { TabsPage } from '../pages/tabs/tabs';
+import { Nav, NavController, NavParams } from 'ionic-angular';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -27,13 +27,15 @@ import { PedidosProvider } from '../providers/pedidos/pedidos';
     ClientesPage,
     PerfilPage,
     TabsPage,
+    CatalogoPage,
     LoginPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    CatalogoPageModule
+    HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

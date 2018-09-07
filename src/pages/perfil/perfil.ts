@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { UsuariosProvider}  from "../../providers/usuarios/usuarios";
 
 /**
  * Generated class for the PerfilPage page.
@@ -15,14 +16,13 @@ import { LoginPage } from '../login/login';
   templateUrl: 'perfil.html',
 })
 export class PerfilPage {
-  app: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public _us:UsuariosProvider) {
   }
 
-  logOut() : void
-   {
-     this.navCtrl.parent.parent.setRoot(LoginPage);
-   }
+  logOuT(){
+    this._us.cerrar_sesion();
+    this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
 
 }
