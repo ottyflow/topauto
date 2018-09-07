@@ -14,9 +14,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ProveedorProvider } from '../providers/proveedor/proveedor';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginPage } from '../pages/login/login';
+import { UsuariosProvider } from '../providers/usuarios/usuarios';
+import { ArticulosProvider } from '../providers/articulos/articulos';
+import { PedidosProvider } from '../providers/pedidos/pedidos';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { LoginPage } from '../pages/login/login';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ProveedorProvider
+    UsuariosProvider,
+    ArticulosProvider,
+    PedidosProvider
   ]
 })
 export class AppModule {}

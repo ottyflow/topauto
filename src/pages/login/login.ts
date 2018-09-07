@@ -16,6 +16,9 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
+  usuario:string ="";
+  contrasena:string="";
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
