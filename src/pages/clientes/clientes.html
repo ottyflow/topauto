@@ -6,27 +6,27 @@
 <ion-content>
   <ion-row ></ion-row>
   <ion-grid class="listadoclientes">
-    <div *ngFor="let cliente of clientes">
+    <div *ngFor="let item of _cs.clientes">
       <ion-row class="cliente" (tap)="openModal(1)">
         <ion-col col-7>
           <div class="container">
             <ion-row class="nombre">
-              {{ cliente.nombre }} - {{ cliente.cuenta }}
+              {{ item.razon_social }} - {{ item.cuenta }}
             </ion-row>
             <ion-row class="localidad">
-              {{ cliente.direccion }}, {{ cliente.ciudad }}
+              {{ item.direccion }}, {{ item.id_localidad }}
             </ion-row>
           </div>
         </ion-col>
         <ion-col col-5 align-items: center>
           <div class="telefono" >
-            {{ cliente.telefono }}
+            {{ item.telefono }}
           </div>
         </ion-col>
       </ion-row>
     </div>
   </ion-grid>
   <ion-fab bottom right>
-    <button ion-fab (click)="openModal(0)"><ion-icon name="person-add"></ion-icon></button>
+    <button ion-fab (tap)="openModal(0)"><ion-icon name="person-add"></ion-icon></button>
   </ion-fab>
 </ion-content>

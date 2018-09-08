@@ -19,6 +19,7 @@ import { LoginPage } from '../pages/login/login';
 import { UsuariosProvider } from '../providers/usuarios/usuarios';
 import { ArticulosProvider } from '../providers/articulos/articulos';
 import { PedidosProvider } from '../providers/pedidos/pedidos';
+import { ClientesProvider } from '../providers/clientes/clientes';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { PedidosProvider } from '../providers/pedidos/pedidos';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsuariosProvider,
     ArticulosProvider,
-    PedidosProvider
+    PedidosProvider,
+    ClientesProvider
   ]
 })
 export class AppModule {}
