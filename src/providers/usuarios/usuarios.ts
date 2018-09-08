@@ -11,18 +11,18 @@ export class UsuariosProvider {
 
   token:string="";
   id_usuario:string="";
+  nombre:string="";
 
   constructor(public http: Http, public alertCtrl: AlertController, private platform: Platform, private storage:Storage) {
     this.cargar_storage();
   }
 
   ingresar(usuario:string, contrasena:string){
+    let url = URL_SERVICIOS + "/login";
     this.cerrar_sesion();
     let data = new URLSearchParams();
     data.append("usuario", usuario);
     data.append("contrasena", contrasena);
-
-    let url = URL_SERVICIOS + "/login";
 
     return this.http.post( url, data )
                     .map( resp=>{
@@ -38,6 +38,7 @@ export class UsuariosProvider {
                       }else{
                         this.token = data_resp.token;
                         this.id_usuario=data_resp.id_usuario;
+                        this.nombre = data_resp.nombre;
 
                         this.guardar_storage();
                       }
@@ -54,13 +55,16 @@ export class UsuariosProvider {
     if(this.platform.is("cordova")){
       this.storage.set('token', this.token);
       this.storage.set('id_usuario', this.id_usuario);
+      this.storage.set('nombre', this.nombre);
     }else{
       if (this.token){
       localStorage.setItem("token", this.token);
       localStorage.setItem("id_usuario", this.id_usuario);
+      localStorage.setItem("nombre", this.nombre);
       }else{
         localStorage.removeItem("token");
         localStorage.removeItem("id_usuario");
+        localStorage.removeItem("nombre");
       }
     }
   }

@@ -10,7 +10,10 @@ import 'rxjs/add/operator/do';
 export class ClientesProvider {
 
   clientes:any [] = [];
-
+  cliente:any [] = [];
+  codigocliente:string="";
+  razonsocial:string="";
+  nombrefantasia:string="";
   constructor(public http: Http, private platform: Platform, private storage:Storage) {
     this.cargar_clientes();
   }
@@ -33,19 +36,28 @@ export class ClientesProvider {
                       })
   }
 
-  private guardar_storage(){
-    if(this.platform.is("cordova")){
-      this.storage.set('token', this.token);
-      this.storage.set('id_usuario', this.id_usuario);
-    }else{
-      if (this.token){
-      localStorage.setItem("token", this.token);
-      localStorage.setItem("id_usuario", this.id_usuario);
-      }else{
-        localStorage.removeItem("token");
-        localStorage.removeItem("id_usuario");
-      }
-    }
+
+  traer_cliente(codigocliente:string){
+    let url = URL_SERVICIOS + "/clientes/cliente/" + codigocliente;
+    return this.http.get( url )
+                    .map( resp=> resp.json() )
+                      .subscribe( data=>{
+
+                        console.log(data);
+
+                        if(data.error){
+
+                        }else{
+                          this.clientes.push( ...data.cliente);
+
+                          // this.razonsocial= data.razonsocial;
+                          // this.nombrefantasia = data.nombrefantasia;
+                          // console.log(this.razonsocial);
+                          this.cliente= data.cliente;
+                           console.log(this.cliente);
+
+                        }
+                      })
   }
 
 }

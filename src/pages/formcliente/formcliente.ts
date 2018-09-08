@@ -9,33 +9,15 @@ import { ClientesProvider } from '../../providers/clientes/clientes';
 })
 export class FormclientePage {
 
-  cliente = {
-    codigo:'',
-    codigo_postal:'',
-    created_at:'',
-    cuenta:'',
-    cuit:'',
-    direccion:'',
-    email:'',
-    id_iva:'',
-    id_localidad:'',
-    id_provincia:'',
-    nombre_fantasia:'',
-    razon_social:'',
-    telefono:'',
-    telefono2:'',
-    updated_at:'',
-    web:''
-  };
   accion:any = 0;
+  codigo:string="";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _cs:ClientesProvider) {
     this.accion = this.navParams.get("accion");
+    this.codigo = this.navParams.get("codigo");
+    this.traercliente(this.codigo);
   }
 
-  logForm(){
-    console.log(this.cliente);
-  }
   closeModal(){
     this.view.dismiss();
   }
@@ -43,4 +25,9 @@ export class FormclientePage {
   modificar(accion:any){
     this.accion=accion;
   }
+
+  traercliente(codigo:string){
+    this._cs.traer_cliente(this.codigo)
+
+    }
 }

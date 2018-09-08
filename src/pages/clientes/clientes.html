@@ -7,7 +7,7 @@
   <ion-row ></ion-row>
   <ion-grid class="listadoclientes">
     <div *ngFor="let item of _cs.clientes">
-      <ion-row class="cliente" (tap)="openModal(1)">
+      <ion-row class="cliente" (tap)="openModal(1,item.codigo);">
         <ion-col col-7>
           <div class="container">
             <ion-row class="nombre">
