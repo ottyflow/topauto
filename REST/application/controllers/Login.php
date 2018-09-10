@@ -41,8 +41,11 @@ class Login extends REST_Controller {
 
     $query = $this->db->get_where('users', $condiciones );
     $usuario = $query->row();
-    $activo = $usuario->activo;
-    $rol = $usuario->id_rol;
+    if($usuario!=null){
+      $activo = $usuario->activo;
+      $rol = $usuario->id_rol;
+    };
+
 
 
     if( !isset( $usuario ) ){
@@ -79,7 +82,8 @@ class Login extends REST_Controller {
     $respuesta = array(
                   'error' => FALSE,
                   'token' => $token,
-                  'id_usuario' => $usuario->id
+                  'id_usuario' => $usuario->id,
+                  'nombre' => $usuario->nombre,
                 );
     $this->response( $respuesta );
   }
