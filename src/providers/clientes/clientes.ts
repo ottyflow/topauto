@@ -15,7 +15,7 @@ export class ClientesProvider {
   razonsocial:string="";
   nombrefantasia:string="";
   constructor(public http: Http, private platform: Platform, private storage:Storage) {
-    this.cargar_clientes();
+
   }
 
   cargar_clientes(){

@@ -15,7 +15,9 @@ export class FormclientePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _cs:ClientesProvider) {
     this.accion = this.navParams.get("accion");
     this.codigo = this.navParams.get("codigo");
-    this.traercliente(this.codigo);
+    if(this.codigo != null){
+      this.traercliente(this.codigo);
+    }
   }
 
   closeModal(){
