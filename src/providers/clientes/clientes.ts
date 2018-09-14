@@ -1,8 +1,6 @@
-import { Http , URLSearchParams } from '@angular/http';
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { URL_SERVICIOS } from '../../config/url.servicios';
-import { AlertController , Platform } from "ionic-angular";
-import { Storage } from '@ionic/storage';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 
@@ -14,7 +12,7 @@ export class ClientesProvider {
   codigocliente:string="";
   razonsocial:string="";
   nombrefantasia:string="";
-  constructor(public http: Http, private platform: Platform, private storage:Storage) {
+  constructor(public http: Http) {
 
   }
 

@@ -16,7 +16,7 @@
           <ion-scroll direction="y" class="theroot">
             <div *ngFor="let articulo of articulos">
               <ion-row class="Items">
-                <ion-col col-2>
+                <ion-col col-2 pull-col-xs-0 class="contenedorimagen">
                   <div class="container">
                     <img [src]="articulo.imagen" class="FotoArti">
                   </div>
@@ -80,7 +80,7 @@
             Otros datos
           </ion-title>
           <ion-item>
-            <ion-textarea placeholder="Observaciones" style="margin-top: 32px; height: 40px;"></ion-textarea>
+            <ion-textarea placeholder="Observaciones"></ion-textarea>
           </ion-item>
         </div>
       </ion-col>

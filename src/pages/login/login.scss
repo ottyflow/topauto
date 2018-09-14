@@ -6,25 +6,26 @@ page-login {
     background-color: #FFFFFF;
     height: max-content;
     width: 40%;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 8px;
     box-shadow: 0 6px 12px 0 rgba(0,0,0,0.24);
-  }
-  .error .toolbar-title-md{
-    color: #ff5e5e!important;
-    text-align: center;
+    animation-name: fadeIn;
+    animation-duration: 10s;
   }
   .logo{
-    background-image: url(../assets/imgs/logotopauto.jpg);
+    background-image: url(../assets/imgs/logotopauto.png);
     background-repeat: no-repeat;
-    background-size: center;
+    background-size: contain;
     background-position: center;
     height: 30%;
     width: 30%;
     margin-left: auto;
     margin-right: auto;
+    animation-name: fadeIn;
+    animation-duration: 10s;
+    margin-top: 10px;
   }
   .Titulos{
     text-align: center;
@@ -66,5 +67,77 @@ page-login {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 799px){
+    .login{
+      width: 50%;
+      height: max-content;
+      background-color: #FFFFFF;
+    }
+    .iniciarsesion{
+      border-radius: 24px;
+      background-color: #FBC02D;
+      color: #fff;
+      -webkit-box-shadow : none;
+      font-size: 12px;
+      height: 34px;
+      font-family: Roboto;
+      width: 90%;
+      margin-top: 0px;
+    }
+    .ion-list{
+      margin-bottom: 16px;
+    }
+    .Titulos{
+      text-align: center;
+      padding-top: 10px;
+      margin-right: auto;
+      margin-left: auto;
+      border-color: #888888;
+      border-radius: 1px;
+      vertical-align: middle;
+    }
+    .Tituloscolumnas{
+      color: #3C3A3A;
+      margin-bottom: 0px;
+      .toolbar-title-md{
+        color: #263238;
+        font-family: Roboto;
+        font-size: 18px;
+        letter-spacing: 0.86px;
+        text-align: center;
+      }
+    }
+  }
+
+  @media (max-width: 560px){
+    .login{
+      width: 100%;
+      height: max-content;
+      background-color: #FFFFFF;
+    }
+    .logo{
+      background-image: url(../assets/imgs/logotopauto.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: 30%;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      animation-name: fadeIn;
+      animation-duration: 17s;
+    }
   }
 }

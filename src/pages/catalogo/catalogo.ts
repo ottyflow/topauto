@@ -12,6 +12,7 @@ export class CatalogoPage {
 
   articulos:any = [];
   queryText : string;
+  datosarticulo:any=[];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController) {
@@ -19,9 +20,10 @@ export class CatalogoPage {
     this.generateItems();
 
   }
-  openModal(){
-    const myModal =  this.modal.create('SeleccionproductosPage')
 
+  openModal(datoarticulo:any){
+    const myModal =  this.modal.create('SeleccionproductosPage', {datoarticulo});
+    console.log(datoarticulo);
     myModal.present();
   }
 

@@ -70,7 +70,7 @@ page-seleccionproductos {
   .divprecio{
     margin-left: 25px;
     height: 20px;
-    width: 30%;
+    width: 40%;
   }
   .titulo .toolbar-title-md{
     	color: #263238;
@@ -88,6 +88,29 @@ page-seleccionproductos {
   .header-md::after{
     background-image: none;
     height: 0px;
+  }
+  @media(max-width:560px){
+    .cancelar{
+      color: #FBC02D;
+      border: none;
+      -webkit-box-shadow : none;
+      font-size: 12px;
+      height: 40px;
+      font-family: Roboto;
+      width: 77px;
+      margin-right: 2px;
+    }
+    .aceptar{
+      border-radius: 24px;
+      background-color: #FBC02D;
+      color: #fff;
+      -webkit-box-shadow : none;
+      font-size: 12px;
+      height: 40px;
+      font-family: Roboto;
+      width: 77px;
+      margin-left: 2px;
+    }
   }
 
 }

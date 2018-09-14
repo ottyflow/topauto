@@ -38,4 +38,19 @@ page-clientes {
   .container{
     text-align: left;
   }
+  @media (max-width: 799px){
+    .listadoclientes{
+      width: 75%;
+      height: auto;
+      background-color: #FFFFFF;
+    }
+  }
+
+  @media (max-width: 600px){
+    .listadoclientes{
+      width: 100%;
+      height: auto;
+      background-color: #FFFFFF;
+    }
+  }
 }

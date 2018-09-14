@@ -45,6 +45,14 @@
             Pedidos
           </ion-title>
         </div>
+        <ion-footer>
+          <ion-toolbar class="cerrarsesion" (tap)="logOuT()">
+            <ion-row>
+              <ion-icon class="iconosesion" name="sync" style="font-size:32px;"></ion-icon>
+              <div class="cerrarsesiontext"> Sincronizar pedidos </div>
+            </ion-row>
+          </ion-toolbar>
+        </ion-footer>
       </ion-col>
     </ion-row>
   </ion-grid>
