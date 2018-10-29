@@ -47,10 +47,6 @@ export class ClientesProvider {
 
                         }else{
                           this.clientes.push( ...data.cliente);
-
-                          // this.razonsocial= data.razonsocial;
-                          // this.nombrefantasia = data.nombrefantasia;
-                          // console.log(this.razonsocial);
                           this.cliente= data.cliente;
                            console.log(this.cliente);
 

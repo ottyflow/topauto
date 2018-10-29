@@ -15,31 +15,40 @@
         </div>
           <ion-scroll direction="y" class="theroot">
             <div *ngFor="let articulo of articulos">
-              <ion-row class="Items">
-                <ion-col col-2 pull-col-xs-0 class="contenedorimagen">
-                  <div class="container">
-                    <img [src]="articulo.imagen" class="FotoArti">
-                  </div>
-                </ion-col>
-                <ion-col col-8>
-                  <div class="info">
-                    {{ articulo.descripcion }}
-                  </div>
-                </ion-col>
-                <ion-col col-2>
-                  <div class="alerta">
-                    <ion-icon name="alert"></ion-icon>
-                  </div>
-                  <div class="precio">
-                    ${{ articulo.precio }}
-                  </div>
-                </ion-col>
-              </ion-row>
+              <ion-list>
+                <ion-item-sliding #item>
+                  <ion-item>
+                    <ion-row class="Items">
+                      <ion-col col-2 pull-col-xs-0 class="contenedorimagen">
+                        <div class="container">
+                          <img [src]="'assets/imgarticulos/' + articulo.imagen">
+                        </div>
+                      </ion-col>
+                      <ion-col col-8>
+                        <div class="info">
+                          {{ articulo.descripcion }}
+                        </div>
+                      </ion-col>
+                      <ion-col col-2>
+                        <div class="alerta">
+                          <ion-icon name="alert"></ion-icon>
+                        </div>
+                        <div class="precio">
+                          ${{ articulo.precio }}
+                        </div>
+                      </ion-col>
+                    </ion-row>
+                  </ion-item>
+                  <ion-item-options side="right">
+                    <button ion-button color="danger" (tap)="borrar(articulo.codigo)">Borrar</button>
+                  </ion-item-options>
+                </ion-item-sliding>
+              </ion-list>
             </div>
           </ion-scroll>
         <ion-footer>
           <ion-toolbar class="CargarCodigo">
-            <button class="CargaCodigo" ion-button color="dark" outline>CARGAR POR CÓDIGO</button>
+            <button class="CargaCodigo" ion-button color="dark" outline (tap)="openModal()">CARGAR POR CÓDIGO</button>
           </ion-toolbar>
         </ion-footer>
       </ion-col>
@@ -142,7 +151,7 @@
         </div>
         <ion-footer class="Footer">
           <ion-toolbar class="BotonesPedido">
-            <button class="CancelarPedido" ion-button color="dark" outline>CANCELAR PEDIDO</button>
+            <button class="CancelarPedido" ion-button color="dark" outline (tap)="cancelarPedido()">CANCELAR PEDIDO</button>
             <button class="RealizarPedido" ion-button color="light">REALIZAR PEDIDO</button>
           </ion-toolbar>
         </ion-footer>

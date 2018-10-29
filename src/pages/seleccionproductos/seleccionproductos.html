@@ -10,15 +10,15 @@
     <ion-row>
       <ion-col col-5>
         <div class="container">
-          <img [src]="articulocopia.imagen">
+          <img [src]="'assets/imgarticulos/' + articulo.imagen">
         </div>
       </ion-col>
       <ion-col col-7>
-          {{ articulocopia.descripcion }}
+          {{ articulo.descripcion }}
       </ion-col>
     </ion-row>
   </div>
-  <ion-list *ngIf="articulocopia.fragancias">
+  <ion-list *ngIf="articulo.fragancias== 1">
     <ion-item>
       LIMON
       <button ion-button item-end class="suma" (tap)="decrement1()" style="height:32px;">
@@ -92,7 +92,7 @@
       </button>
     </ion-item>
   </ion-list>
-  <ion-list *ngIf="articulocopia.talles">
+  <ion-list *ngIf="articulo.talles==1">
     <ion-item>
       XS
       <button ion-button item-end class="suma" (tap)="decrement1()" style="height:32px;">
@@ -154,7 +154,7 @@
       </button>
     </ion-item>
   </ion-list>
-  <ion-list *ngIf="!articulocopia.fragancias && !articulocopia.talles">
+  <ion-list *ngIf="articulo.fragancias==0 && articulo.talles==0">
     <ion-item>
       UNIDADES
       <button ion-button item-end class="suma" (tap)="decrement1()" style="height:32px;">
@@ -174,12 +174,12 @@
     <ion-row class="botones">
       <ion-col col-6>
         <ion-item class="divprecio">
-          <ion-input type="number" value={{articulocopia.precio}} class="precio"></ion-input>
+          <ion-input type="number" value={{articulo.precio}} class="precio"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col col-6>
-        <button class="aceptar" ion-button float-right color="light"  (tap)="closeModal(1)" outline>ACEPTAR</button>
-        <button class="cancelar" ion-button float-right color="light" (tap)="closeModal(0)" outline>CANCELAR</button>
+        <button class="aceptar" ion-button float-right color="light"  (tap)="closeModal(1,articulo)" outline>ACEPTAR</button>
+        <button class="cancelar" ion-button float-right color="light" (tap)="closeModal(0,articulo)" outline>CANCELAR</button>
       </ion-col>
     </ion-row>
   </ion-grid>

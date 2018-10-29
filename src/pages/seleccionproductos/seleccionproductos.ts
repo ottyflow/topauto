@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { PedidoPage } from '../pedido/pedido';
+import { PedidosProvider } from '../../providers/pedidos/pedidos';
+import { ArticulosProvider } from '../../providers/articulos/articulos';
 
 /**
  * Generated class for the SeleccionproductosPage page.
@@ -25,20 +28,33 @@ export class SeleccionproductosPage {
   totalPrecio = 0;
   precio = 0;
 
-  articulocopia:any=[];
+  codigoArticulo:any= 0;
+  solocodigo:any;
+  articulo:any;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController) {
-    this.articulocopia = this.navParams.get("datoarticulo");
-    this.totalPrecio=this.articulocopia.precio;
-    this.precio = this.articulocopia.precio;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _ps:PedidosProvider, private _as:ArticulosProvider) {
+      var articulocopia:any = this.navParams.get("datoarticulo");
+      console.log(articulocopia);
+      if(articulocopia != undefined){
+        this.totalPrecio=articulocopia.precio;
+        this.precio = articulocopia.precio;
+        this.articulo = articulocopia;
+        console.log(this.articulo);
+      }else{
+        articulocopia= _as.unarticulo;
+        console.log(articulocopia);
+        this.totalPrecio=articulocopia.precio;
+        this.precio = articulocopia.precio;
+        this.articulo = articulocopia;
+      }
   }
 
-  closeModal(procesa:any){
+  closeModal(procesa:any,articulo){
     if(procesa==0){
       this.cancelar();
     }else{
-
+      this._ps.agregar_pedido(articulo);
+      this.cancelar();
     }
     this.view.dismiss();
   }
@@ -105,12 +121,12 @@ export class SeleccionproductosPage {
       this.totalPrecio = this.precio * this.totalCantidades;
     }
     if(this.totalPrecio>0){
-      this.articulocopia.precio = this.totalPrecio;
+      this.articulo.precio = this.totalPrecio;
     }
   }
 
   cancelar(){
-    this.articulocopia.precio= this.precio;
+    this.articulo.precio= this.precio;
     this.currentNumber1 = 0;
     this.currentNumber2 = 0;
     this.currentNumber3 = 0;
