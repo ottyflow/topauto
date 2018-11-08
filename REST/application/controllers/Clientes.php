@@ -39,4 +39,30 @@ class Clientes extends REST_Controller {
                 );
     $this->response( $respuesta );
   }
+
+  public function insertar_post(){
+    $data = $this->post();
+    $data = array(
+      'codigo'=> $data['codigo'],
+      'razon_social'=>$data['razon_social'],
+      'nombre_fantasia'=>$data['nombre_fantasia'],
+      'id_provincia'=>$data['id_provincia'],
+      'id_iva'=>$data['id_iva'],
+      'id_localidad'=>$data['id_localidad'],
+      'email'=>$data['email'],
+      'web'=>$data['web'],
+      'cuenta'=>$data['cuenta'],
+      'cuit'=>$data['cuit'],
+      'telefono'=>$data['telefono'],
+      'telefono2'=>$data['telefono2'],
+      'direccion'=>$data['direccion'],
+      'codigo_postal'=>$data['codigo_postal']
+    );
+    $this->db->insert('clientes', $data);
+    $respuesta = array(
+                  'error' => FALSE,
+                  'cliente' => $data,
+                );
+    $this->response( $respuesta );
+  }
 }

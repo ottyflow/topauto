@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { ARTICULOS } from '../../data/data.articulos';
-import { ArticulosProvider } from '../../providers/articulos/articulos';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
+import { BuscadorxcodigoPage } from '../buscadorxcodigo/buscadorxcodigo';
 
 /**
  * Generated class for the PedidoPage page.
@@ -21,12 +20,12 @@ export class PedidoPage {
   hideMe1: boolean = false;
   hideMe2: boolean = false;
   hideMe3: boolean = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _as:ArticulosProvider, private _ps:PedidosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _ps:PedidosProvider) {
     this.articulos = this._ps.articulos;
   }
 
   openModal(codigoarticulo:any){
-    const myModal = this.modal.create('BuscadorxcodigoPage', {codigoarticulo}, { cssClass: 'buscaCodigo' });
+    const myModal = this.modal.create(BuscadorxcodigoPage, {codigoarticulo}, { cssClass: 'buscaCodigo' });
     myModal.present();
   }
 
@@ -54,12 +53,12 @@ export class PedidoPage {
   }
 
   borrar(codigo:any){
+    var contador:number = 0;
     if(codigo!=undefined){
       console.log(codigo);
       for(let articulo of this.articulos){
-        var contador:number = 0;
         if(articulo.codigo == codigo){
-          this.articulos.splice(contador, 0);
+          this.articulos.splice(contador, 1);
           console.log(this.articulos);
         }
         contador++;

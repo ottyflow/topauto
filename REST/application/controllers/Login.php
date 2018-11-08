@@ -37,7 +37,7 @@ class Login extends REST_Controller {
 
     // Tenemos correo y contraseña en un post
     $condiciones = array('usuario' => $data['usuario'],
-                         'contrasena'=>$data['contrasena'] );
+                         'password'=>$data['contrasena'] );
 
     $query = $this->db->get_where('users', $condiciones );
     $usuario = $query->row();

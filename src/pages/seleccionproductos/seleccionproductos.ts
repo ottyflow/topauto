@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { PedidoPage } from '../pedido/pedido';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
 import { ArticulosProvider } from '../../providers/articulos/articulos';
 
@@ -11,7 +10,6 @@ import { ArticulosProvider } from '../../providers/articulos/articulos';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-seleccionproductos',
   templateUrl: 'seleccionproductos.html',
@@ -41,7 +39,7 @@ export class SeleccionproductosPage {
         this.articulo = articulocopia;
         console.log(this.articulo);
       }else{
-        articulocopia= _as.unarticulo;
+        articulocopia= this._as.unarticulo;
         console.log(articulocopia);
         this.totalPrecio=articulocopia.precio;
         this.precio = articulocopia.precio;

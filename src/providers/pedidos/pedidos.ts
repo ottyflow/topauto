@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AlertController , Platform } from "ionic-angular";
+import { AlertController } from "ionic-angular";
 
 /*
   Generated class for the PedidosProvider provider.

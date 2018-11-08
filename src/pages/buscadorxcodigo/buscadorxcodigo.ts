@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 import { ArticulosProvider } from '../../providers/articulos/articulos';
+import { SeleccionproductosPage } from '../seleccionproductos/seleccionproductos';
 
 /**
  * Generated class for the BuscadorxcodigoPage page.
@@ -9,7 +10,6 @@ import { ArticulosProvider } from '../../providers/articulos/articulos';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-buscadorxcodigo',
   templateUrl: 'buscadorxcodigo.html',
@@ -29,7 +29,7 @@ export class BuscadorxcodigoPage {
       this.view.dismiss();
       if(queryText!=undefined){
         this._as.cargar_articulo(queryText);
-        const myModal =  this.modal.create('SeleccionproductosPage');
+        const myModal =  this.modal.create(SeleccionproductosPage);
         myModal.present();
       }
     }

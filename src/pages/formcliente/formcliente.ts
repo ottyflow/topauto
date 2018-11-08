@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { ClientesProvider } from '../../providers/clientes/clientes';
 
-@IonicPage()
 @Component({
   selector: 'page-formcliente',
   templateUrl: 'formcliente.html',
@@ -32,4 +31,8 @@ export class FormclientePage {
     this._cs.traer_cliente(this.codigo)
 
     }
+
+  grabar_cliente(){
+    this._cs.grabar_cliente
+  }
 }

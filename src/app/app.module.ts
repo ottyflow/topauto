@@ -8,6 +8,10 @@ import { CatalogoPage} from '../pages/catalogo/catalogo';
 import { PedidoPage } from '../pages/pedido/pedido';
 import { ClientesPage } from '../pages/clientes/clientes';
 import { PerfilPage } from '../pages/perfil/perfil';
+import { BuscadorxcodigoPage } from '../pages/buscadorxcodigo/buscadorxcodigo';
+import { FiltrosPage } from '../pages/filtros/filtros';
+import { FormclientePage } from '../pages/formcliente/formcliente';
+import { SeleccionproductosPage } from '../pages/seleccionproductos/seleccionproductos';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -27,7 +31,11 @@ import { ClientesProvider } from '../providers/clientes/clientes';
     PerfilPage,
     TabsPage,
     CatalogoPage,
-    LoginPage
+    LoginPage,
+    BuscadorxcodigoPage,
+    FiltrosPage,
+    FormclientePage,
+    SeleccionproductosPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,11 @@ import { ClientesProvider } from '../providers/clientes/clientes';
     ClientesPage,
     PerfilPage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    BuscadorxcodigoPage,
+    FiltrosPage,
+    FormclientePage,
+    SeleccionproductosPage
   ],
   providers: [
     StatusBar,

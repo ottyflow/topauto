@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { ARTICULOS } from '../../data/data.articulos';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ArticulosProvider } from '../../providers/articulos/articulos';
+import { SeleccionproductosPage } from '../seleccionproductos/seleccionproductos';
+import { FiltrosPage } from '../filtros/filtros';
 
 
-@IonicPage()
 @Component({
   selector: 'page-catalogo',
   templateUrl: 'catalogo.html',
@@ -18,18 +18,18 @@ export class CatalogoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _as:ArticulosProvider) {
 
     this.articulos=[];
-    _as.cargar_articulos();
+    this._as.cargar_articulos();
 
   }
 
   openModal(datoarticulo:any){
-    const myModal =  this.modal.create('SeleccionproductosPage', {datoarticulo});
+    const myModal =  this.modal.create(SeleccionproductosPage, {datoarticulo});
     console.log(datoarticulo);
     myModal.present();
   }
 
   openModalFiltros(){
-    const myModal =  this.modal.create('FiltrosPage')
+    const myModal =  this.modal.create(FiltrosPage)
 
     myModal.present();
   }
