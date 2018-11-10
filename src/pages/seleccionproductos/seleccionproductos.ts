@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
-import { ArticulosProvider } from '../../providers/articulos/articulos';
 import { Articulo } from '../../interfaces/articulo.interface';
 
 /**
@@ -30,7 +29,7 @@ export class SeleccionproductosPage {
   codigoArticulo:any= 0;
   solocodigo:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _ps:PedidosProvider, private _as:ArticulosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _ps:PedidosProvider) {
       let articulocopia = new Articulo();
       articulocopia = this.navParams.get("articulo");
       if(articulocopia != undefined){

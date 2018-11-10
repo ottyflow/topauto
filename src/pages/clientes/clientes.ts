@@ -1,4 +1,4 @@
-import { Component, NgZone } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController, Events } from 'ionic-angular';
 import { ClientesProvider } from '../../providers/clientes/clientes';
 import { FormclientePage } from '../formcliente/formcliente';
@@ -13,7 +13,7 @@ export class ClientesPage {
   accion:any;
   codigo:string="";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _cs:ClientesProvider , public events: Events, private zone: NgZone) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _cs:ClientesProvider , public events: Events) {
     this._cs.cargar_clientes();
   }
 

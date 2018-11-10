@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 import { ArticulosProvider } from '../../providers/articulos/articulos';
 import { SeleccionproductosPage } from '../seleccionproductos/seleccionproductos';
-import { Articulo } from '../../interfaces/articulo.interface';
 
 /**
  * Generated class for the BuscadorxcodigoPage page.

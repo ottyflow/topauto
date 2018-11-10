@@ -3,7 +3,7 @@ import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
 import { BuscadorxcodigoPage } from '../buscadorxcodigo/buscadorxcodigo';
 import { Pedido } from '../../interfaces/pedido.interface';
-import { PedidoDetalle } from '../../interfaces/pedidoDetalle.interface';
+
 
 /**
  * Generated class for the PedidoPage page.
@@ -25,6 +25,7 @@ export class PedidoPage {
   subtotal: any;
   total: any;
   descuento:any;
+  numero: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _ps:PedidosProvider) {
     this.articulos = this._ps.articulos;
     console.log(this.articulos);
@@ -85,23 +86,42 @@ export class PedidoPage {
 
   grabarPedido(){
     let pedido = new Pedido();
-    pedido.id_transaccion = 23452;
-    pedido.numero = 2345;
+    pedido.id_transaccion = this.numero ;
+    pedido.numero = Math.floor(Math.random() * 9999) + 1;
     pedido.id_cliente = 1;
     pedido.id_vendedor = 18;
     pedido.total = 2345;
     pedido.id_mpago = 2;
     pedido.controlado = 0;
     pedido.descuento = 10;
-    pedido.notas = 'shdfoshfushgnshdoghd';
+    pedido.notas = '';
     pedido.created_at = new Date() ;
     pedido.updated_at = new Date() ;
-    this._ps.grabar_pedido(pedido);
+    this._ps.grabar_pedido(pedido, this.articulos);
     console.log(pedido);
+    this.cancelarPedido();
+    this.numero = Math.floor(Math.random() * 9999) + 1;
   }
+
+  // grabar_detalle(){
+  //   for(let articulo of this.articulos){
+  //     let pedidoDetalle = new PedidoDetalle();
+  //     pedidoDetalle.transaccion = 23452;
+  //     pedidoDetalle.articulo = articulo.codigoarticulo;
+  //     pedidoDetalle.cantidad = 2;
+  //     pedidoDetalle.precio = articulo.precio;
+  //     pedidoDetalle.created_at = new Date();
+  //     pedidoDetalle.updated_at = new Date();
+  //     this._ps.grabarDetalle(articulo);
+  //   }
+  // }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PedidoPage');
+  }
+
+  ionViewWillEnter() {
+    this.numero = Math.floor(Math.random() * 9999) + 1;
   }
 
 }
