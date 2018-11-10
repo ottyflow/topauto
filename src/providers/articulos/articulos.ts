@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { URL_SERVICIOS } from '../../config/url.servicios';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
+import { Articulo } from '../../interfaces/articulo.interface';
 
 @Injectable()
 export class ArticulosProvider {
@@ -36,6 +37,7 @@ export class ArticulosProvider {
 
   cargar_articulo(codigoarticulo:any){
     this.unarticulo=[];
+    let articulo = new Articulo();
     let url = URL_SERVICIOS + "/productos/articulo/" + codigoarticulo ;
 
     return this.http.get( url )
@@ -48,8 +50,8 @@ export class ArticulosProvider {
 
                         }else{
                           this.unarticulo.push( ...data.articulo);
-                          this.unarticulo = data.articulo;
-                          console.log(this.unarticulo);
+                          articulo = data.articulo;
+                          console.log(articulo);
                         }
                       })
   }

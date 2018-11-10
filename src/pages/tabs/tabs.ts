@@ -5,6 +5,8 @@ import { PedidoPage } from '../pedido/pedido';
 import { ClientesPage } from '../clientes/clientes';
 import { PerfilPage } from '../perfil/perfil';
 
+import { ClientesProvider } from '../../providers/clientes/clientes';
+
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -15,7 +17,10 @@ export class TabsPage {
   tab3Root = ClientesPage;
   tab4Root = PerfilPage;
 
-  constructor() {
+  constructor(private _cs:ClientesProvider) {
 
+  }
+  cargar_clientes(){
+    this._cs.cargar_clientes();
   }
 }

@@ -10,7 +10,7 @@
     <ion-row>
       <ion-col col-5>
         <div class="container">
-          <img [src]="'assets/imgarticulos/' + articulo.imagen">
+          <img [src]="'http://18.228.160.222/img/productos/' + articulo.imagen">
         </div>
       </ion-col>
       <ion-col col-7>
@@ -167,14 +167,14 @@
         <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
       </button>
     </ion-item>
-  </ion-list>
+  </ion-list>s
 </ion-content>
 <ion-footer>
   <ion-grid>
     <ion-row class="botones">
       <ion-col col-6>
         <ion-item class="divprecio">
-          <ion-input type="number" value={{articulo.precio}} class="precio"></ion-input>
+          <ion-input type="number" value={{articulo.precio}} [(ngModel)]="precio"  class="precio"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col col-6>

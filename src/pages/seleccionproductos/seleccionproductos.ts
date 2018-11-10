@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
 import { ArticulosProvider } from '../../providers/articulos/articulos';
+import { Articulo } from '../../interfaces/articulo.interface';
 
 /**
  * Generated class for the SeleccionproductosPage page.
@@ -23,35 +24,28 @@ export class SeleccionproductosPage {
   currentNumber5 = 0;
   currentNumber6 = 0;
   totalCantidades= 0;
-  totalPrecio = 0;
-  precio = 0;
-
+  totalPrecio: any;
+  precio : any;
+  articulo : any;
   codigoArticulo:any= 0;
   solocodigo:any;
-  articulo:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _ps:PedidosProvider, private _as:ArticulosProvider) {
-      var articulocopia:any = this.navParams.get("datoarticulo");
-      console.log(articulocopia);
+      let articulocopia = new Articulo();
+      articulocopia = this.navParams.get("articulo");
       if(articulocopia != undefined){
-        this.totalPrecio=articulocopia.precio;
-        this.precio = articulocopia.precio;
-        this.articulo = articulocopia;
-        console.log(this.articulo);
-      }else{
-        articulocopia= this._as.unarticulo;
-        console.log(articulocopia);
-        this.totalPrecio=articulocopia.precio;
+        this.totalPrecio = articulocopia.precio;
         this.precio = articulocopia.precio;
         this.articulo = articulocopia;
       }
   }
 
-  closeModal(procesa:any,articulo){
+  closeModal(procesa:any){
     if(procesa==0){
       this.cancelar();
     }else{
-      this._ps.agregar_pedido(articulo);
+      this.articulo.precio = this.precio
+      this._ps.agregar_pedido(this.articulo);
       this.cancelar();
     }
     this.view.dismiss();

@@ -19,37 +19,37 @@
             <ion-icon name="person" item-start></ion-icon>
             <ion-label floating *ngIf="accion == 0 || accion == 3">Denominacion Legal *</ion-label>
             <ion-input *ngIf="accion == 1 || accion == 3" name="razonsocial" [disabled]="accion==1" value={{_cs.cliente.razon_social}} type="text"></ion-input>
-            <ion-input *ngIf="accion == 0" name="razonsocial"  type="text"></ion-input>
+            <ion-input *ngIf="accion == 0" name="razonsocial"  type="text" [(ngModel)]=razon_social></ion-input>
           </ion-item>
           <ion-item>
             <ion-icon name="" item-start></ion-icon>
             <ion-label floating *ngIf="accion == 0 || accion == 3">Nombre de fantasia</ion-label>
             <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.nombre_fantasia}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text"></ion-input>
+            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=nombre_fantasia></ion-input>
           </ion-item>
           <ion-item>
             <ion-icon name="" item-start></ion-icon>
             <ion-label floating *ngIf="accion == 0 || accion == 3">Cuenta</ion-label>
             <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.cuenta}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text"></ion-input>
+            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=cuenta></ion-input>
           </ion-item>
           <ion-item>
             <ion-icon name="call" item-start></ion-icon>
             <ion-label floating *ngIf="accion == 0 || accion == 3">Telefono *</ion-label>
             <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.telefono}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text"></ion-input>
+            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=telefono></ion-input>
           </ion-item>
           <ion-item>
             <ion-icon name="call" item-start></ion-icon>
             <ion-label floating *ngIf="accion == 0 || accion == 3">Telefono 2</ion-label>
             <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.telefono2}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text"></ion-input>
+            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=telefono2></ion-input>
           </ion-item>
           <ion-item>
             <ion-icon name="pin" item-start></ion-icon>
             <ion-label  floating *ngIf="accion == 0 || accion == 3">Direccion *</ion-label>
             <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.direccion}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text"></ion-input>
+            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=direccion></ion-input>
           </ion-item>
           <ion-grid class="grupoinput">
             <ion-row>
@@ -89,7 +89,7 @@
                     <ion-option value=22>Tierra del Fuego</ion-option>
                     <ion-option value=23>Tucumán</ion-option>
                   </ion-select>
-                  <ion-select *ngIf="accion == 0 || accion == 3" okText="OK" cancelText="CANCELAR">
+                  <ion-select *ngIf="accion == 0 || accion == 3" okText="OK" cancelText="CANCELAR" [(ngModel)]=id_provincia>
                     <ion-option value=1>Buenos Aires</ion-option>
                     <ion-option value=2>Catamarca</ion-option>
                     <ion-option value=3>Chaco</ion-option>
@@ -123,14 +123,14 @@
                   <ion-icon name="" item-start></ion-icon>
                   <ion-label floating *ngIf="accion == 0 || accion == 3">Ciudad *</ion-label>
                   <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.id_localidad}}></ion-input>
-                  <ion-input *ngIf="accion == 0" type="text"></ion-input>
+                  <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=id_localidad></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-6>
                 <ion-item>
                   <ion-label floating *ngIf="accion == 0 || accion == 3">Código postal *</ion-label>
                   <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.codigo_postal}}></ion-input>
-                  <ion-input *ngIf="accion == 0" type="text"></ion-input>
+                  <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=codigo_postal></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
@@ -139,25 +139,25 @@
             <ion-icon name="mail" item-start></ion-icon>
             <ion-label floating *ngIf="accion == 0 || accion == 3">E-Mail</ion-label>
             <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.email}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text"></ion-input>
+            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=email></ion-input>
           </ion-item>
           <ion-item>
             <ion-icon name="globe" item-start></ion-icon>
             <ion-label floating *ngIf="accion == 0 || accion == 3">Pagina web</ion-label>
             <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.web}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text"></ion-input>
+            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=web></ion-input>
           </ion-item>
           <ion-item>
             <ion-icon name="" item-start></ion-icon>
             <ion-label floating *ngIf="accion == 0 || accion == 3">Situacion ante el IVA *</ion-label>
             <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.id_iva}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text"></ion-input>
+            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=id_iva></ion-input>
           </ion-item>
           <ion-item class="cuit">
             <ion-icon name="" item-start></ion-icon>
             <ion-label floating *ngIf="accion == 0 || accion == 3">Cuit *</ion-label>
             <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.cuit}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text"></ion-input>
+            <ion-input *ngIf="accion == 0" type="text"  [(ngModel)]=cuit></ion-input>
           </ion-item>
         </ion-list>
     </ion-col>

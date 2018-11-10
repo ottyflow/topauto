@@ -6,9 +6,9 @@
       <button ion-button icon-only *ngIf="!isSearchBarOpened" (tap)="isSearchBarOpened=true">
         <ion-icon name="search"></ion-icon>
       </button>
-      <button ion-button icon-only (tap)="openModalFiltros()" >
+      <!-- <button ion-button icon-only (tap)="openModalFiltros()" >
         <ion-icon name="options"></ion-icon>
-      </button>
+      </button> -->
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -18,7 +18,7 @@
       <ion-col col-xs-6 col-sm-4 col-md-3 col-xl-3 *ngFor="let item of _as.articulos">
         <ion-card class="card-catalogo" (tap)="openModal(item)">
           <div class="container">
-            <img [src]="'assets/imgarticulos/' + item.imagen">
+            <img [src]="'http://18.228.160.222/img/productos/' + item.imagen">
           </div>
           <ion-card-content class="card-content">
             <div class="info">
