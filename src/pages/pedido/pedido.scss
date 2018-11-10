@@ -52,18 +52,18 @@ page-pedido {
   .Footer{
     background: #ffffff;
   }
-  .CargaCodigo{
-    border-radius: 24px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 16px;
-    border: 2px solid;
-    height: 48px;
-    font-family: Roboto;
-    width: max-content ;
-  }
+  // .CargaCodigo{
+  //   border-radius: 24px;
+  //   margin-top: auto;
+  //   margin-bottom: auto;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   font-size: 16px;
+  //   border: 2px solid;
+  //   height: 48px;
+  //   font-family: Roboto;
+  //   width: max-content ;
+  // }
   .RealizarPedido{
     border-radius: 24px;
     background-color: #FBC02D;
@@ -146,7 +146,7 @@ page-pedido {
     margin-bottom: 8px;
   }
   .theroot {
-    height: 84%;
+    height: 100%;
   }
   ion-scroll .scroll-content{
     overflow-y: scroll!important

@@ -18,14 +18,14 @@ export class CatalogoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _as:ArticulosProvider) {
 
-    this.articulos=[];
     this._as.cargar_articulos();
+    console.log(this.articulos);
 
   }
 
   openModal(datoarticulo:any){
     let articulo = new Articulo();
-    articulo.codigo = "";
+    articulo.codigo = datoarticulo.codigo;
     articulo.descripcion = datoarticulo.descripcion;
     articulo.descripcionAdicional = datoarticulo.descripcionAdicional;
     articulo.imagen = datoarticulo.imagen;
@@ -93,5 +93,10 @@ export class CatalogoPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CatalogoPage');
+  }
+
+  ionViewWillEnter() {
+    this._as.cargar_articulos();
+    console.log(this.articulos);
   }
 }

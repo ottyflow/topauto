@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',	
-	'password' => '',
-	'database' => 'test',
+	'hostname' => 'topauto.cy9vyiiskclw.sa-east-1.rds.amazonaws.com',
+	'username' => 'dafaack',
+	'password' => 'dafaacklabs',
+	'database' => 'topauto',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

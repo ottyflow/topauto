@@ -19,7 +19,7 @@ class Productos extends REST_Controller {
   }
 
   public function index_get(){
-    $query = $this->db->query('SELECT * FROM `productos`');
+    $query = $this->db->query('SELECT * FROM `productos` WHERE activo = 0');
     $respuesta = array(
         'error'=> FALSE,
         'productos' => $query->result_array()

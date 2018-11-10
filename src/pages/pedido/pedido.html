@@ -7,7 +7,7 @@
 <ion-content>
   <ion-grid class="CuerpoGrid">
     <ion-row class="Cuerpo">
-      <ion-col col-5>
+      <ion-col col-6>
         <div class="Titulos">
           <ion-title class="Tituloscolumnas">
             Productos
@@ -21,7 +21,7 @@
                     <ion-row class="Items">
                       <ion-col col-2 pull-col-xs-0 class="contenedorimagen">
                         <div class="container">
-                          <img [src]="'assets/imgarticulos/' + articulo.imagen">
+                          <img [src]="'http://18.228.160.222/img/productos/' + articulo.imagen">
                         </div>
                       </ion-col>
                       <ion-col col-8>
@@ -46,11 +46,11 @@
               </ion-list>
             </div>
           </ion-scroll>
-        <ion-footer>
+        <!-- <ion-footer>
           <ion-toolbar class="CargarCodigo">
             <button class="CargaCodigo" ion-button color="dark" outline (tap)="openModal()">CARGAR POR CÓDIGO</button>
           </ion-toolbar>
-        </ion-footer>
+        </ion-footer> -->
       </ion-col>
       <ion-col col-4>
         <div class="Titulos">
@@ -73,14 +73,14 @@
         </div>
         <div class="CondPago">
           <ion-title class="CondicionTitulo">
-            Condicion de pago
+            Condicion de facturación
           </ion-title>
           <ion-item>
             <ion-label></ion-label>
             <ion-select [(ngModel)]="gender" interface="popover">
-              <ion-option value="s">Sin seleccionar</ion-option>
-              <ion-option value="f">Facturado</ion-option>
-              <ion-option value="c">Cuenta corriente</ion-option>
+              <ion-option value="1">FACTURADO</ion-option>
+              <ion-option value="2">FACT/MONOT</ion-option>
+              <ion-option value="3">REMITADO</ion-option>
             </ion-select>
           </ion-item>
         </div>
@@ -93,7 +93,7 @@
           </ion-item>
         </div>
       </ion-col>
-      <ion-col col-3>
+      <ion-col col-2>
         <div class="Titulos">
           <ion-title class="Tituloscolumnas">
             Totales
@@ -152,7 +152,7 @@
         <ion-footer class="Footer">
           <ion-toolbar class="BotonesPedido">
             <button class="CancelarPedido" ion-button color="dark" outline (tap)="cancelarPedido()">CANCELAR PEDIDO</button>
-            <button class="RealizarPedido" ion-button color="light">REALIZAR PEDIDO</button>
+            <button class="RealizarPedido" ion-button color="light" (tap)="grabarPedido()">REALIZAR PEDIDO</button>
           </ion-toolbar>
         </ion-footer>
       </ion-col>
