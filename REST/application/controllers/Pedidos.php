@@ -25,7 +25,7 @@ class Pedidos extends REST_Controller {
     $respuesta = array(
         'error'=> FALSE,
         'pedidosCab' => $query->result_array()
-  );
+    );
     $this->response( $respuesta );
   }
 
@@ -76,6 +76,15 @@ class Pedidos extends REST_Controller {
                   'error' => FALSE,
                   'pedidoDet' => $data,
                 );
+    $this->response( $respuesta );
+  }
+
+  public function ultimoNumero_get($usuarioId){
+    $query = $this->db->query("SELECT * FROM `pedidoscab` WHERE id_vendedor = '".$usuarioId."' ORDER BY numero DESC LIMIT 1");
+    $respuesta = array(
+        'error'=> FALSE,
+        'pedidosCab' => $query->result_array()
+  );
     $this->response( $respuesta );
   }
 }

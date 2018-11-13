@@ -19,7 +19,7 @@ class Productos extends REST_Controller {
   }
 
   public function index_get(){
-    $query = $this->db->query('SELECT * FROM `productos` WHERE activo = 0');
+    $query = $this->db->query('select p.codigo as codigo, p.descripcion as descripcion, p.descripcion_adicional as descripcion_adicional, p.precio as precio, p.precio2, p.precio3, p.id_marca, m.nombre as nombremarca, p.id_categoria, c.nombre as nombrecategoria, imagen, activo, oferta_volumen, envase_nuevo, escala_descuento, oferta_lanzamiento, agotar_stock, embarque, fragancias, talles  from productos p LEFT OUTER JOIN marcas m on p.id_marca = m.codigo LEFT OUTER JOIN categorias c on p.id_categoria = c.codigo where activo = 0');
     $respuesta = array(
         'error'=> FALSE,
         'productos' => $query->result_array()

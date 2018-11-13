@@ -23,12 +23,10 @@ export class UsuariosProvider {
     let data = new URLSearchParams();
     data.append("usuario", usuario);
     data.append("contrasena", contrasena);
-
     return this.http.post( url, data )
                     .map( resp=>{
                       let data_resp = resp.json();
                       console.log(data_resp);
-
                       if( data_resp.error ){
                         this.alertCtrl.create({
                           title:"Error al inciar",
@@ -39,7 +37,6 @@ export class UsuariosProvider {
                         this.token = data_resp.token;
                         this.id_usuario=data_resp.id_usuario;
                         this.nombre = data_resp.nombre;
-
                         this.guardar_storage();
                       }
                     })

@@ -79,7 +79,7 @@ export class CatalogoPage {
     let serVal = ev.target.value;
     if(serVal&& serVal.trim() !='') {
       this._as.articulos = this._as.articulos.filter((item) => {
-        return (item.descripcion.toLowerCase().indexOf(serVal.toLowerCase()) > -1 );
+        return (item.descripcion.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombremarca.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombrecategoria.toLowerCase().indexOf(serVal.toLowerCase()) > -1 );
       })
     }else{
       this._as.cargar_articulos();
