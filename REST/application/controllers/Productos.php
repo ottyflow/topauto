@@ -28,7 +28,7 @@ class Productos extends REST_Controller {
   }
 
   public function articulo_get($codigo){
-    $query = $this->db->query("SELECT * FROM `productos` WHERE codigo = '".$codigo."'");
+    $query = $this->db->query("select p.codigo, p.descripcion, p.descripcion_adicional, p.precio, p.precio2, p.precio3, p.id_marca, COALESCE (m.nombre, '".''."')as nombreMarca, p.id_categoria, COALESCE(c.nombre, '".''."') as nombreCategoria, p.imagen, p.activo, p.oferta_volumen, p.envase_nuevo, p.escala_descuento, p.oferta_lanzamiento, p.agotar_stock, p.embarque, p.fragancias, p.talles, p.created_at, p.updated_at from productos p LEFT OUTER JOIN marcas m on p.id_marca = m.codigo LEFT OUTER JOIN categorias c ON p.id_categoria = c.codigo WHERE p.codigo = '".$codigo."'");
     $articulo = $query->row();
     $respuesta = array(
                   'error' => FALSE,

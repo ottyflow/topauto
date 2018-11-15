@@ -7,6 +7,7 @@ page-catalogo {
   .container{
     height: 50%;
     width: 50%;
+    min-height: 50%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -27,7 +28,7 @@ page-catalogo {
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 16px;
-    padding-bottom: 16px;
+    padding-bottom: 8px;
     text-align: center;
     font-size: 16px;
     height: 105px;
@@ -38,10 +39,11 @@ page-catalogo {
   .infoadicional{
     padding-left: 16px;
     padding-right: 16px;
-    padding-top: 16px;
+    padding-top: 5px;
     padding-bottom: 16px;
     text-align: center;
     font-size: 12px;
+    font-style: italic;
     margin-top: auto;
     margin-bottom: auto;
   }
@@ -56,6 +58,7 @@ page-catalogo {
     height: 15%;
     padding: 0;
     text-align: center;
+    margin-top: 5px;
   }
   .codigo{
     font-size: 20px;
@@ -71,7 +74,7 @@ page-catalogo {
     background-size: cover;
     background-position: center;
   }
-  @media(max-width: 799px){
+  @media(max-width: 800px){
     .info{
       padding-left: 2px;
       padding-right: 2px;
@@ -85,6 +88,9 @@ page-catalogo {
       margin-bottom: auto;
       margin-left: auto;
       margin-right: auto;
+    }
+    .infoadicional{
+      font-size: 8px;
     }
     .precio{
       font-size: 12px;
@@ -111,7 +117,7 @@ page-catalogo {
       padding-left: 2px;
       padding-right: 2px;
       padding-top: 8px;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
       text-align: center;
       font-size: 8px;
       height: 50px;

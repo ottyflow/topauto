@@ -17,7 +17,7 @@ export class ArticulosProvider {
   }
 
   cargar_articulos(){
-    this.articulos=[];
+    this.articulos= new Array();
     let url = URL_SERVICIOS + "/productos";
 
     return this.http.get( url )
@@ -36,7 +36,7 @@ export class ArticulosProvider {
   }
 
   cargar_articulo(codigoarticulo:any){
-    this.unarticulo=[];
+    this.articulos= new Array();
     let articulo = new Articulo();
     let url = URL_SERVICIOS + "/productos/articulo/" + codigoarticulo ;
 

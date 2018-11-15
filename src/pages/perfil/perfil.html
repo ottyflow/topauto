@@ -45,6 +45,17 @@
             Pedidos
           </ion-title>
         </div>
+        <div *ngFor="let pedido of _ps.pedidos">
+          <div>
+            <ion-col col-6>
+            </ion-col>
+                Numero : {{ pedido.numero}}
+                {{ pedido.razon_social }}
+            <ion-col col-6>
+              TOTAL : {{ pedido.total }}
+            </ion-col>
+          </div>
+        </div>
         <ion-footer>
           <ion-toolbar class="cerrarsesion" (tap)="logOuT()">
             <ion-row>

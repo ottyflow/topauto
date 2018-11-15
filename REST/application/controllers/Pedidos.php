@@ -21,7 +21,7 @@ class Pedidos extends REST_Controller {
   }
 
   public function index_get($usuarioId){
-    $query = $this->db->query("SELECT * FROM `pedidoscab` WHERE id_vendedor = '".$usuarioId."'");
+    $query = $this->db->query("select p.id_transaccion, p.numero, p.id_cliente, c.razon_social, p.total, p.id_mpago, p.id_condpago, p.controlado, p.descuento, p.notas, p.created_at, p.updated_at from pedidoscab p LEFT OUTER JOIN clientes c ON p.id_cliente = c.codigo WHERE id_vendedor = '".$usuarioId."'");
     $respuesta = array(
         'error'=> FALSE,
         'pedidosCab' => $query->result_array()

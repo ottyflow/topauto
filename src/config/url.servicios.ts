@@ -1,1 +1,1 @@
-export const URL_SERVICIOS = "http://192.168.0.4/REST/index.php";
+export const URL_SERVICIOS = "http://c1370301.ferozo.com/REST/index.php";

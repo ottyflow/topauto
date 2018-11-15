@@ -71,16 +71,29 @@
             Consumidor final
           </ion-title>
         </div>
-        <div class="CondPago">
+        <div class="CondFactu">
           <ion-title class="CondicionTitulo">
             Condicion de facturación
           </ion-title>
           <ion-item>
             <ion-label></ion-label>
-            <ion-select [(ngModel)]="gender" interface="popover">
+            <ion-select [(ngModel)]="medpago" interface="popover">
               <ion-option value="1">FACTURADO</ion-option>
               <ion-option value="2">FACT/MONOT</ion-option>
               <ion-option value="3">REMITADO</ion-option>
+            </ion-select>
+          </ion-item>
+        </div>
+        <div class="CondPago">
+          <ion-title class="CondicionTitulo">
+            Condicion de pago
+          </ion-title>
+          <ion-item>
+            <ion-label></ion-label>
+            <ion-select [(ngModel)]="condpago" interface="popover">
+              <ion-option value="0">NO PAGA</ion-option>
+              <ion-option value="1">PAGA</ion-option>
+              <ion-option value="2">PAGA SOLO REMITO</ion-option>
             </ion-select>
           </ion-item>
         </div>

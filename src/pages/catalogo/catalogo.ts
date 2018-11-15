@@ -17,23 +17,21 @@ export class CatalogoPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _as:ArticulosProvider) {
-
-    this._as.cargar_articulos();
-    console.log(this.articulos);
-
   }
 
   openModal(datoarticulo:any){
     let articulo = new Articulo();
     articulo.codigo = datoarticulo.codigo;
     articulo.descripcion = datoarticulo.descripcion;
-    articulo.descripcionAdicional = datoarticulo.descripcionAdicional;
+    articulo.descripcion_adicional = datoarticulo.descripcion_adicional;
     articulo.imagen = datoarticulo.imagen;
     articulo.precio = datoarticulo.precio;
     articulo.precio2 = datoarticulo.precio2;
     articulo.precio3 = datoarticulo.precio3;
     articulo.id_marca = datoarticulo.id_marca;
+    articulo.nombreMarca = datoarticulo.nombreMarca;
     articulo.id_categoria = datoarticulo.id_categoria;
+    articulo.nombreCategoria = datoarticulo.nombreCategoria;
     articulo.activo = datoarticulo.activo;
     articulo.oferta_volumen = datoarticulo.oferta_volumen;
     articulo.envase_nuevo = datoarticulo.envase_nuevo;
@@ -44,6 +42,7 @@ export class CatalogoPage {
     articulo.fragancias = datoarticulo.fragancias;
     articulo.talles = datoarticulo.talles;
     const myModal =  this.modal.create(SeleccionproductosPage, {articulo});
+    console.log(datoarticulo);
     console.log(articulo);
     myModal.present();
   }
@@ -55,7 +54,9 @@ export class CatalogoPage {
   }
 
   generateItems(){
-    this.articulos = this._as.articulos;
+    if(this.articulos==undefined){
+      this.articulos = this._as.articulos;
+    }
   }
 
   // getItems(ev: any){
@@ -74,12 +75,10 @@ export class CatalogoPage {
 
   getItems(ev: any){
     this.generateItems();
-    console.log(this.articulos);
-    console.log(this._as.articulos)
     let serVal = ev.target.value;
     if(serVal&& serVal.trim() !='') {
       this._as.articulos = this._as.articulos.filter((item) => {
-        return (item.descripcion.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombremarca.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombrecategoria.toLowerCase().indexOf(serVal.toLowerCase()) > -1 );
+        return (item.descripcion.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombreMarca.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombreCategoria.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.codigo.toLowerCase().indexOf(serVal.toLowerCase()) > -1 );
       })
     }else{
       this._as.cargar_articulos();
@@ -96,7 +95,11 @@ export class CatalogoPage {
   }
 
   ionViewWillEnter() {
-    this._as.cargar_articulos();
-    console.log(this.articulos);
+    if(this.articulos.length == 0){
+      this.articulos= new Array();
+      console.log(this.articulos.length);
+      this._as.cargar_articulos();
+      console.log(this.articulos);
+    }
   }
 }
