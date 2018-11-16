@@ -21,7 +21,7 @@ class Pedidos extends REST_Controller {
   }
 
   public function index_get($usuarioId){
-    $query = $this->db->query("select p.id_transaccion, p.numero, p.id_cliente, c.razon_social, p.total, p.id_mpago, p.id_condpago, p.controlado, p.descuento, p.notas, p.created_at, p.updated_at from pedidoscab p LEFT OUTER JOIN clientes c ON p.id_cliente = c.codigo WHERE id_vendedor = '".$usuarioId."'");
+    $query = $this->db->query("select p.id_transaccion, p.numero, p.id_cliente, c.razon_social, p.total, p.id_mpago, p.id_condpago, p.controlado, p.descuento, p.notas, p.created_at, p.updated_at from pedidoscab p LEFT OUTER JOIN clientes c ON p.id_cliente = c.codigo WHERE id_vendedor = '".$usuarioId."' order by numero DESC");
     $respuesta = array(
         'error'=> FALSE,
         'pedidosCab' => $query->result_array()
@@ -47,6 +47,7 @@ class Pedidos extends REST_Controller {
       'id_vendedor'=> $data['id_vendedor'],
       'total'=> $data['total'],
       'id_mpago'=> $data['id_mpago'],
+      'id_condpago'=> $data['id_condpago'],
       'controlado'=> $data['controlado'],
       'descuento'=> $data['descuento'],
       'notas'=> $data['notas'],
@@ -80,11 +81,8 @@ class Pedidos extends REST_Controller {
   }
 
   public function ultimoNumero_get($usuarioId){
-    $query = $this->db->query("SELECT * FROM `pedidoscab` WHERE id_vendedor = '".$usuarioId."' ORDER BY numero DESC LIMIT 1");
-    $respuesta = array(
-        'error'=> FALSE,
-        'pedidosCab' => $query->result_array()
-  );
+    $query = $this->db->query("SELECT numero FROM `pedidoscab` WHERE id_vendedor = '".$usuarioId."' ORDER BY numero DESC LIMIT 1");
+    $respuesta = $query->result_array();
     $this->response( $respuesta );
   }
 }

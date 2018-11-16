@@ -3,6 +3,7 @@ import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
 import { BuscadorxcodigoPage } from '../buscadorxcodigo/buscadorxcodigo';
 import { Pedido } from '../../interfaces/pedido.interface';
+import { UsuariosProvider}  from "../../providers/usuarios/usuarios";
 
 
 /**
@@ -25,8 +26,11 @@ export class PedidoPage {
   subtotal: any;
   total: any;
   descuento:any;
-  numero: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _ps:PedidosProvider) {
+  numero:number = 1;
+  medpago:any;
+  condpago:any;
+  notas: string = "";
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _ps:PedidosProvider, public _us:UsuariosProvider) {
     this.articulos = this._ps.articulos;
     console.log(this.articulos);
     for(let articulo of this.articulos){
@@ -81,26 +85,30 @@ export class PedidoPage {
 
   cancelarPedido(){
     this.articulos.length = 0;
+    this.medpago=null;
+    this.condpago=null;
+    this.notas="";
     this.generateItems();
   }
 
   grabarPedido(){
     let pedido = new Pedido();
-    pedido.id_transaccion = this.numero ;
-    pedido.numero = Math.floor(Math.random() * 9999) + 1;
+    pedido.id_transaccion =  Math.floor(Math.random() * 9999) + 1;
+    pedido.numero = this.numero;
     pedido.id_cliente = 1;
-    pedido.id_vendedor = 18;
+    pedido.id_vendedor = parseInt(this._us.id_usuario);
     pedido.total = 2345;
-    pedido.id_mpago = 2;
+    pedido.id_mpago = this.medpago;
+    pedido.id_condpago = this.condpago;
     pedido.controlado = 0;
     pedido.descuento = 10;
-    pedido.notas = '';
+    pedido.notas = this.notas;
     pedido.created_at = new Date() ;
     pedido.updated_at = new Date() ;
     this._ps.grabar_pedido(pedido, this.articulos);
     console.log(pedido);
     this.cancelarPedido();
-    this.numero = Math.floor(Math.random() * 9999) + 1;
+    this._ps.ultimo_numero(this._us.id_usuario)
   }
 
   // grabar_detalle(){
@@ -121,7 +129,15 @@ export class PedidoPage {
   }
 
   ionViewWillEnter() {
-    this.numero = Math.floor(Math.random() * 9999) + 1;
+    this._ps.ultimo_numero(this._us.id_usuario);
+    this.numero = this._ps.numero;
+    console.log(this.numero);
+    if(this.numero == undefined){
+      this.numero = 1;
+    }else{
+      this.numero++;
+    }
+    console.log(this.numero);
   }
 
 }

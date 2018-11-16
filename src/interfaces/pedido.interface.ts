@@ -5,6 +5,7 @@ export class Pedido {
   id_vendedor : number;
   total : number;
   id_mpago : number;
+  id_condpago: number;
   controlado : number;
   descuento : number;
   notas : string;

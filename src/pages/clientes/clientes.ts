@@ -14,7 +14,6 @@ export class ClientesPage {
   codigo:string="";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _cs:ClientesProvider , public events: Events) {
-    this._cs.cargar_clientes();
   }
 
   openModal( accion:any,codigo:string ){
@@ -29,4 +28,7 @@ export class ClientesPage {
     myModal.present();
   }
 
+  ionViewWillEnter() {
+      this._cs.cargar_clientes();
   }
+}

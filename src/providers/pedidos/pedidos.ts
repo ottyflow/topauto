@@ -15,10 +15,11 @@ import { PedidoDetalle } from '../../interfaces/pedidoDetalle.interface';
 @Injectable()
 export class PedidosProvider {
   pedidos: any[];
-
+  pedido:any [] = [];
   articulos:any [] = [];
   subtotal: number = 0;
   noesta: number=0;
+  numero:number;
 
   constructor(public http: Http, public alertCtrl: AlertController) {
     console.log('Hello PedidosProvider Provider');
@@ -68,7 +69,6 @@ export class PedidosProvider {
                           console.log(this.pedidos);
                         }
                       })
-
   }
 
   grabar_pedido(pedido, articulos){
@@ -92,6 +92,7 @@ export class PedidosProvider {
     data.append("id_vendedor", pedido.id_vendedor);
     data.append("total", pedido.total);
     data.append("id_mpago", pedido.id_mpago);
+    data.append("id_condpago", pedido.id_condpago);
     data.append("controlado", pedido.controlado);
     data.append("descuento", pedido.descuento);
     data.append("notas", pedido.notas);
@@ -121,6 +122,20 @@ export class PedidosProvider {
       return this.http.post( url, JSON.stringify(detalle), {headers: headers})
                       .map( resp=>resp.json()).subscribe(data=>console.log('conchita')
       );
+  }
+
+  ultimo_numero(usuarioId){
+    let url = URL_SERVICIOS + "/pedidos/ultimoNumero/" + usuarioId;
+    return this.http.get( url )
+                    .map( resp=> resp.json() )
+                      .subscribe( data=>{
+                        console.log(data);
+                        // console.log(data[0].numero);
+                        if(data.length > 0){
+                            this.numero = (data[0].numero);
+                        }
+                          console.log(this.numero);
+                      })
   }
 
 

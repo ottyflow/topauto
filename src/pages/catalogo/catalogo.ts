@@ -4,6 +4,8 @@ import { ArticulosProvider } from '../../providers/articulos/articulos';
 import { SeleccionproductosPage } from '../seleccionproductos/seleccionproductos';
 import { FiltrosPage } from '../filtros/filtros';
 import { Articulo } from '../../interfaces/articulo.interface';
+import { UsuariosProvider}  from "../../providers/usuarios/usuarios";
+import { PedidosProvider } from '../../providers/pedidos/pedidos';
 
 
 @Component({
@@ -16,7 +18,8 @@ export class CatalogoPage {
   datosarticulo:any=[];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _as:ArticulosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _as:ArticulosProvider, private _ps:PedidosProvider, public _us:UsuariosProvider) {
+    this._ps.ultimo_numero(this._us.id_usuario);
   }
 
   openModal(datoarticulo:any){
@@ -101,5 +104,6 @@ export class CatalogoPage {
       this._as.cargar_articulos();
       console.log(this.articulos);
     }
+    this._ps.ultimo_numero(this._us.id_usuario);
   }
 }
