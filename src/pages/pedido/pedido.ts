@@ -4,6 +4,8 @@ import { PedidosProvider } from '../../providers/pedidos/pedidos';
 import { BuscadorxcodigoPage } from '../buscadorxcodigo/buscadorxcodigo';
 import { Pedido } from '../../interfaces/pedido.interface';
 import { UsuariosProvider}  from "../../providers/usuarios/usuarios";
+import { PopupclientePage } from '../popupcliente/popupcliente';
+import { Cliente } from '../../interfaces/clientes.interface';
 
 
 /**
@@ -18,6 +20,7 @@ import { UsuariosProvider}  from "../../providers/usuarios/usuarios";
 })
 export class PedidoPage {
 
+  cliente = new Cliente();
   articulos:any [] = [];
   queryText : string;
   hideMe1: boolean = false;
@@ -43,6 +46,17 @@ export class PedidoPage {
   openModal(codigoarticulo:any){
     const myModal = this.modal.create(BuscadorxcodigoPage, {codigoarticulo}, { cssClass: 'buscaCodigo' });
     myModal.present();
+  }
+
+  openModalCliente(){
+    let myModalCliente = this.modal.create(PopupclientePage);
+    myModalCliente.onDidDismiss(data =>{
+      console.log(data);
+      if(data!=undefined){
+        this.cliente = data;
+      }
+    })
+    myModalCliente.present();
   }
 
   generateItems(){

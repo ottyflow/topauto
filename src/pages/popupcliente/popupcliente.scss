@@ -1,0 +1,48 @@
+page-popupcliente {
+  .cancelar{
+    color: #FBC02D;
+    border: none;
+    -webkit-box-shadow : none;
+    font-size: 14px;
+    height: 40px;
+    font-family: Roboto;
+    width: 95px;
+  }
+  .Botones{
+    text-align: right;
+  }
+  .cliente{
+    height: max-content;
+    margin-top: auto;
+    margin-bottom: 10px;
+
+  }
+  .nombre{
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0px;
+  }
+  .localidad{
+    font-size: 14px;
+    color: rgba(38,50,56,0.6);
+  }
+  .container{
+    text-align: left;
+  }
+  .telefono{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: right;
+    font-size: 14px;
+    color: #263238;
+    font-weight: 500;
+  }
+  .listadoclientes{
+    width: 90%;
+    height: auto;
+    background-color: #FFFFFF;
+  }
+  ion-content{
+    margin-top: 10px;
+  }
+}

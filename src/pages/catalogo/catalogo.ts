@@ -16,6 +16,7 @@ export class CatalogoPage {
 
   articulos:any [] = [];
   datosarticulo:any=[];
+  public aColor: string = "#ffd400";
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _as:ArticulosProvider, private _ps:PedidosProvider, public _us:UsuariosProvider) {

@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-toolbar color="dark">
     <ion-title>Nota de pedido - {{ numero}} </ion-title>
@@ -63,12 +62,12 @@
             <ion-title class="CondicionTitulo">
               Cliente
             </ion-title>
-            <button class="BotonAddPersona" style="background-color: #fff; margin-top: 14px; margin-right: 25px; height: 19px!important;">
+            <button class="BotonAddPersona" (tap)="openModalCliente()" style="background-color: #fff; margin-top: 14px; margin-right: 25px; height: 19px!important;">
               <ion-icon class="AddPersona" name="person-add"></ion-icon>
             </button>
           </ion-row>
           <ion-title class="NombreCliente">
-            Consumidor final
+            {{cliente.razon_social}}
           </ion-title>
         </div>
         <div class="CondFactu">

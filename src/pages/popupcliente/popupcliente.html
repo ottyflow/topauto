@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-searchbar showCancelButton="true" [(ngModel)]="queryText" (ionInput)="getClientes($event)" (ionCancel)="isSearchBarOpened=false" placeholder=""></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid class="listadoclientes">
+    <div *ngFor="let item of _cs.clientes">
+      <ion-row class="cliente" (tap)="cargaCliente(item)">
+        <ion-col col-7>
+          <div class="container">
+            <ion-row class="nombre">
+              {{ item.razon_social }} - {{ item.cuenta }}
+            </ion-row>
+            <ion-row class="localidad">
+              {{ item.direccion }}, {{ item.id_localidad }}
+            </ion-row>
+          </div>
+        </ion-col>
+        <ion-col col-5 align-items: center>
+          <div class="telefono" >
+            {{ item.telefono }}
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="Botones">
+    <button class="cancelar" ion-button color="light" (click)="closeModal()" outline>CERRAR</button>
+  </ion-toolbar>
+</ion-footer>
