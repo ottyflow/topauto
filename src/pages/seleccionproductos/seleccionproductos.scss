@@ -61,6 +61,21 @@ page-seleccionproductos {
   .item-md{
         padding-left: 0px!important;
   }
+  .selectPrecio{
+    width: 30%;
+    border-radius: 24px;
+    background-color: #FBC02D;
+    color: #fff;
+    -webkit-box-shadow : none;
+    font-size: 14px;
+    height: 40px;
+    font-family: Roboto;
+    margin-left: 2px;
+  }
+  .botonesPrecios{
+    width: 50%;
+    margin: 0 auto;
+  }
   .suma{
     background-color: #fff;
     color: #FBC02D;

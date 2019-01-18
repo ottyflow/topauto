@@ -24,6 +24,11 @@
       </ion-col>
     </ion-row>
   </div>
+  <div class="botonesPrecios" *ngIf="articulo.precio2 > 0 || articulo.precio3 > 0">
+    <button class="selectPrecio" ion-button item-start (tap)="changePrecio(articulo.precio)">$ {{ articulo.precio }}</button>
+    <button class="selectPrecio" ion-button item-end *ngIf="articulo.precio2 > 0" (tap)="changePrecio(articulo.precio2)">$ {{ articulo.precio2 }}</button>
+    <button class="selectPrecio" ion-button item-end *ngIf="articulo.precio3 > 0" (tap)="changePrecio(articulo.precio3)">$ {{ articulo.precio3 }}</button>
+  </div>
   <ion-list *ngIf="articulo.fragancias== 1">
     <ion-item>
       LIMON
@@ -180,7 +185,7 @@
     <ion-row class="botones">
       <ion-col col-6>
         <ion-item class="divprecio">
-          <ion-input type="number" value={{articulo.precio}} [(ngModel)]="precio"  class="precio"></ion-input>
+          <ion-input type="number" value={{totalPrecio}} [(ngModel)]="totalPrecio"  class="precio"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col col-6>

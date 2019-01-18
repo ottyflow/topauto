@@ -26,9 +26,10 @@ export class PedidoPage {
   hideMe1: boolean = false;
   hideMe2: boolean = false;
   hideMe3: boolean = false;
-  subtotal: any;
-  total: any;
-  descuento:any;
+  subtotal: number;
+  total: number;
+  descuento:number;
+  descuentoCalculado: number;
   numero:number = 1;
   medpago:any;
   condpago:any;
@@ -57,6 +58,36 @@ export class PedidoPage {
       }
     })
     myModalCliente.present();
+  }
+
+  calculaSubtotal(){
+    this.subtotal = 0;
+    for(let articulo  of this.articulos){
+      console.log(articulo.getPrecio());
+      this.subtotal = this.subtotal + parseInt(articulo.getPrecio());
+      console.log(this.subtotal);
+    }
+    this.calculaDescuento(this.subtotal);
+    this.calculaTotal(this.subtotal);
+  }
+
+  calculaDescuento(subtotal:number){
+    if(this.descuento !=null && this.descuento!= 0){
+      this.descuentoCalculado = 0;
+      console.log(this.descuentoCalculado);
+      this.descuentoCalculado = (this.subtotal * this.descuento)/100;
+    }else{
+      this.descuentoCalculado = 0;
+    }
+  }
+
+  calculaTotal(subtotal:number){
+    this.total = 0;
+    console.log(subtotal);
+    console.log(this.total);
+    console.log(this.descuento);
+    this.total= subtotal - this.descuentoCalculado;
+    console.log(this.total);
   }
 
   generateItems(){
@@ -109,13 +140,13 @@ export class PedidoPage {
     let pedido = new Pedido();
     pedido.id_transaccion =  Math.floor(Math.random() * 9999) + 1;
     pedido.numero = this.numero;
-    pedido.id_cliente = 1;
+    pedido.id_cliente = this.cliente.codigo;
     pedido.id_vendedor = parseInt(this._us.id_usuario);
-    pedido.total = 2345;
+    pedido.total = this.total;
     pedido.id_mpago = this.medpago;
     pedido.id_condpago = this.condpago;
     pedido.controlado = 0;
-    pedido.descuento = 10;
+    pedido.descuento = this.descuento;
     pedido.notas = this.notas;
     pedido.created_at = new Date() ;
     pedido.updated_at = new Date() ;
@@ -152,6 +183,7 @@ export class PedidoPage {
       this.numero++;
     }
     console.log(this.numero);
+    this.calculaSubtotal();
   }
 
 }

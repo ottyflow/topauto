@@ -12,6 +12,12 @@ page-catalogo {
     margin-left: auto;
   }
 
+  .ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .card-title{
     text-align: left;
     padding-left: 16px;
@@ -28,7 +34,7 @@ page-catalogo {
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 16px;
-    padding-bottom: 8px;
+    padding-bottom: 16px;
     text-align: center;
     font-size: 16px;
     height: 105px;
@@ -39,7 +45,7 @@ page-catalogo {
   .infoadicional{
     padding-left: 16px;
     padding-right: 16px;
-    padding-top: 5px;
+    padding-top: 16px;
     padding-bottom: 16px;
     text-align: center;
     font-size: 12px;

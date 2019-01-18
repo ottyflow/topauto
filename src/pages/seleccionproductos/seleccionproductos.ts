@@ -28,14 +28,17 @@ export class SeleccionproductosPage {
   articulo : any;
   codigoArticulo:any= 0;
   solocodigo:any;
+  articulocopia =  new Articulo();
+  nuevoArticulo:Articulo;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _ps:PedidosProvider) {
-      let articulocopia = new Articulo();
-      articulocopia = this.navParams.get("articulo");
-      if(articulocopia != undefined){
-        this.totalPrecio = articulocopia.precio;
-        this.precio = articulocopia.precio;
-        this.articulo = articulocopia;
+
+      this.articulocopia = this.navParams.get("articulo");
+      if(this.articulocopia != undefined){
+        this.totalPrecio = this.articulocopia.precio;
+        this.precio = this.articulocopia.precio;
+        this.articulo = this.articulocopia;
+        this.creacionNuevoArticulo();
       }
   }
 
@@ -43,15 +46,36 @@ export class SeleccionproductosPage {
     if(procesa==0){
       this.cancelar();
     }else{
-      this.articulo.precio = this.precio
-      this._ps.agregar_pedido(this.articulo);
+      this.nuevoArticulo.setPrecio(this.totalPrecio);
+      console.log(this.nuevoArticulo.precio);
+      this._ps.agregar_pedido( this.nuevoArticulo);
       this.cancelar();
     }
     this.view.dismiss();
   }
 
+  creacionNuevoArticulo(){
+    this.nuevoArticulo = new Articulo();
+    this.nuevoArticulo.setCodigo(this.articulocopia.codigo);
+    this.nuevoArticulo.setDescripcion(this.articulocopia.descripcion)
+    this.nuevoArticulo.setDescripcionAdicional(this.articulocopia.descripcion_adicional);
+    this.nuevoArticulo.setImagen(this.articulocopia.imagen);
+    this.nuevoArticulo.setPrecio(this.articulocopia.precio);
+    this.nuevoArticulo.setPrecio2(this.articulocopia.precio2);
+    this.nuevoArticulo.setPrecio3(this.articulocopia.precio3);
+  }
+
+  changePrecio(precio){
+    if(precio!=null && precio> 0){
+      this.precio = precio;
+      this.totalPrecio = precio;
+    }
+
+  }
+
   increment1 () {
     this.currentNumber1++;
+    console.log(this.currentNumber1);
     this.calculaTotal();
   }
 
@@ -107,12 +131,13 @@ export class SeleccionproductosPage {
   }
 
   calculaTotal(){
+    this.totalCantidades=0;
     this.totalCantidades = (this.currentNumber1+this.currentNumber2+this.currentNumber3+this.currentNumber4+this.currentNumber5+this.currentNumber6);
+    console.log(this.totalCantidades);
     if(this.totalCantidades>0){
+      this.totalPrecio = 0;
       this.totalPrecio = this.precio * this.totalCantidades;
-    }
-    if(this.totalPrecio>0){
-      this.articulo.precio = this.totalPrecio;
+      console.log(this.totalPrecio);
     }
   }
 

@@ -87,3 +87,11 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+.toastPedido{
+  max-width: 250px!important;
+}
+ion-toast{
+  right: 10px!important;
+  left: unset!important;
+}

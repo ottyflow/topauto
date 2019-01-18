@@ -129,7 +129,7 @@
               <ion-icon *ngIf="!hideMe1"name="eye-off" style="font-size:32px;"></ion-icon>
             </button>
             <ion-title *ngIf="hideMe1" class="Cantidades">
-              $ 2.000
+              $ {{this.subtotal}}
             </ion-title>
           </ion-row>
         </div>
@@ -143,7 +143,7 @@
               <ion-icon *ngIf="!hideMe2"name="eye-off" style="font-size:32px;"></ion-icon>
             </button>
             <ion-title *ngIf="hideMe2" class="Cantidades">
-              30%
+              <ion-input type="number" [(ngModel)]="descuento" (ionChange)="calculaSubtotal()"></ion-input>
             </ion-title>
           </ion-row>
         </div>
@@ -157,7 +157,7 @@
               <ion-icon *ngIf="!hideMe3"name="eye-off" style="font-size:32px;"></ion-icon>
             </button>
             <ion-title *ngIf="hideMe3" class="Cantidades">
-              $ 1.570
+              $ {{this.total}}
             </ion-title>
           </ion-row>
         </div>
