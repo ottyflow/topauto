@@ -99,11 +99,11 @@ export class CatalogoPage {
   }
 
   ionViewWillEnter() {
-    if(this.articulos.length == 0){
+    if(this._as.articulos.length == 0){
       this.articulos= new Array();
       console.log(this.articulos.length);
       this._as.cargar_articulos();
-      console.log(this.articulos);
+      console.log(this._as.articulos);
     }
     this._ps.ultimo_numero(this._us.id_usuario);
   }

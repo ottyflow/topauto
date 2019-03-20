@@ -1,19 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
+import { ToastController  } from "ionic-angular";
 import { BuscadorxcodigoPage } from '../buscadorxcodigo/buscadorxcodigo';
 import { Pedido } from '../../interfaces/pedido.interface';
 import { UsuariosProvider}  from "../../providers/usuarios/usuarios";
 import { PopupclientePage } from '../popupcliente/popupcliente';
 import { Cliente } from '../../interfaces/clientes.interface';
 
-
-/**
- * Generated class for the PedidoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 @Component({
   selector: 'page-pedido',
   templateUrl: 'pedido.html',
@@ -28,13 +22,13 @@ export class PedidoPage {
   hideMe3: boolean = false;
   subtotal: number;
   total: number;
-  descuento:number;
-  descuentoCalculado: number;
+  descuento:number = 0;
+  descuentoCalculado: number = 0;
   numero:number = 1;
   medpago:any;
   condpago:any;
   notas: string = "";
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _ps:PedidosProvider, public _us:UsuariosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _ps:PedidosProvider, public _us:UsuariosProvider,  private toastCtrl: ToastController) {
     this.articulos = this._ps.articulos;
     console.log(this.articulos);
     for(let articulo of this.articulos){
@@ -94,15 +88,6 @@ export class PedidoPage {
     this.articulos;
   }
 
-  // getItems(ev: any){
-  //   this.generateItems();
-  //   let serVal = ev.target.value;
-  //   if(serVal&& serVal.trim() !='') {
-  //     this.articulos = this.articulos.filter((item) => {
-  //       return (item.descripcion.toLowerCase().indexOf(serVal.toLowerCase()) > -1 );
-  //     })
-  //   }
-  // }
   showHide1() {
    this.hideMe1 = !this.hideMe1;
   }
@@ -124,7 +109,8 @@ export class PedidoPage {
         }
         contador++;
       }
-          this.generateItems();
+      this.generateItems();
+      this.calculaSubtotal();
     }
   }
 
@@ -133,6 +119,11 @@ export class PedidoPage {
     this.medpago=null;
     this.condpago=null;
     this.notas="";
+    this.cliente= new Cliente();
+    this.descuento = 0;
+    this.descuentoCalculado = 0;
+    this.subtotal = 0;
+    this.total = 0;
     this.generateItems();
   }
 
@@ -150,24 +141,67 @@ export class PedidoPage {
     pedido.notas = this.notas;
     pedido.created_at = new Date() ;
     pedido.updated_at = new Date() ;
-    this._ps.grabar_pedido(pedido, this.articulos);
-    console.log(pedido);
-    this.cancelarPedido();
-    this._ps.ultimo_numero(this._us.id_usuario)
+    console.log(this.articulos.length);
+    if (this.articulos.length < 1 || this.articulos.length == null || this.articulos.length == undefined ){
+      let toast = this.toastCtrl.create({
+        message: 'Debe ingresar por lo menos un articulo',
+        duration: 3000,
+        position: 'bottom',
+        cssClass: "toastPedido"
+      });
+      toast.onDidDismiss(() => {
+        console.log('Dismissed toast');
+      });
+      toast.present();
+    }else{
+      if(pedido.id_cliente == undefined){
+        console.log("entro aca");
+        let toast = this.toastCtrl.create({
+          message: 'Debe ingresar un cliente',
+          duration: 3000,
+          position: 'bottom',
+          cssClass: "toastPedido"
+        });
+        toast.onDidDismiss(() => {
+          console.log('Dismissed toast');
+        });
+        toast.present();
+      }else{
+        if(this.medpago == undefined){
+          console.log("entro aca");
+          let toast = this.toastCtrl.create({
+            message: 'Debe indicar condicion de facturacion',
+            duration: 3000,
+            position: 'bottom',
+            cssClass: "toastPedido"
+          });
+          toast.onDidDismiss(() => {
+            console.log('Dismissed toast');
+          });
+          toast.present();
+        }else{
+          if(this.condpago == undefined){
+            console.log("entro aca");
+            let toast = this.toastCtrl.create({
+              message: 'Debe indicar una condicion de pago',
+              duration: 3000,
+              position: 'bottom',
+              cssClass: "toastPedido"
+            });
+            toast.onDidDismiss(() => {
+              console.log('Dismissed toast');
+            });
+            toast.present();
+          }else{
+            this._ps.grabar_pedido(pedido, this.articulos);
+            console.log(pedido);
+            this.cancelarPedido();
+            this._ps.ultimo_numero(this._us.id_usuario);
+          }
+        }
+      }
+    }
   }
-
-  // grabar_detalle(){
-  //   for(let articulo of this.articulos){
-  //     let pedidoDetalle = new PedidoDetalle();
-  //     pedidoDetalle.transaccion = 23452;
-  //     pedidoDetalle.articulo = articulo.codigoarticulo;
-  //     pedidoDetalle.cantidad = 2;
-  //     pedidoDetalle.precio = articulo.precio;
-  //     pedidoDetalle.created_at = new Date();
-  //     pedidoDetalle.updated_at = new Date();
-  //     this._ps.grabarDetalle(articulo);
-  //   }
-  // }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PedidoPage');

@@ -165,15 +165,15 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar class="Botones" *ngIf="accion == 0">
-    <button class="cancelar" ion-button color="light" (click)="closeModal()" outline>CANCELAR</button>
-    <button class="aceptar" ion-button color="light" type="submit"  (click)="grabar_cliente()" outline>CREAR</button>
+    <button class="cancelar" ion-button color="light" (tap)="closeModal()" outline>CANCELAR</button>
+    <button class="aceptar" ion-button color="light" type="submit"  (tap)="grabar_cliente()" outline>CREAR</button>
   </ion-toolbar>
   <ion-toolbar class="Botones" *ngIf="accion == 1">
-    <button class="cancelar" ion-button color="light" (click)="closeModal()" outline>CANCELAR</button>
-    <button class="aceptar" ion-button color="light"  (click)="modificar(3)" outline>MODIFICAR</button>
+    <button class="cancelar" ion-button color="light" (tap)="closeModal()" outline>CANCELAR</button>
+    <button class="aceptar" ion-button color="light"  (tap)="modificar(3)" outline>MODIFICAR</button>
   </ion-toolbar>
   <ion-toolbar class="Botones" *ngIf="accion == 3">
-    <button class="cancelar" ion-button color="light" (click)="closeModal()" outline>CANCELAR</button>
-    <button class="aceptar" ion-button color="light"  (click)="modificar(3)" outline>GUARDAR</button>
+    <button class="cancelar" ion-button color="light" (tap)="closeModal()" outline>CANCELAR</button>
+    <button class="aceptar" ion-button color="light"  (tap)="modificar(3)" outline>GUARDAR</button>
   </ion-toolbar>
 </ion-footer>

@@ -200,6 +200,9 @@ page-pedido {
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,0.12);
   }
+  .RowCliente{
+    height: 44px;
+  }
   .CondPago{
     height: 104px;
     border-bottom: 1px solid;
@@ -239,6 +242,8 @@ page-pedido {
   }
   button .BotonAddPersona{
     background-color: #fff!important;
+    height: 44px;
+    width: 44px;
   }
   .alerta{
     margin-top: 10px;

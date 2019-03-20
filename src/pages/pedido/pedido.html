@@ -27,9 +27,12 @@
                         <div class="info">
                           {{ articulo.descripcion }}
                         </div>
+                        <div style="margin-top= 0px;">
+                          {{ articulo.cantidad}} Unidades
+                        </div>
                       </ion-col>
                       <ion-col col-2>
-                        <div class="alerta">
+                        <div class="alerta" *ngIf="articulo.oferta_volumen !=0 || articulo.envase_nuevo !=0 || articulo.escala_descuento !=0 || articulo.oferta_lanzamiento !=0 || articulo.agotar_stock !=0 || articulo.embarque !=0">
                           <ion-icon name="alert"></ion-icon>
                         </div>
                         <div class="precio">
@@ -58,17 +61,25 @@
           </ion-title>
         </div>
         <div class="Cliente">
-          <ion-row>
+          <ion-row class="RowCliente">
             <ion-title class="CondicionTitulo">
               Cliente
             </ion-title>
-            <button class="BotonAddPersona" (tap)="openModalCliente()" style="background-color: #fff; margin-top: 14px; margin-right: 25px; height: 19px!important;">
+            <button class="BotonAddPersona" (tap)="openModalCliente()" style="background-color: #fff; margin-top: 14px; margin-right: 25px; height: 44px!important; width: 66px!important;">
               <ion-icon class="AddPersona" name="person-add"></ion-icon>
             </button>
           </ion-row>
           <ion-title class="NombreCliente">
             {{cliente.razon_social}}
           </ion-title>
+        </div>
+        <div class="OtroDatos">
+          <ion-title class="CondicionTitulo">
+            Otros datos
+          </ion-title>
+          <ion-item>
+            <ion-textarea placeholder="Observaciones" [(ngModel)]="notas"></ion-textarea>
+          </ion-item>
         </div>
         <div class="CondFactu">
           <ion-title class="CondicionTitulo">
@@ -96,14 +107,6 @@
             </ion-select>
           </ion-item>
         </div>
-        <div class="OtroDatos">
-          <ion-title class="CondicionTitulo">
-            Otros datos
-          </ion-title>
-          <ion-item>
-            <ion-textarea placeholder="Observaciones" [(ngModel)]="notas"></ion-textarea>
-          </ion-item>
-        </div>
       </ion-col>
       <ion-col col-3>
         <div class="Titulos">
@@ -124,7 +127,7 @@
             Subtotal
           </ion-title>
           <ion-row>
-            <button ion-button clear item-start (click)='showHide1()' style="height:32px;">
+            <button ion-button clear item-start (tap)='showHide1()' style="height:32px;">
               <ion-icon *ngIf="hideMe1"name="eye" style="font-size:32px;"></ion-icon>
               <ion-icon *ngIf="!hideMe1"name="eye-off" style="font-size:32px;"></ion-icon>
             </button>
@@ -138,7 +141,7 @@
             Descuento
           </ion-title>
           <ion-row>
-            <button ion-button clear item-start (click)='showHide2()' style="height:32px;">
+            <button ion-button clear item-start (tap)='showHide2()' style="height:32px;">
               <ion-icon *ngIf="hideMe2"name="eye" style="font-size:32px;"></ion-icon>
               <ion-icon *ngIf="!hideMe2"name="eye-off" style="font-size:32px;"></ion-icon>
             </button>
@@ -152,7 +155,7 @@
             Total
           </ion-title>
           <ion-row>
-            <button ion-button clear item-start (click)='showHide3()' style="height:32px;">
+            <button ion-button clear item-start (tap)='showHide3()' style="height:32px;">
               <ion-icon *ngIf="hideMe3"name="eye" style="font-size:32px;"></ion-icon>
               <ion-icon *ngIf="!hideMe3"name="eye-off" style="font-size:32px;"></ion-icon>
             </button>

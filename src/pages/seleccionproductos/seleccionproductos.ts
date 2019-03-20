@@ -47,7 +47,8 @@ export class SeleccionproductosPage {
       this.cancelar();
     }else{
       this.nuevoArticulo.setPrecio(this.totalPrecio);
-      console.log(this.nuevoArticulo.precio);
+      this.nuevoArticulo.setCantidad(this.totalCantidades);
+      console.log(this.nuevoArticulo);
       this._ps.agregar_pedido( this.nuevoArticulo);
       this.cancelar();
     }
@@ -63,6 +64,14 @@ export class SeleccionproductosPage {
     this.nuevoArticulo.setPrecio(this.articulocopia.precio);
     this.nuevoArticulo.setPrecio2(this.articulocopia.precio2);
     this.nuevoArticulo.setPrecio3(this.articulocopia.precio3);
+    this.nuevoArticulo.setCantidad(this.totalCantidades);
+    this.nuevoArticulo.setOfertaVolumen(this.articulocopia.oferta_volumen);
+    this.nuevoArticulo.setEnvaseNuevo(this.articulocopia.envase_nuevo);
+    this.nuevoArticulo.setEscalaDescuento(this.articulocopia.envase_nuevo);
+    this.nuevoArticulo.setOfertaLanzamiento(this.articulocopia.oferta_lanzamiento);
+    this.nuevoArticulo.setAgotarStock(this.articulocopia.agotar_stock);
+    this.nuevoArticulo.setEmbarque(this.articulocopia.embarque);
+
   }
 
   changePrecio(precio){
@@ -138,6 +147,7 @@ export class SeleccionproductosPage {
       this.totalPrecio = 0;
       this.totalPrecio = this.precio * this.totalCantidades;
       console.log(this.totalPrecio);
+
     }
   }
 

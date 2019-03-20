@@ -77,7 +77,7 @@ export class PedidosProvider {
       let detalle = new PedidoDetalle();
       detalle.transaccion = pedido.id_transaccion;
       detalle.articulo = articulo.codigo;
-      detalle.cantidad = 3;
+      detalle.cantidad = articulo.cantidad;
       detalle.precio = articulo.precio;
       detalle.created_at = new Date();
       detalle.updated_at = new Date();
@@ -131,10 +131,7 @@ export class PedidosProvider {
                           toast.present();
                       }
     }
-
                   );
-
-
   }
 
   grabarDetalle(detalle){
@@ -166,7 +163,4 @@ export class PedidosProvider {
                           console.log(this.numero);
                       })
   }
-
-
-
 }

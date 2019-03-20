@@ -22,6 +22,7 @@ export class Articulo{
   talles:string;
   created_at: string;
   updated_at: string;
+  cantidad:number = 0;
 
   constructor(){
 
@@ -82,4 +83,59 @@ export class Articulo{
   getPrecio3(){
   return this.precio3;
   }
+
+  setCantidad(cantidad){
+    this.cantidad = cantidad;
+  }
+
+  getCantidad(){
+    return this.cantidad;
+  }
+
+  setOfertaVolumen(oferta_volumen){
+    this.oferta_volumen = oferta_volumen;
+  }
+  getOfertaVolumen(){
+    return this.oferta_volumen;
+  }
+
+  setEnvaseNuevo(envase_nuevo){
+    this.envase_nuevo = envase_nuevo;
+  }
+
+  getEnvaseNuevo(){
+    return this.envase_nuevo;
+  }
+
+  setEscalaDescuento(escala_descuento){
+    this.escala_descuento = escala_descuento;
+  }
+
+  getEscalaDescuento(){
+    return this.escala_descuento;
+  }
+
+  setOfertaLanzamiento(oferta_lanzamiento){
+    this.oferta_lanzamiento = oferta_lanzamiento;
+  }
+
+  getOfertaLanzamiento(){
+    return this.oferta_lanzamiento;
+  }
+
+  setAgotarStock(agotar_stock){
+    this.agotar_stock = agotar_stock;
+  }
+
+  getAgotarStock(){
+    return this.agotar_stock;
+  }
+
+   setEmbarque(embarque){
+     this.embarque = embarque;
+   }
+
+   getEmbarque(){
+     return this.embarque;
+   }
 }

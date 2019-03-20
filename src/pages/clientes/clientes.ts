@@ -26,6 +26,7 @@ export class ClientesPage {
     const myModal =  this.modal.create(FormclientePage, { accion })
     console.log(accion);
     myModal.present();
+    myModal.onDidDismiss(()=>{this._cs.cargar_clientes();})
   }
 
   ionViewWillEnter() {

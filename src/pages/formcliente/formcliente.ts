@@ -65,6 +65,5 @@ export class FormclientePage {
     console.log(cliente);
     this._cs.grabar_cliente(cliente);
     this.closeModal();
-    this._cs.cargar_clientes();
   }
 }
