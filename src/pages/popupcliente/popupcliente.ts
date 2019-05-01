@@ -29,7 +29,9 @@ export class PopupclientePage {
     let serVal = ev.target.value;
     if(serVal&& serVal.trim() !='') {
       this._cs.clientes = this._cs.clientes.filter((item) => {
-        return (item.razon_social.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombre_fantasia.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.cuenta.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.cuit.toLowerCase().indexOf(serVal.toLowerCase()) > -1 );
+        if(item.razon_social!= null && item.nombre_fantasia!=null){
+        return (item.razon_social.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombre_fantasia.toLowerCase().indexOf(serVal.toLowerCase()) > -1);
+        }
       })
     }else{
       this._cs.cargar_clientes();

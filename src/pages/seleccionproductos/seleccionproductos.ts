@@ -49,6 +49,9 @@ export class SeleccionproductosPage {
       this.nuevoArticulo.setPrecio(this.totalPrecio);
       this.nuevoArticulo.setCantidad(this.totalCantidades);
       console.log(this.nuevoArticulo);
+      if(this.nuevoArticulo.cantidad == 0){
+        this.nuevoArticulo.setCantidad(1);
+      }
       this._ps.agregar_pedido( this.nuevoArticulo);
       this.cancelar();
     }
