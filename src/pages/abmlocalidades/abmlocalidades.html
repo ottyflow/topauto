@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="dark">
+      <ion-title>Localidades</ion-title>
+      <ion-searchbar showCancelButton="true" [(ngModel)]="queryText" (ionInput)="getLocalidades($event)" (ionCancel)="isSearchBarOpened=false" placeholder=""></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid class="listadoclientes">
+    <div *ngFor="let item of _ls.localidades">
+      <ion-row class="cliente" (tap)="cargarLocalidad(item)">
+        <ion-col col-3 align-items: center>
+          <div class="nombre" >
+            {{ item.nombre }}
+          </div>
+        </ion-col>
+        <ion-col col-3 align-items: center>
+          <div class="nombre" >
+            {{ item.provincia }}
+          </div>
+        </ion-col>
+        <ion-col col-2>
+          <div class="container">
+              {{ item.zona }}
+          </div>
+        </ion-col>
+        <ion-col col-2>
+          <div class="container">
+              {{ item.zona2 }}
+          </div>
+        </ion-col>
+        <ion-col col-2>
+          <div class="container">
+              {{ item.zona3 }}
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="Botones">
+    <button class="cancelar" ion-button color="light" (tap)="closeModal()" outline>CERRAR</button>
+  </ion-toolbar>
+</ion-footer>
