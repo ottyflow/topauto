@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule}  from '@ionic/storage';
 import { CatalogoPage} from '../pages/catalogo/catalogo';
+import { AbmlocalidadesPage} from '../pages/abmlocalidades/abmlocalidades';
 import { PedidoPage } from '../pages/pedido/pedido';
 import { ClientesPage } from '../pages/clientes/clientes';
 import { PerfilPage } from '../pages/perfil/perfil';
@@ -23,6 +24,7 @@ import { UsuariosProvider } from '../providers/usuarios/usuarios';
 import { ArticulosProvider } from '../providers/articulos/articulos';
 import { PedidosProvider } from '../providers/pedidos/pedidos';
 import { ClientesProvider } from '../providers/clientes/clientes';
+import { LocalidadesProvider } from '../providers/localidades/localidades';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { ClientesProvider } from '../providers/clientes/clientes';
     FiltrosPage,
     FormclientePage,
     SeleccionproductosPage,
-    PopupclientePage
+    PopupclientePage,
+    AbmlocalidadesPage
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { ClientesProvider } from '../providers/clientes/clientes';
     FiltrosPage,
     FormclientePage,
     SeleccionproductosPage,
-    PopupclientePage
+    PopupclientePage,
+    AbmlocalidadesPage
   ],
   providers: [
     StatusBar,
@@ -68,7 +72,8 @@ import { ClientesProvider } from '../providers/clientes/clientes';
     UsuariosProvider,
     ArticulosProvider,
     PedidosProvider,
-    ClientesProvider
+    ClientesProvider,
+    LocalidadesProvider
   ]
 })
 export class AppModule {}

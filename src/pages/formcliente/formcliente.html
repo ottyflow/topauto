@@ -120,10 +120,10 @@
             <ion-row>
               <ion-col col-6>
                 <ion-item>
-                  <ion-icon name="" item-start></ion-icon>
-                  <ion-label floating *ngIf="accion == 0 || accion == 3">Ciudad *</ion-label>
-                  <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.id_localidad}}></ion-input>
-                  <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=id_localidad></ion-input>
+                  <ion-icon *ngIf="accion == 0" name="compass" (tap)="openLocalidades()"  item-start></ion-icon>
+                  <ion-label floating *ngIf="accion == 0 && localidad.nombre == ''">Localidad *</ion-label>
+                  <ion-title *ngIf="accion == 1 || accion == 3" type="text">{{_cs.cliente.id_localidad}}</ion-title>
+                  <ion-title *ngIf="accion == 0" placeholder = "Localidad" type="text">{{localidad.nombre}}</ion-title>
                 </ion-item>
               </ion-col>
               <ion-col col-6>

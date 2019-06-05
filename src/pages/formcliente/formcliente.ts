@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 import { ClientesProvider } from '../../providers/clientes/clientes';
 import { Cliente } from '../../interfaces/clientes.interface';
+import { Localidad } from '../../interfaces/localidad.interface';
+import { AbmlocalidadesPage} from '../abmlocalidades/abmlocalidades';
 
 @Component({
   selector: 'page-formcliente',
@@ -9,6 +11,7 @@ import { Cliente } from '../../interfaces/clientes.interface';
 })
 export class FormclientePage {
 
+  localidad= new Localidad();
   accion:any = 0;
   codigo:any;
   razon_social: string;
@@ -25,7 +28,7 @@ export class FormclientePage {
   direccion: string;
   codigo_postal: string
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _cs:ClientesProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _cs:ClientesProvider, private modal: ModalController) {
     this.accion = this.navParams.get("accion");
     this.codigo = this.navParams.get("codigo");
     if(this.codigo != null){
@@ -65,5 +68,18 @@ export class FormclientePage {
     console.log(cliente);
     this._cs.grabar_cliente(cliente);
     this.closeModal();
+  }
+
+  openLocalidades(){
+    if(this.accion==0){
+        let myModalLocalidades = this.modal.create(AbmlocalidadesPage);
+        myModalLocalidades.onDidDismiss(data =>{
+          console.log(data);
+          if(data!=undefined){
+            this.localidad = data;
+          }
+        })
+        myModalLocalidades.present();
+    }
   }
 }
