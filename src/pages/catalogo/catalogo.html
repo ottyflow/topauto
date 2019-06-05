@@ -43,4 +43,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ion-infinite-scroll (ionInfinite)="scrollInfinite($event)" *ngIf="currentPage < totalPage">
+    <ion-infinite-scroll-content>nepe</ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

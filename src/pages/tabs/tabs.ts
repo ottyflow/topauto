@@ -6,6 +6,7 @@ import { ClientesPage } from '../clientes/clientes';
 import { PerfilPage } from '../perfil/perfil';
 
 import { ClientesProvider } from '../../providers/clientes/clientes';
+import { UsuariosProvider } from '../../providers/usuarios/usuarios';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -18,9 +19,6 @@ export class TabsPage {
   tab4Root = PerfilPage;
 
   constructor(private _cs:ClientesProvider) {
+  }
 
-  }
-  cargar_clientes(){
-    this._cs.cargar_clientes();
-  }
 }

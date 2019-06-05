@@ -85,11 +85,18 @@ export class UsuariosProvider {
                                         }
                                         resolve();
                                       })
+                        this.storage.get("nombre")
+                                    .then(nombre=>{
+                                      if(nombre){
+                                        this.nombre = nombre;
+                                      }
+                                    })
                       })
       }else{
         if(localStorage.getItem("token")){
           this.token = localStorage.getItem("token");
           this.id_usuario = localStorage.getItem("id_usuario");
+          this.nombre = localStorage.getItem("nombre");
         }
       }
     } )
