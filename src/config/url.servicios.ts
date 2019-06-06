@@ -1,1 +1,1 @@
-export const URL_SERVICIOS = "http://c1370301.ferozo.com/REST/index.php";
+export const URL_SERVICIOS = "http://pedidostopauto.com/REST/index.php";

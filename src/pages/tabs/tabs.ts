@@ -20,7 +20,4 @@ export class TabsPage {
   constructor(private _cs:ClientesProvider) {
 
   }
-  cargar_clientes(){
-    this._cs.cargar_clientes();
-  }
 }
