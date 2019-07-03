@@ -4,56 +4,50 @@ import { URL_SERVICIOS } from '../../config/url.servicios';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import { Articulo } from '../../interfaces/articulo.interface';
+import { CatalogoPage } from '../../pages/catalogo/catalogo';
 
 @Injectable()
 export class ArticulosProvider {
 
-  articulos:any [] = [];
+  articulos = [];
+  articulosFinal = [];
   unarticulo:any;
   codigoarticulo:any;
+  count:number = 0;
 
   constructor(public http: Http) {
-    console.log('Hello ArticulosProvider Provider');
   }
 
   cargar_articulos(){
+    this.count = 0;
+    console.log("nepelocu");
     this.articulos= new Array();
     let url = URL_SERVICIOS + "/productos";
-
-    return this.http.get( url )
-                    .map( resp=> resp.json() )
-                      .subscribe( data=>{
-
-                        console.log(data.productos);
-
-                        if(data.error){
-
-                        }else{
-                          this.articulos.push( ...data.productos);
-                          console.log(this.articulos);
-                        }
-                      })
+    return this.http.get( url ).map( resp=> resp.json() ).subscribe( data=>{
+            if(data.error){
+            }else{
+              for(let item of data.productos){
+                this.articulos.push(item);
+              }
+              this.articulosFinal = new Array();
+              for (let i = 0; i < 20; i++) {  // here you can limit the items according to your needs.
+                this.articulosFinal.push(this.articulos[this.count]);   // your JSON data which you want to display
+                this.count++ //i am using a count variable to keep track of inserted records to avoid inserting duplicate records on infinite scroll
+              }
+            }
+      })
   }
 
   cargar_articulo(codigoarticulo:any){
     this.articulos= new Array();
     let articulo = new Articulo();
     let url = URL_SERVICIOS + "/productos/articulo/" + codigoarticulo ;
-
-    return this.http.get( url )
-                    .map( resp=> resp.json() )
-                      .subscribe( data=>{
-
-                        console.log(data.articulo);
-
-                        if(data.error){
-
-                        }else{
-                          this.unarticulo.push( ...data.articulo);
-                          articulo = data.articulo;
-                          console.log(articulo);
-                        }
-                      })
+    return this.http.get( url ).map( resp=> resp.json() ).subscribe( data=>{
+            if(data.error){
+            }else{
+              this.unarticulo.push( ...data.articulo);
+              articulo = data.articulo;
+            }
+    })
   }
-
 }

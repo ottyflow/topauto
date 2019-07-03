@@ -9,51 +9,53 @@ import { ToastController } from 'ionic-angular';
 export class ClientesProvider {
   [x: string]: any;
 
-  clientes:any [] = [];
+  clientes = [];
+  clientesFinal = [];
+  clientesFinalPopUp = [];
   cliente:any [] = [];
   codigocliente:string="";
   razonsocial:string="";
   nombrefantasia:string="";
-  constructor(public http: Http, public toastCtrl: ToastController) {
+  count: number = 0;
 
+  constructor(public http: Http, public toastCtrl: ToastController) {
   }
 
   cargar_clientes(){
-    this.clientes = [];
+    this.count = 0;
+    this.clientes = new Array();
     let url = URL_SERVICIOS + "/clientes";
-    return this.http.get( url )
-                    .map( resp=> resp.json() )
-                      .subscribe( data=>{
-
-                        console.log(data);
-
-                        if(data.error){
-
-                        }else{
-                          this.clientes.push( ...data.clientes);
-                          console.log(this.clientes);
-                        }
-                      })
+    return this.http.get( url ).map( resp=> resp.json() ).subscribe( data=>{
+          console.log(data);
+          if(data.error){
+          }else{
+            for(let item of data.clientes){
+              this.clientes.push(item);
+            }
+            this.clientesFinal = new Array();
+            for(let i = 0; i < 100; i++){
+              this.clientesFinal.push(this.clientes[this.count]);
+              this.count++;
+            }
+            this.count = 0;
+            this.clientesFinalPopUp = new Array();
+            for(let i = 0; i < 100; i++){
+              this.clientesFinalPopUp.push(this.clientes[this.count]);
+              this.count++;
+            }
+          }
+      })
   }
-
 
   traer_cliente(codigocliente:string){
     let url = URL_SERVICIOS + "/clientes/cliente/" + codigocliente;
-    return this.http.get( url )
-                    .map( resp=> resp.json() )
-                      .subscribe( data=>{
-
-                        console.log(data);
-
-                        if(data.error){
-
-                        }else{
-                          this.clientes.push( ...data.cliente);
-                          this.cliente= data.cliente;
-                           console.log(this.cliente);
-
-                        }
-                      })
+    return this.http.get( url ).map( resp=> resp.json() ).subscribe( data=>{
+            if(data.error){
+            }else{
+              this.clientes.push( ...data.cliente);
+              this.cliente= data.cliente;
+            }
+    })
   }
 
   grabar_cliente(cliente:any){

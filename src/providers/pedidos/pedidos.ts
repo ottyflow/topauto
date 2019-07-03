@@ -85,7 +85,7 @@ export class PedidosProvider {
     }
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    let url = URL_SERVICIOS + "/pedidos/insertCab/";
+    let url = URL_SERVICIOS + "/pedidos/insertCab";
     let data = new URLSearchParams();
     data.append("id_transaccion", pedido.id_transaccion);
     data.append("numero", pedido.numero);
@@ -137,7 +137,7 @@ export class PedidosProvider {
   grabarDetalle(detalle){
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      let url = URL_SERVICIOS + "/pedidos/insertDet/";
+      let url = URL_SERVICIOS + "/pedidos/insertDet";
       let data = new URLSearchParams();
       data.append("transaccion", detalle.id_transaccion);
       data.append("articulo", detalle.codigoarticulo);

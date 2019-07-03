@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UsuariosProvider } from '../providers/usuarios/usuarios';
+import { ArticulosProvider } from '../providers/articulos/articulos';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,7 +13,7 @@ import { UsuariosProvider } from '../providers/usuarios/usuarios';
 export class MyApp {
   rootPage : any;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private _us:UsuariosProvider) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private _as:ArticulosProvider, private _us:UsuariosProvider) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -21,5 +22,6 @@ export class MyApp {
     });
 
     this.rootPage = this._us.token ? TabsPage : LoginPage;
+
   }
 }

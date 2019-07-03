@@ -5,7 +5,7 @@
 </ion-header>
 <ion-content>
   <ion-grid class="listadoclientes">
-    <div *ngFor="let item of _cs.clientes">
+    <div *ngFor="let item of _cs.clientesFinalPopUp">
       <ion-row class="cliente" (tap)="cargaCliente(item)">
         <ion-col col-7>
           <div class="container">
@@ -24,6 +24,9 @@
         </ion-col>
       </ion-row>
     </div>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
   </ion-grid>
 </ion-content>
 <ion-footer>

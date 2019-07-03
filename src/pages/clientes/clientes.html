@@ -6,7 +6,7 @@
 <ion-content>
   <ion-row ></ion-row>
   <ion-grid class="listadoclientes">
-    <div *ngFor="let item of _cs.clientes">
+    <div *ngFor="let item of _cs.clientesFinal">
       <ion-row class="cliente" (tap)="openModal(1,item.codigo);">
         <ion-col col-7>
           <div class="container">
@@ -25,6 +25,9 @@
         </ion-col>
       </ion-row>
     </div>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
   </ion-grid>
   <ion-fab bottom right>
     <button ion-fab (tap)="openModalvacio(0)"><ion-icon name="person-add"></ion-icon></button>

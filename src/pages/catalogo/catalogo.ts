@@ -16,6 +16,7 @@ export class CatalogoPage {
 
   articulos:any [] = [];
   datosarticulo:any=[];
+  count: number = 0;
   public aColor: string = "#ffd400";
 
 
@@ -63,25 +64,11 @@ export class CatalogoPage {
     }
   }
 
-  // getItems(ev: any){
-  //   this.generate_items();
-  //   console.log(this.articulos);
-  //   let serVal = ev.target.value;
-  //   if(serVal&& serVal.trim() !='') {
-  //     this.articulos = this.articulos.filter(function(item){
-  //       return (item.descripcion.toLowerCase().indexOf(serVal.toLowerCase()) > -1 );
-  //     })
-  //     // return this.articulos.filter((item) => {
-  //     //     return item.descripcion.toLowerCase().indexOf(serVal.toLowerCase()) > -1;
-  //     // });
-  //   }
-  // }
-
   getItems(ev: any){
     this.generateItems();
     let serVal = ev.target.value;
     if(serVal&& serVal.trim() !='') {
-      this._as.articulos = this._as.articulos.filter((item) => {
+      this._as.articulosFinal = this._as.articulos.filter((item) => {
         return (item.descripcion.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombreMarca.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombreCategoria.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.codigo.toLowerCase().indexOf(serVal.toLowerCase()) > -1 );
       })
     }else{
@@ -90,20 +77,23 @@ export class CatalogoPage {
 
   }
 
-
-
+  doInfinite(infiniteScroll) {
+    setTimeout(() => {
+      this.count = this._as.articulosFinal.length;
+      for (let i = 0; i < 20; i++) {
+        this._as.articulosFinal.push(this._as.articulos[this.count]); // this will start pushing next 5 items
+        this.count++
+      }
+      infiniteScroll.complete();
+    }, 500);
+  }
   public isSearchBarOpened = false;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CatalogoPage');
-  }
-
   ionViewWillEnter() {
+    console.log("nepe locu 2");
     if(this._as.articulos.length == 0){
-      this.articulos= new Array();
-      console.log(this.articulos.length);
       this._as.cargar_articulos();
-      console.log(this._as.articulos);
+      this.articulos= this._as.articulosFinal;
     }
     this._ps.ultimo_numero(this._us.id_usuario);
   }
