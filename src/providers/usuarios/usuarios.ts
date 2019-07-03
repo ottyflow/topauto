@@ -100,7 +100,5 @@ export class UsuariosProvider {
         }
       }
     } )
-    console.log(promesa);
   }
-
 }
