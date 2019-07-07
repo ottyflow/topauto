@@ -14,166 +14,166 @@
 <ion-content>
   <ion-grid>
     <ion-col col-12>
-        <ion-list>
-          <ion-item>
-            <ion-icon name="person" item-start></ion-icon>
-            <ion-label floating *ngIf="accion == 0 || accion == 3">Denominacion Legal *</ion-label>
-            <ion-input *ngIf="accion == 1 || accion == 3" name="razonsocial" [disabled]="accion==1" value={{_cs.cliente.razon_social}} type="text"></ion-input>
-            <ion-input *ngIf="accion == 0" name="razonsocial"  type="text" [(ngModel)]=razon_social></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="" item-start></ion-icon>
-            <ion-label floating *ngIf="accion == 0 || accion == 3">Nombre de fantasia</ion-label>
-            <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.nombre_fantasia}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=nombre_fantasia></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="" item-start></ion-icon>
-            <ion-label floating *ngIf="accion == 0 || accion == 3">Cuenta</ion-label>
-            <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.cuenta}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=cuenta></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="call" item-start></ion-icon>
-            <ion-label floating *ngIf="accion == 0 || accion == 3">Telefono *</ion-label>
-            <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.telefono}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=telefono></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="call" item-start></ion-icon>
-            <ion-label floating *ngIf="accion == 0 || accion == 3">Telefono 2</ion-label>
-            <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.telefono2}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=telefono2></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="pin" item-start></ion-icon>
-            <ion-label  floating *ngIf="accion == 0 || accion == 3">Direccion *</ion-label>
-            <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.direccion}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=direccion></ion-input>
-          </ion-item>
-          <ion-grid class="grupoinput">
-            <ion-row>
-              <ion-col col-6>
-                <ion-item>
-                  <ion-icon name="" item-start></ion-icon>
-                  <ion-label floating *ngIf="accion == 0 || accion == 3">Zona</ion-label>
-                  <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text"></ion-input>
-                  <ion-input *ngIf="accion == 0" type="text"></ion-input>
-                </ion-item>
-              </ion-col>
-              <ion-col col-6>
-                <ion-item>
-                  <ion-label *ngIf="accion == 0 || accion == 3" >Provincia</ion-label>
-                  <ion-select *ngIf="accion == 1 || accion == 3" okText="OK" cancelText="CANCELAR" [(ngModel)]="_cs.cliente.id_provincia" [disabled]="accion==1">
-                    <ion-option value=1>Buenos Aires</ion-option>
-                    <ion-option value=2>Catamarca</ion-option>
-                    <ion-option value=3>Chaco</ion-option>
-                    <ion-option value=4>Chubut</ion-option>
-                    <ion-option value=5>Córdoba</ion-option>
-                    <ion-option value=6>Corrientes</ion-option>
-                    <ion-option value=7>Entre Ríos</ion-option>
-                    <ion-option value=8>Formosa</ion-option>
-                    <ion-option value=9>Jujuy</ion-option>
-                    <ion-option value=10>La Pampa</ion-option>
-                    <ion-option value=11>La Rioja</ion-option>
-                    <ion-option value=12>Mendoza</ion-option>
-                    <ion-option value=13>Misiones</ion-option>
-                    <ion-option value=14>Neuquén</ion-option>
-                    <ion-option value=15>Río Negro</ion-option>
-                    <ion-option value=16>Salta</ion-option>
-                    <ion-option value=17>San Juan</ion-option>
-                    <ion-option value=18>San Luis</ion-option>
-                    <ion-option value=19>Santa Cruz</ion-option>
-                    <ion-option value=20>Santa Fe</ion-option>
-                    <ion-option value=21>Santiago del Estero</ion-option>
-                    <ion-option value=22>Tierra del Fuego</ion-option>
-                    <ion-option value=23>Tucumán</ion-option>
-                  </ion-select>
-                  <ion-select *ngIf="accion == 0 || accion == 3" okText="OK" cancelText="CANCELAR" [(ngModel)]=id_provincia>
-                    <ion-option value=1>Buenos Aires</ion-option>
-                    <ion-option value=2>Catamarca</ion-option>
-                    <ion-option value=3>Chaco</ion-option>
-                    <ion-option value=4>Chubut</ion-option>
-                    <ion-option value=5>Córdoba</ion-option>
-                    <ion-option value=6>Corrientes</ion-option>
-                    <ion-option value=7>Entre Ríos</ion-option>
-                    <ion-option value=8>Formosa</ion-option>
-                    <ion-option value=9>Jujuy</ion-option>
-                    <ion-option value=10>La Pampa</ion-option>
-                    <ion-option value=11>La Rioja</ion-option>
-                    <ion-option value=12>Mendoza</ion-option>
-                    <ion-option value=13>Misiones</ion-option>
-                    <ion-option value=14>Neuquén</ion-option>
-                    <ion-option value=15>Río Negro</ion-option>
-                    <ion-option value=16>Salta</ion-option>
-                    <ion-option value=17>San Juan</ion-option>
-                    <ion-option value=18>San Luis</ion-option>
-                    <ion-option value=19>Santa Cruz</ion-option>
-                    <ion-option value=20>Santa Fe</ion-option>
-                    <ion-option value=21>Santiago del Estero</ion-option>
-                    <ion-option value=22>Tierra del Fuego</ion-option>
-                    <ion-option value=23>Tucumán</ion-option>
-                  </ion-select>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col col-6>
-                <ion-item>
-                  <ion-icon name="" item-start></ion-icon>
-                  <ion-label floating *ngIf="accion == 0 || accion == 3">Ciudad *</ion-label>
-                  <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.id_localidad}}></ion-input>
-                  <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=id_localidad></ion-input>
-                </ion-item>
-              </ion-col>
-              <ion-col col-6>
-                <ion-item>
-                  <ion-label floating *ngIf="accion == 0 || accion == 3">Código postal *</ion-label>
-                  <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.codigo_postal}}></ion-input>
-                  <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=codigo_postal></ion-input>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-          <ion-item>
-            <ion-icon name="mail" item-start></ion-icon>
-            <ion-label floating *ngIf="accion == 0 || accion == 3">E-Mail</ion-label>
-            <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.email}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=email></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="globe" item-start></ion-icon>
-            <ion-label floating *ngIf="accion == 0 || accion == 3">Pagina web</ion-label>
-            <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.web}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=web></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="" item-start></ion-icon>
-            <ion-label floating *ngIf="accion == 0 || accion == 3">Situacion ante el IVA *</ion-label>
-            <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.id_iva}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=id_iva></ion-input>
-          </ion-item>
-          <ion-item class="cuit">
-            <ion-icon name="" item-start></ion-icon>
-            <ion-label floating *ngIf="accion == 0 || accion == 3">Cuit *</ion-label>
-            <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.cuit}}></ion-input>
-            <ion-input *ngIf="accion == 0" type="text"  [(ngModel)]=cuit></ion-input>
-          </ion-item>
-        </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" item-start></ion-icon>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Denominacion Legal *</ion-label>
+          <ion-input *ngIf="accion == 1 || accion == 3" name="razonsocial" [disabled]="accion==1" value={{_cs.cliente.razon_social}} type="text"></ion-input>
+          <ion-input *ngIf="accion == 0" name="razonsocial" type="text" [(ngModel)]=razon_social></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="" item-start></ion-icon>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Nombre de fantasia</ion-label>
+          <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.nombre_fantasia}}></ion-input>
+          <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=nombre_fantasia></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="" item-start></ion-icon>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Cuenta</ion-label>
+          <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.cuenta}}></ion-input>
+          <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=cuenta></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="call" item-start></ion-icon>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Telefono *</ion-label>
+          <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.telefono}}></ion-input>
+          <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=telefono></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="call" item-start></ion-icon>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Telefono 2</ion-label>
+          <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.telefono2}}></ion-input>
+          <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=telefono2></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="pin" item-start></ion-icon>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Direccion *</ion-label>
+          <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.direccion}}></ion-input>
+          <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=direccion></ion-input>
+        </ion-item>
+        <ion-grid class="grupoinput">
+          <ion-row>
+            <ion-col col-6>
+              <ion-item>
+                <ion-icon name="" item-start></ion-icon>
+                <ion-label floating *ngIf="accion == 0 || accion == 3">Zona</ion-label>
+                <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text"></ion-input>
+                <ion-input *ngIf="accion == 0" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col-6>
+              <ion-item>
+                <ion-label *ngIf="accion == 0 || accion == 3">Provincia</ion-label>
+                <ion-select *ngIf="accion == 1 || accion == 3" okText="OK" cancelText="CANCELAR" [(ngModel)]="_cs.cliente.id_provincia" [disabled]="accion==1">
+                  <ion-option value=1>Buenos Aires</ion-option>
+                  <ion-option value=2>Catamarca</ion-option>
+                  <ion-option value=3>Chaco</ion-option>
+                  <ion-option value=4>Chubut</ion-option>
+                  <ion-option value=5>Córdoba</ion-option>
+                  <ion-option value=6>Corrientes</ion-option>
+                  <ion-option value=7>Entre Ríos</ion-option>
+                  <ion-option value=8>Formosa</ion-option>
+                  <ion-option value=9>Jujuy</ion-option>
+                  <ion-option value=10>La Pampa</ion-option>
+                  <ion-option value=11>La Rioja</ion-option>
+                  <ion-option value=12>Mendoza</ion-option>
+                  <ion-option value=13>Misiones</ion-option>
+                  <ion-option value=14>Neuquén</ion-option>
+                  <ion-option value=15>Río Negro</ion-option>
+                  <ion-option value=16>Salta</ion-option>
+                  <ion-option value=17>San Juan</ion-option>
+                  <ion-option value=18>San Luis</ion-option>
+                  <ion-option value=19>Santa Cruz</ion-option>
+                  <ion-option value=20>Santa Fe</ion-option>
+                  <ion-option value=21>Santiago del Estero</ion-option>
+                  <ion-option value=22>Tierra del Fuego</ion-option>
+                  <ion-option value=23>Tucumán</ion-option>
+                </ion-select>
+                <ion-select *ngIf="accion == 0 || accion == 3" okText="OK" cancelText="CANCELAR" [(ngModel)]=id_provincia>
+                  <ion-option value=1>Buenos Aires</ion-option>
+                  <ion-option value=2>Catamarca</ion-option>
+                  <ion-option value=3>Chaco</ion-option>
+                  <ion-option value=4>Chubut</ion-option>
+                  <ion-option value=5>Córdoba</ion-option>
+                  <ion-option value=6>Corrientes</ion-option>
+                  <ion-option value=7>Entre Ríos</ion-option>
+                  <ion-option value=8>Formosa</ion-option>
+                  <ion-option value=9>Jujuy</ion-option>
+                  <ion-option value=10>La Pampa</ion-option>
+                  <ion-option value=11>La Rioja</ion-option>
+                  <ion-option value=12>Mendoza</ion-option>
+                  <ion-option value=13>Misiones</ion-option>
+                  <ion-option value=14>Neuquén</ion-option>
+                  <ion-option value=15>Río Negro</ion-option>
+                  <ion-option value=16>Salta</ion-option>
+                  <ion-option value=17>San Juan</ion-option>
+                  <ion-option value=18>San Luis</ion-option>
+                  <ion-option value=19>Santa Cruz</ion-option>
+                  <ion-option value=20>Santa Fe</ion-option>
+                  <ion-option value=21>Santiago del Estero</ion-option>
+                  <ion-option value=22>Tierra del Fuego</ion-option>
+                  <ion-option value=23>Tucumán</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <ion-item>
+                <ion-icon name="" item-start></ion-icon>
+                <ion-label floating *ngIf="accion == 0 || accion == 3">Ciudad *</ion-label>
+                <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.id_localidad}}></ion-input>
+                <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=id_localidad></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col-6>
+              <ion-item>
+                <ion-label floating *ngIf="accion == 0 || accion == 3">Código postal *</ion-label>
+                <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.codigo_postal}}></ion-input>
+                <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=codigo_postal></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-item>
+          <ion-icon name="mail" item-start></ion-icon>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">E-Mail</ion-label>
+          <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.email}}></ion-input>
+          <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=email></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="globe" item-start></ion-icon>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Pagina web</ion-label>
+          <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.web}}></ion-input>
+          <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=web></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="" item-start></ion-icon>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Situacion ante el IVA *</ion-label>
+          <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.id_iva}}></ion-input>
+          <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=id_iva></ion-input>
+        </ion-item>
+        <ion-item class="cuit">
+          <ion-icon name="" item-start></ion-icon>
+          <ion-label floating *ngIf="accion == 0 || accion == 3">Cuit *</ion-label>
+          <ion-input *ngIf="accion == 1 || accion == 3" [disabled]="accion==1" type="text" value={{_cs.cliente.cuit}}></ion-input>
+          <ion-input *ngIf="accion == 0" type="text" [(ngModel)]=cuit></ion-input>
+        </ion-item>
+      </ion-list>
     </ion-col>
   </ion-grid>
 </ion-content>
 <ion-footer>
   <ion-toolbar class="Botones" *ngIf="accion == 0">
     <button class="cancelar" ion-button color="light" (tap)="closeModal()" outline>CANCELAR</button>
-    <button class="aceptar" ion-button color="light" type="submit"  (tap)="grabar_cliente()" outline>CREAR</button>
+    <button class="aceptar" ion-button color="light" type="submit" (tap)="grabar_cliente()" outline>CREAR</button>
   </ion-toolbar>
   <ion-toolbar class="Botones" *ngIf="accion == 1">
     <button class="cancelar" ion-button color="light" (tap)="closeModal()" outline>CANCELAR</button>
-    <button class="aceptar" ion-button color="light"  (tap)="modificar(3)" outline>MODIFICAR</button>
+    <button class="aceptar" ion-button color="light" (tap)="modificar(3)" outline>MODIFICAR</button>
   </ion-toolbar>
   <ion-toolbar class="Botones" *ngIf="accion == 3">
     <button class="cancelar" ion-button color="light" (tap)="closeModal()" outline>CANCELAR</button>
-    <button class="aceptar" ion-button color="light"  (tap)="modificar(3)" outline>GUARDAR</button>
+    <button class="aceptar" ion-button color="light" (tap)="modificar(3)" outline>GUARDAR</button>
   </ion-toolbar>
 </ion-footer>

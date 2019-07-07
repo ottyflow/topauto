@@ -9,21 +9,20 @@ import { UsuariosProvider } from '../../providers/usuarios/usuarios';
 })
 export class LoginPage {
 
-  usuario:string ="";
-  contrasena:string="";
+  usuario: string = "";
+  contrasena: string = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _us:UsuariosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _us: UsuariosProvider) {
   }
 
-  ingresar(){
+  ingresar() {
     this._us.ingresar(this.usuario, this.contrasena)
-            .subscribe( ()=>{
-              if(this._us.token != null){
-                if(this._us.token.length > 1 ){
-                  this.navCtrl.setRoot(TabsPage);
-                }
-              }
-            })
-
+      .subscribe(() => {
+        if (this._us.token != null) {
+          if (this._us.token.length > 1) {
+            this.navCtrl.setRoot(TabsPage);
+          }
+        }
+      })
   }
 }

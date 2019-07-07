@@ -12,47 +12,42 @@
             Productos
           </ion-title>
         </div>
-          <ion-scroll direction="y" class="theroot">
-            <div *ngFor="let articulo of articulos">
-              <ion-list>
-                <ion-item-sliding #item>
-                  <ion-item>
-                    <ion-row class="Items">
-                      <ion-col col-2 pull-col-xs-0 class="contenedorimagen">
-                        <div class="container">
-                          <img [src]="'http://18.228.160.222/img/productos/' + articulo.imagen">
-                        </div>
-                      </ion-col>
-                      <ion-col col-8>
-                        <div class="info">
-                          {{ articulo.descripcion }}
-                        </div>
-                        <div style="margin-top= 0px;">
-                          {{ articulo.cantidad}} Unidades
-                        </div>
-                      </ion-col>
-                      <ion-col col-2>
-                        <div class="alerta" *ngIf="articulo.oferta_volumen !=0 || articulo.envase_nuevo !=0 || articulo.escala_descuento !=0 || articulo.oferta_lanzamiento !=0 || articulo.agotar_stock !=0 || articulo.embarque !=0">
-                          <ion-icon name="alert"></ion-icon>
-                        </div>
-                        <div class="precio">
-                          ${{ articulo.precio }}
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                  </ion-item>
-                  <ion-item-options side="right">
-                    <button ion-button color="danger" (tap)="borrar(articulo.codigo)">Borrar</button>
-                  </ion-item-options>
-                </ion-item-sliding>
-              </ion-list>
-            </div>
-          </ion-scroll>
-        <!-- <ion-footer>
-          <ion-toolbar class="CargarCodigo">
-            <button class="CargaCodigo" ion-button color="dark" outline (tap)="openModal()">CARGAR POR CÓDIGO</button>
-          </ion-toolbar>
-        </ion-footer> -->
+        <ion-scroll direction="y" class="theroot">
+          <div *ngFor="let articulo of articulos">
+            <ion-list>
+              <ion-item-sliding #item>
+                <ion-item>
+                  <ion-row class="Items">
+                    <ion-col col-2 pull-col-xs-0 class="contenedorimagen">
+                      <div class="container">
+                        <img [src]="'http://18.228.160.222/img/productos/' + articulo.imagen">
+                      </div>
+                    </ion-col>
+                    <ion-col col-8>
+                      <div class="info">
+                        {{ articulo.descripcion }}
+                      </div>
+                      <div style="margin-top= 0px;">
+                        {{ articulo.cantidad}} Unidades
+                      </div>
+                    </ion-col>
+                    <ion-col col-2>
+                      <div class="alerta" *ngIf="articulo.oferta_volumen !=0 || articulo.envase_nuevo !=0 || articulo.escala_descuento !=0 || articulo.oferta_lanzamiento !=0 || articulo.agotar_stock !=0 || articulo.embarque !=0">
+                        <ion-icon name="alert"></ion-icon>
+                      </div>
+                      <div class="precio">
+                        ${{ articulo.precio }}
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-item>
+                <ion-item-options side="right">
+                  <button ion-button color="danger" (tap)="borrar(articulo.codigo)">Borrar</button>
+                </ion-item-options>
+              </ion-item-sliding>
+            </ion-list>
+          </div>
+        </ion-scroll>
       </ion-col>
       <ion-col col-3>
         <div class="Titulos">
@@ -114,22 +109,14 @@
             Totales
           </ion-title>
         </div>
-        <!-- <div class="Cantidad"> -->
-          <!-- <ion-title class="TituloCantidad">
-            Cantidad de productos
-          </ion-title> -->
-          <!-- <ion-title class="Cantidades">
-            40
-          </ion-title> -->
-        <!-- </div> -->
         <div class="Subtotal">
           <ion-title class="TituloSubtotal">
             Subtotal
           </ion-title>
           <ion-row>
             <button ion-button clear item-start (tap)='showHide1()' style="height:32px;">
-              <ion-icon *ngIf="hideMe1"name="eye" style="font-size:32px;"></ion-icon>
-              <ion-icon *ngIf="!hideMe1"name="eye-off" style="font-size:32px;"></ion-icon>
+              <ion-icon *ngIf="hideMe1" name="eye" style="font-size:32px;"></ion-icon>
+              <ion-icon *ngIf="!hideMe1" name="eye-off" style="font-size:32px;"></ion-icon>
             </button>
             <ion-title *ngIf="hideMe1" class="Cantidades">
               $ {{this.subtotal}}
@@ -142,8 +129,8 @@
           </ion-title>
           <ion-row>
             <button ion-button clear item-start (tap)='showHide2()' style="height:32px;">
-              <ion-icon *ngIf="hideMe2"name="eye" style="font-size:32px;"></ion-icon>
-              <ion-icon *ngIf="!hideMe2"name="eye-off" style="font-size:32px;"></ion-icon>
+              <ion-icon *ngIf="hideMe2" name="eye" style="font-size:32px;"></ion-icon>
+              <ion-icon *ngIf="!hideMe2" name="eye-off" style="font-size:32px;"></ion-icon>
             </button>
             <ion-title *ngIf="hideMe2" class="Cantidades">
               <ion-input type="number" [(ngModel)]="descuento" (ionChange)="calculaSubtotal()"></ion-input>
@@ -156,8 +143,8 @@
           </ion-title>
           <ion-row>
             <button ion-button clear item-start (tap)='showHide3()' style="height:32px;">
-              <ion-icon *ngIf="hideMe3"name="eye" style="font-size:32px;"></ion-icon>
-              <ion-icon *ngIf="!hideMe3"name="eye-off" style="font-size:32px;"></ion-icon>
+              <ion-icon *ngIf="hideMe3" name="eye" style="font-size:32px;"></ion-icon>
+              <ion-icon *ngIf="!hideMe3" name="eye-off" style="font-size:32px;"></ion-icon>
             </button>
             <ion-title *ngIf="hideMe3" class="Cantidades">
               $ {{this.total}}

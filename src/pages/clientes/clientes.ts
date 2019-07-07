@@ -8,26 +8,23 @@ import { FormclientePage } from '../formcliente/formcliente';
   templateUrl: 'clientes.html',
 })
 export class ClientesPage {
+  clientes: any[] = [];
+  accion: any;
+  codigo: string = "";
+  count: number = 0;
 
-  clientes:any = [];
-  accion:any;
-  codigo:string="";
-  count:number = 0;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _cs:ClientesProvider , public events: Events) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _cs: ClientesProvider, public events: Events) {
   }
 
-  openModal( accion:any,codigo:string ){
-    const myModal =  this.modal.create(FormclientePage, { accion,codigo })
-    console.log(accion,codigo);
+  openModal(accion: any, codigo: string) {
+    const myModal = this.modal.create(FormclientePage, { accion, codigo })
     myModal.present();
   }
 
-  openModalvacio( accion:any){
-    const myModal =  this.modal.create(FormclientePage, { accion })
-    console.log(accion);
+  openModalvacio(accion: any) {
+    const myModal = this.modal.create(FormclientePage, { accion })
     myModal.present();
-    myModal.onDidDismiss(()=>{this._cs.cargar_clientes();})
+    myModal.onDidDismiss(() => { this._cs.cargar_clientes(); })
   }
 
   doInfinite(infiniteScroll) {
@@ -41,7 +38,27 @@ export class ClientesPage {
     }, 500);
   }
 
-  ionViewWillEnter() {
+  getClientes(ev: any) {
+    this.generateClientes();
+    let serVal = ev.target.value;
+    if (serVal && serVal.trim() != '') {
+      this._cs.clientesFinal = this._cs.clientes.filter((item) => {
+        if (item.razon_social != null && item.nombre_fantasia != null) {
+          return (item.razon_social.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombre_fantasia.toLowerCase().indexOf(serVal.toLowerCase()) > -1);
+        }
+      })
+    } else {
       this._cs.cargar_clientes();
+    }
+  }
+
+  generateClientes() {
+    if (this.clientes == undefined) {
+      this.clientes = this._cs.clientes;
+    }
+  }
+
+  ionViewWillEnter() {
+    this._cs.cargar_clientes();
   }
 }

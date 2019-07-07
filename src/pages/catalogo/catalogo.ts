@@ -2,11 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ArticulosProvider } from '../../providers/articulos/articulos';
 import { SeleccionproductosPage } from '../seleccionproductos/seleccionproductos';
-import { FiltrosPage } from '../filtros/filtros';
 import { Articulo } from '../../interfaces/articulo.interface';
-import { UsuariosProvider}  from "../../providers/usuarios/usuarios";
+import { UsuariosProvider } from "../../providers/usuarios/usuarios";
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
-
 
 @Component({
   selector: 'page-catalogo',
@@ -14,17 +12,16 @@ import { PedidosProvider } from '../../providers/pedidos/pedidos';
 })
 export class CatalogoPage {
 
-  articulos:any [] = [];
-  datosarticulo:any=[];
+  articulos: any[] = [];
+  datosarticulo: any = [];
   count: number = 0;
   public aColor: string = "#ffd400";
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _as:ArticulosProvider, private _ps:PedidosProvider, public _us:UsuariosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _as: ArticulosProvider, private _ps: PedidosProvider, public _us: UsuariosProvider) {
     this._ps.ultimo_numero(this._us.id_usuario);
   }
 
-  openModal(datoarticulo:any){
+  openModal(datoarticulo: any) {
     let articulo = new Articulo();
     articulo.codigo = datoarticulo.codigo;
     articulo.descripcion = datoarticulo.descripcion;
@@ -46,35 +43,46 @@ export class CatalogoPage {
     articulo.embarque = datoarticulo.embarque;
     articulo.fragancias = datoarticulo.fragancias;
     articulo.talles = datoarticulo.talles;
-    const myModal =  this.modal.create(SeleccionproductosPage, {articulo});
-    console.log(datoarticulo);
-    console.log(articulo);
+    const myModal = this.modal.create(SeleccionproductosPage, { articulo });
     myModal.present();
   }
 
-  openModalFiltros(){
-    const myModal =  this.modal.create(FiltrosPage)
-
-    myModal.present();
-  }
-
-  generateItems(){
-    if(this.articulos==undefined){
+  generateItems() {
+    if (this.articulos == undefined) {
       this.articulos = this._as.articulos;
     }
   }
 
-  getItems(ev: any){
+  getItems(ev: any) {
     this.generateItems();
     let serVal = ev.target.value;
-    if(serVal&& serVal.trim() !='') {
+    if (serVal && serVal.trim() != '') {
       this._as.articulosFinal = this._as.articulos.filter((item) => {
-        return (item.descripcion.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombreMarca.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombreCategoria.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.codigo.toLowerCase().indexOf(serVal.toLowerCase()) > -1 );
+        return (item.descripcion.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombreMarca.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombreCategoria.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.codigo.toLowerCase().indexOf(serVal.toLowerCase()) > -1);
       })
-    }else{
+    } else {
       this._as.cargar_articulos();
     }
+  }
 
+  changeColor(item){
+    if(item.envase_nuevo == '1')
+        this.aColor= '#2799d6';
+    else
+      if(item.oferta_lanzamiento == '1')
+        this.aColor = '#63b32e';
+      else
+        if(item.agotar_stock == '1')
+          this.aColor = '#ee7202';
+        else
+          if(item.embarque == '1')
+            this.aColor = '#e30613';
+          else
+            if(item.oferta_volumen == '1' || item.escala_descuento == '1')
+              this.aColor = '#ffd400';
+            else
+              this.aColor = '#464648';
+    return this.aColor;
   }
 
   doInfinite(infiniteScroll) {
@@ -90,10 +98,9 @@ export class CatalogoPage {
   public isSearchBarOpened = false;
 
   ionViewWillEnter() {
-    console.log("nepe locu 2");
-    if(this._as.articulos.length == 0){
+    if (this._as.articulos.length == 0) {
       this._as.cargar_articulos();
-      this.articulos= this._as.articulosFinal;
+      this.articulos = this._as.articulosFinal;
     }
     this._ps.ultimo_numero(this._us.id_usuario);
   }

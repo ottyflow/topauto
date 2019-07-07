@@ -1,35 +1,40 @@
 page-popupcliente {
-  .cancelar{
+  .cancelar {
     color: #FBC02D;
     border: none;
-    -webkit-box-shadow : none;
+    -webkit-box-shadow: none;
     font-size: 14px;
     height: 40px;
     font-family: Roboto;
     width: 95px;
   }
-  .Botones{
+
+  .Botones {
     text-align: right;
   }
-  .cliente{
+
+  .cliente {
     height: max-content;
     margin-top: auto;
     margin-bottom: 10px;
-
   }
-  .nombre{
+
+  .nombre {
     font-size: 14px;
     font-weight: 700;
-    margin: 0px;
+    margin: 0;
   }
-  .localidad{
+
+  .localidad {
     font-size: 14px;
     color: rgba(38,50,56,0.6);
   }
-  .container{
+
+  .container {
     text-align: left;
   }
-  .telefono{
+
+  .telefono {
     margin-right: auto;
     margin-left: auto;
     text-align: right;
@@ -37,12 +42,14 @@ page-popupcliente {
     color: #263238;
     font-weight: 500;
   }
-  .listadoclientes{
+
+  .listadoclientes {
     width: 90%;
     height: auto;
     background-color: #FFFFFF;
   }
-  ion-content{
+
+  ion-content {
     margin-top: 10px;
   }
 }

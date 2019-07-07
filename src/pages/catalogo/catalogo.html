@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="dark">
     <ion-title class="titulo" *ngIf="!isSearchBarOpened">Catálogo</ion-title>
-    <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" [(ngModel)]="queryText" (ionInput)="getItems($event)" (ionCancel)="isSearchBarOpened=false" placeholder=""></ion-searchbar>
+    <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" [(ngModel)]="queryText" (search)="getItems($event)" (ionCancel)="isSearchBarOpened=false" placeholder=""></ion-searchbar>
     <ion-buttons end>
       <button ion-button icon-only *ngIf="!isSearchBarOpened" (tap)="isSearchBarOpened=true">
         <ion-icon name="search"></ion-icon>
@@ -21,10 +21,10 @@
             <div class="info ellipsis">
               {{ item.descripcion }}
               <div class="infoadicional ellipsis">
-              {{ item.descripcion_adicional }}
+                {{ item.descripcion_adicional }}
               </div>
             </div>
-            <div class="valor">
+            <div class="valor" [ngStyle]="{'background-color': changeColor(item)}">
               <ion-col col-6 class="codigo">
                 {{ item.codigo }}
               </ion-col>

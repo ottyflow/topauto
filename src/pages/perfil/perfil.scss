@@ -1,5 +1,5 @@
 page-perfil {
-  .Tituloscolumnas{
+  .Tituloscolumnas {
     font-size: 20px!important;
     color: #3C3A3A;
     font-family: Roboto;
@@ -10,7 +10,7 @@ page-perfil {
     font-weight: bold!important;
   }
 
-  .Titulos{
+  .Titulos {
     text-align: center;
     margin-right: auto;
     margin-left: auto;
@@ -18,37 +18,37 @@ page-perfil {
     border-radius: 1px;
     height: max-content;
     border-bottom: 1px solid;
-    border-top: 0px;
+    border-top: 0;
     vertical-align: middle;
     border-color: rgba(0,0,0,0.12);
   }
 
-  .CuerpoGrid{
+  .CuerpoGrid {
     height: 100%;
   }
 
-  .Cuerpo{
+  .Cuerpo {
     height: 100%;
   }
 
-  .grid{
-    padding: 0px;
+  .grid {
+    padding: 0;
   }
 
-  .col{
+  .col {
     padding: unset;
     border: 1px solid;
-    border-left: 0px;
+    border-left: 0;
     border-right: 0,5px;
     border-color: rgba(0,0,0,0.12);
   }
 
-  .iconosesion{
+  .iconosesion {
     margin-left: auto;
     margin-right: 20px;
   }
 
-  .cerrarsesiontext{
+  .cerrarsesiontext {
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
@@ -56,7 +56,8 @@ page-perfil {
     font-weight: 500;
     color: #263238;
   }
-  .perfilimage{
+
+  .perfilimage {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -68,7 +69,8 @@ page-perfil {
     border-radius: 50%;
     display: flex;
   }
-  .vendedornombre{
+
+  .vendedornombre {
     height: max-content;
     width: auto;
     font-size: 24px;
@@ -77,31 +79,37 @@ page-perfil {
     color: #263238;
     text-align: center;
   }
-  .zonas{
+
+  .zonas {
     margin-right: auto;
     margin-left: auto;
     width: max-content;
     margin-top: 25px;
   }
-  .titulozona{
+
+  .titulozona {
     padding-right: 8px;
     font-size: 16px;
   }
-  .zona{
+
+  .zona {
     font-size: 16px;
     font-weight: 500;
   }
 
-  .header-md::after{
-    height: 0px;
+  .header-md::after {
+    height: 0;
   }
-  .footer-md::before{
-    height: 0px;
+
+  .footer-md::before {
+    height: 0;
   }
-  ion-content{
+
+  ion-content {
     scroll-behavior: auto;
   }
-  .cerrarsesion{
+
+  .cerrarsesion {
     height: max-content;
   }
 }

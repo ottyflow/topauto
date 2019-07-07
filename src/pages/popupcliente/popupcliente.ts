@@ -7,20 +7,18 @@ import { ClientesProvider } from '../../providers/clientes/clientes';
   templateUrl: 'popupcliente.html',
 })
 export class PopupclientePage {
-
-  clientes:any [] = [];
+  clientes: any[] = [];
   count: number = 0;
 
-  constructor(public navCtrl: NavController, private view: ViewController, public navParams: NavParams, private modal: ModalController, private _cs:ClientesProvider , public events: Events) {
+  constructor(public navCtrl: NavController, private view: ViewController, public navParams: NavParams, private modal: ModalController, private _cs: ClientesProvider, public events: Events) {
   }
 
-  cargaCliente(item){
-    console.log(item);
+  cargaCliente(item) {
     this.view.dismiss(item);
   }
 
-  generateClientes(){
-    if(this.clientes==undefined){
+  generateClientes() {
+    if (this.clientes == undefined) {
       this.clientes = this._cs.clientes;
     }
   }
@@ -36,26 +34,25 @@ export class PopupclientePage {
     }, 500);
   }
 
-  getClientes(ev: any){
+  getClientes(ev: any) {
     this.generateClientes();
     let serVal = ev.target.value;
-    if(serVal&& serVal.trim() !='') {
+    if (serVal && serVal.trim() != '') {
       this._cs.clientesFinalPopUp = this._cs.clientes.filter((item) => {
-        if(item.razon_social!= null && item.nombre_fantasia!=null){
-        return (item.razon_social.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombre_fantasia.toLowerCase().indexOf(serVal.toLowerCase()) > -1);
+        if (item.razon_social != null && item.nombre_fantasia != null) {
+          return (item.razon_social.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombre_fantasia.toLowerCase().indexOf(serVal.toLowerCase()) > -1);
         }
       })
-    }else{
+    } else {
       this._cs.cargar_clientes();
     }
-
   }
 
-  closeModal(){
+  closeModal() {
     this.view.dismiss();
   }
 
   ionViewWillEnter() {
-      this._cs.cargar_clientes();
+    this._cs.cargar_clientes();
   }
 }

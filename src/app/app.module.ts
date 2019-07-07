@@ -8,8 +8,6 @@ import { CatalogoPage} from '../pages/catalogo/catalogo';
 import { PedidoPage } from '../pages/pedido/pedido';
 import { ClientesPage } from '../pages/clientes/clientes';
 import { PerfilPage } from '../pages/perfil/perfil';
-import { BuscadorxcodigoPage } from '../pages/buscadorxcodigo/buscadorxcodigo';
-import { FiltrosPage } from '../pages/filtros/filtros';
 import { FormclientePage } from '../pages/formcliente/formcliente';
 import { SeleccionproductosPage } from '../pages/seleccionproductos/seleccionproductos';
 import { PopupclientePage } from '../pages/popupcliente/popupcliente';
@@ -33,8 +31,6 @@ import { ClientesProvider } from '../providers/clientes/clientes';
     TabsPage,
     CatalogoPage,
     LoginPage,
-    BuscadorxcodigoPage,
-    FiltrosPage,
     FormclientePage,
     SeleccionproductosPage,
     PopupclientePage
@@ -55,8 +51,6 @@ import { ClientesProvider } from '../providers/clientes/clientes';
     PerfilPage,
     TabsPage,
     LoginPage,
-    BuscadorxcodigoPage,
-    FiltrosPage,
     FormclientePage,
     SeleccionproductosPage,
     PopupclientePage

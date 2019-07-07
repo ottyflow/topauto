@@ -1,27 +1,28 @@
 page-pedido {
-  .grid{
-    padding: 0px;
+  .grid {
+    padding: 0;
   }
 
-  .list .list-md{
-    margin-bottom: 0px;
+  .list .list-md {
+    margin-bottom: 0;
   }
-  .label .label-md{
-    margin-top: 0px;
+
+  .label .label-md {
+    margin-top: 0;
     margin-bottom: 1px;
   }
-  .col{
+
+  .col {
     padding: unset;
     border: 1px solid;
-    border-top-width: 0px;
-    border-bottom-width: 0px;
-    border-left: 0px;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left: 0;
     border-right: 0,5px;
     border-color: rgba(0,0,0,0.12);
-
   }
 
-  .Tituloscolumnas{
+  .Tituloscolumnas {
     color: #3C3A3A;
     font-family: Roboto;
     font-size: 20px;
@@ -31,7 +32,7 @@ page-pedido {
     font-weight: bold!important;
   }
 
-  .Titulos{
+  .Titulos {
     text-align: center;
     margin-right: auto;
     margin-left: auto;
@@ -39,43 +40,36 @@ page-pedido {
     border-radius: 1px;
     height: max-content;
     border-bottom: 1px solid;
-    border-top: 0px solid;
+    border-top: 0 solid;
     vertical-align: middle;
     border-color: rgba(0,0,0,0.12);
   }
-  .Cuerpo{
+
+  .Cuerpo {
     height: 100%;
   }
-  .CuerpoGrid{
+
+  .CuerpoGrid {
     height: 100%;
   }
-  .Footer{
+
+  .Footer {
     background: #ffffff;
   }
-  // .CargaCodigo{
-  //   border-radius: 24px;
-  //   margin-top: auto;
-  //   margin-bottom: auto;
-  //   margin-left: auto;
-  //   margin-right: auto;
-  //   font-size: 16px;
-  //   border: 2px solid;
-  //   height: 48px;
-  //   font-family: Roboto;
-  //   width: max-content ;
-  // }
-  .RealizarPedido{
+
+  .RealizarPedido {
     border-radius: 24px;
     background-color: #FBC02D;
     color: #fff;
-    -webkit-box-shadow : none;
+    -webkit-box-shadow: none;
     font-size: 16px;
     height: 48px;
     font-family: Roboto;
     width: max-content;
     margin-top: 8px;
   }
-  .CancelarPedido{
+
+  .CancelarPedido {
     border-radius: 24px;
     border: 2px solid #FBC02D;
     color: #FBC02D;
@@ -85,14 +79,13 @@ page-pedido {
     width: max-content;
     margin-bottom: 8px;
   }
-  .BotonesPedido{
+
+  .BotonesPedido {
     height: max-content;
     text-align: center;
   }
-  .CargarCodigo{
-    text-align: center;
-  }
-  .TituloCantidad .toolbar-title-md{
+
+  .TituloCantidad .toolbar-title-md {
     color: #263238;
     font-family: Roboto;
     font-size: 16px!important;
@@ -100,65 +93,76 @@ page-pedido {
     font-weight: normal;
     margin-top: 24px;
   }
-  .TituloSubtotal .toolbar-title-md{
-    color: #263238;
-    font-family: Roboto;
-    font-size: 16px!important;
-    line-height: 19px;
-    font-weight: normal;
-    margin-top: 8px;
-  }
-  .TituloDescuento .toolbar-title-md{
-    color: #263238;
-    font-family: Roboto;
-    font-size: 16px!important;
-    line-height: 19px;
-    font-weight: normal;
-    margin-top: 8px;
-  }
-  .TituloTotal .toolbar-title-md{
-    color: #263238;
-    font-family: Roboto;
-    font-size: 16px!important;
-    line-height: 19px;
-    font-weight: normal;
-    margin-top: 8px;
-  }
-  .Cantidad{
-    border-bottom: 1px solid;
-    border-color: rgba(0,0,0,0.12);
 
+  .TituloSubtotal .toolbar-title-md {
+    color: #263238;
+    font-family: Roboto;
+    font-size: 16px!important;
+    line-height: 19px;
+    font-weight: normal;
+    margin-top: 8px;
   }
-  .Subtotal{
+
+  .TituloDescuento .toolbar-title-md {
+    color: #263238;
+    font-family: Roboto;
+    font-size: 16px!important;
+    line-height: 19px;
+    font-weight: normal;
+    margin-top: 8px;
+  }
+
+  .TituloTotal .toolbar-title-md {
+    color: #263238;
+    font-family: Roboto;
+    font-size: 16px!important;
+    line-height: 19px;
+    font-weight: normal;
+    margin-top: 8px;
+  }
+
+  .Cantidad {
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,0.12);
   }
-  .Descuento{
+
+  .Subtotal {
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,0.12);
   }
-  .Total{
+
+  .Descuento {
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,0.12);
   }
-  .Cantidades{
+
+  .Total {
+    border-bottom: 1px solid;
+    border-color: rgba(0,0,0,0.12);
+  }
+
+  .Cantidades {
     text-align: right;
     margin-bottom: 8px;
   }
+
   .theroot {
     height: 100%;
   }
-  ion-scroll .scroll-content{
-    overflow-y: scroll!important
+
+  ion-scroll .scroll-content {
+    overflow-y: scroll!important;
   }
-  .container{
+
+  .container {
     height: 100%;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
     vertical-align: middle;
   }
-  .info{
+
+  .info {
     color: #3C3A3A;
     font-family: Roboto;
     margin-top: 16px;
@@ -168,7 +172,8 @@ page-pedido {
     margin-left: 8px;
     height: 32px;
   }
-  .precio{
+
+  .precio {
     color: #3C3A3A;
     font-family: Roboto;
     font-size: 16px;
@@ -178,40 +183,49 @@ page-pedido {
     margin-top: 20px;
     margin-right: 8px;
   }
-  [col-6]{
+
+  [col-6] {
     max-width: none;
     width: auto;
   }
-  .Items .col{
+
+  .Items .col {
     border-top: none!important;
     border-left: none!important;
     border-right: none!important;
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,0.12);
   }
-  .Items{
+
+  .Items {
     height: 104px;
   }
-  .FotoArti{
+
+  .FotoArti {
     margin-top: 7px;
   }
-  .Cliente{
+
+  .Cliente {
     height: 104px;
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,0.12);
   }
-  .RowCliente{
+
+  .RowCliente {
     height: 44px;
   }
-  .CondPago{
+
+  .CondPago {
     height: 104px;
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,0.12);
   }
-  .OtroDatos{
+
+  .OtroDatos {
     height: 104px;
   }
-  .CondicionTitulo .toolbar-title-md{
+
+  .CondicionTitulo .toolbar-title-md {
     color: #263238;
     font-family: Roboto;
     font-size: 16px!important;
@@ -220,15 +234,18 @@ page-pedido {
     margin-top: 14px;
     margin-left: 24px;
   }
-  ion-option{
+
+  ion-option {
     align-items: left!important;
     align-content: border-left!important;
   }
-  .text-input-md{
+
+  .text-input-md {
     margin-left: 18px;
     font-size: 14px!important;
   }
-  .NombreCliente .toolbar-title-md{
+
+  .NombreCliente .toolbar-title-md {
     color: #263238;
     font-family: Roboto;
     font-size: 16px!important;
@@ -237,75 +254,93 @@ page-pedido {
     margin-left: 24px;
     margin-top: 18px;
   }
-  .AddPersona{
+
+  .AddPersona {
     background-color: #fff;
   }
-  button .BotonAddPersona{
+
+  button .BotonAddPersona {
     background-color: #fff!important;
     height: 44px;
     width: 44px;
   }
-  .alerta{
+
+  .alerta {
     margin-top: 10px;
     text-align: right;
     margin-right: 16px;
     color: #ffd400;
   }
-  .header-md::after{
-    height: 0px;
+
+  .header-md::after {
+    height: 0;
   }
-  .footer-md::before{
-    height: 0px;
+
+  .footer-md::before {
+    height: 0;
   }
-  @media(max-width:799px){
-    img{
+  @media(max-width:799px) {
+    img {
       display: none;
     }
-    .container{
+
+    .container {
       display: none;
     }
-    .contenedorimagen{
-      width: 0%;
-      height: 0%;
+
+    .contenedorimagen {
+      width: 0;
+      height: 0;
     }
-    .info{
+
+    .info {
       font-size: 12px;
-      margin-left: 0px;
+      margin-left: 0;
     }
-    .Items{
+
+    .Items {
       height: 70px;
     }
-    .precio{
+
+    .precio {
       margin-top: 10px;
       font-size: 12px;
     }
+
     .CondicionTitulo .toolbar-title {
       font-size: 14px!important;
     }
-    .BotonAddPersona{
+
+    .BotonAddPersona {
       margin-top: auto;
       margin-bottom: auto;
     }
-    .NombreCliente .toolbar-title{
+
+    .NombreCliente .toolbar-title {
       font-size: 14px!important;
     }
-    .Cliente{
+
+    .Cliente {
       height: 70px;
     }
-    .CondPago{
+
+    .CondPago {
       height: 70px;
     }
-    .OtroDatos{
+
+    .OtroDatos {
       height: 70px;
     }
-    .item{
+
+    .item {
       font-size: 12px;
     }
-    .toolbar-title-md{
+
+    .toolbar-title-md {
       margin-top: 8px!important;
     }
 
-    .Tituloscolumnas .toolbar-title-md{
+    .Tituloscolumnas .toolbar-title-md {
       font-size: 12px!important;
       color: #3C3A3A;
       font-family: Roboto;
@@ -314,30 +349,20 @@ page-pedido {
       margin-top: 4px;
       font-weight: bold!important;
     }
-    .CargaCodigo{
-      border-radius: 24px;
-      margin-top: auto;
-      margin-bottom: auto;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 12px;
-      border: 2px solid;
-      height: 24px;
-      font-family: Roboto;
-      width: max-content ;
-    }
-    .RealizarPedido{
+
+    .RealizarPedido {
       border-radius: 24px;
       background-color: #FBC02D;
       color: #fff;
-      -webkit-box-shadow : none;
+      -webkit-box-shadow: none;
       font-size: 12px;
       height: 24px;
       font-family: Roboto;
       width: max-content;
       margin-top: 8px;
     }
-    .CancelarPedido{
+
+    .CancelarPedido {
       border-radius: 24px;
       border: 2px solid #FBC02D;
       color: #FBC02D;
@@ -347,22 +372,26 @@ page-pedido {
       width: max-content;
       margin-bottom: 8px;
     }
-    .TituloSubtotal .toolbar-title{
+
+    .TituloSubtotal .toolbar-title {
       font-size: 14px!important;
     }
-    .TituloDescuento .toolbar-title{
+
+    .TituloDescuento .toolbar-title {
       font-size: 14px!important;
     }
-    .TituloTotal .toolbar-title{
+
+    .TituloTotal .toolbar-title {
       font-size: 14px!important;
     }
-    .Observaciones{
+
+    .Observaciones {
       margin-top: 0px!important;
     }
-    ion-textarea .input.input-md{
+
+    ion-textarea .input.input-md {
       margin-top: 0px!important;
     }
   }
-  @media(max-width:560px){
-  }
+  @media(max-width:560px) {}
 }

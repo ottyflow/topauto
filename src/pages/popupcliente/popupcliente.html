@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="dark">
-    <ion-searchbar showCancelButton="true" [(ngModel)]="queryText" (ionInput)="getClientes($event)" (ionCancel)="isSearchBarOpened=false" placeholder=""></ion-searchbar>
+    <ion-searchbar showCancelButton="true" [(ngModel)]="queryText" (search)="getClientes($event)" (ionCancel)="isSearchBarOpened=false" placeholder=""></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -18,7 +18,7 @@
           </div>
         </ion-col>
         <ion-col col-5 align-items: center>
-          <div class="telefono" >
+          <div class="telefono">
             {{ item.telefono }}
           </div>
         </ion-col>

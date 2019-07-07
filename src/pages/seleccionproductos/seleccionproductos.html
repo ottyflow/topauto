@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar class="cabeza">
     <ion-title class="titulo">
-      Selección de  productos
+      Selección de productos
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -38,7 +38,7 @@
       <div item-end>
         {{currentNumber1}}
       </div>
-      <button ion-button item-end class="resta"  (tap)="increment1()" style="height:32px;">
+      <button ion-button item-end class="resta" (tap)="increment1()" style="height:32px;">
         <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
       </button>
     </ion-item>
@@ -80,7 +80,7 @@
     </ion-item>
     <ion-item>
       NEW CAR
-      <button ion-button item-end class="suma"  (tap)="decrement5()" style="height:32px;">
+      <button ion-button item-end class="suma" (tap)="decrement5()" style="height:32px;">
         <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
       </button>
       <div item-end>
@@ -112,7 +112,7 @@
       <div item-end>
         {{currentNumber1}}
       </div>
-      <button ion-button item-end class="resta"  (tap)="increment1()" style="height:32px;">
+      <button ion-button item-end class="resta" (tap)="increment1()" style="height:32px;">
         <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
       </button>
     </ion-item>
@@ -154,7 +154,7 @@
     </ion-item>
     <ion-item>
       XL
-      <button ion-button item-end class="suma"  (tap)="decrement5()" style="height:32px;">
+      <button ion-button item-end class="suma" (tap)="decrement5()" style="height:32px;">
         <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
       </button>
       <div item-end>
@@ -174,7 +174,7 @@
       <div item-end>
         {{currentNumber1}}
       </div>
-      <button ion-button item-end class="resta"  (tap)="increment1()" style="height:32px;">
+      <button ion-button item-end class="resta" (tap)="increment1()" style="height:32px;">
         <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
       </button>
     </ion-item>
@@ -185,11 +185,11 @@
     <ion-row class="botones">
       <ion-col col-6>
         <ion-item class="divprecio">
-          <ion-input type="number" value={{totalPrecio}} [(ngModel)]="totalPrecio"  class="precio"></ion-input>
+          <ion-input type="number" value={{totalPrecio}} [(ngModel)]="totalPrecio" class="precio"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col col-6>
-        <button class="aceptar" ion-button float-right color="light"  (tap)="closeModal(1,articulo)" outline>ACEPTAR</button>
+        <button class="aceptar" ion-button float-right color="light" (tap)="closeModal(1,articulo)" outline>ACEPTAR</button>
         <button class="cancelar" ion-button float-right color="light" (tap)="closeModal(0,articulo)" outline>CANCELAR</button>
       </ion-col>
     </ion-row>

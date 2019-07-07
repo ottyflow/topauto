@@ -1,10 +1,9 @@
 page-catalogo {
-
-  .titulo{
+  .titulo {
     text-align: left;
-
   }
-  .container{
+
+  .container {
     height: 50%;
     width: 50%;
     min-height: 50%;
@@ -18,23 +17,22 @@ page-catalogo {
     text-overflow: ellipsis;
   }
 
-  .card-title{
+  .card-title {
     text-align: left;
     padding-left: 16px;
     padding-right: 16px;
-
   }
-  .card-catalogo{
+
+  .card-catalogo {
     border-radius: 3%;
   }
-  .card-content{
+
+  .card-content {
     padding: 0;
   }
-  .info{
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 16px;
-    padding-bottom: 16px;
+
+  .info {
+    padding: 16px 8px;
     text-align: center;
     font-size: 16px;
     height: 105px;
@@ -42,11 +40,8 @@ page-catalogo {
     margin-bottom: auto;
   }
 
-  .infoadicional{
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 16px;
-    padding-bottom: 16px;
+  .infoadicional {
+    padding: 16px;
     text-align: center;
     font-size: 12px;
     font-style: italic;
@@ -54,94 +49,94 @@ page-catalogo {
     margin-bottom: auto;
   }
 
-  .leyenda-iva{
+  .leyenda-iva {
     color: #B49916;
     font-weight: 300;
     font-size: 12px;
   }
-  .valor{
-    background-color: #ffd400;
+
+  .valor {
+    // background-color: #ffd400;
     height: 15%;
     padding: 0;
     text-align: center;
     margin-top: 5px;
   }
-  .codigo{
+
+  .codigo {
     font-size: 20px;
     font-weight: 500;
   }
-  .precio{
+
+  .precio {
     font-size: 20px;
     font-weight: 500;
   }
-  ion-content{
-    background-image: url(../assets/imgs/granPrix17.png);
+
+  ion-content {
+    background-image: url("../assets/imgs/granPrix17.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
-  @media(max-width: 800px){
-    .info{
-      padding-left: 2px;
-      padding-right: 2px;
-      padding-top: 5px;
-      padding-bottom: 2px;
+  @media(max-width: 800px) {
+    .info {
+      padding: 5px 2px 2px;
       text-align: center;
       font-size: 10px;
       height: 60px;
       width: 145px;
-      margin-top: auto;
-      margin-bottom: auto;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
     }
-    .infoadicional{
+
+    .infoadicional {
       font-size: 8px;
     }
-    .precio{
+
+    .precio {
       font-size: 12px;
       font-weight: 500;
     }
-    .codigo{
+
+    .codigo {
       font-size: 12px;
       font-weight: 500;
     }
-    .leyenda-iva{
+
+    .leyenda-iva {
       color: #B49916;
       font-weight: 300;
       font-size: 8px;
     }
   }
-  @media(max-width:560px){
-    .container{
+  @media(max-width:560px) {
+    .container {
       height: 72.5px;
       width: 72.5px;
       margin-right: auto;
       margin-left: auto;
     }
-    .info{
-      padding-left: 2px;
-      padding-right: 2px;
-      padding-top: 8px;
-      padding-bottom: 6px;
+
+    .info {
+      padding: 8px 2px 6px;
       text-align: center;
       font-size: 8px;
       height: 50px;
       width: 145px;
-      margin-top: auto;
-      margin-bottom: auto;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
     }
-    .precio{
+
+    .precio {
       font-size: 12px;
       font-weight: 500;
     }
-    .codigo{
+
+    .codigo {
       font-size: 12px;
       font-weight: 500;
     }
-    .leyenda-iva{
+
+    .leyenda-iva {
       color: #B49916;
       font-weight: 300;
       font-size: 8px;

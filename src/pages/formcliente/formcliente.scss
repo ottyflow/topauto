@@ -1,67 +1,80 @@
 page-formcliente {
-  .titulo .toolbar-title-md{
-    	color: #263238;
-      font-family: Roboto;
-      font-size: 24px;
-      line-height: 24px;
-      font-weight: normal;
+  .titulo .toolbar-title-md {
+    color: #263238;
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: normal;
   }
-  .cancelar{
+
+  .cancelar {
     color: #FBC02D;
     border: none;
-    -webkit-box-shadow : none;
+    -webkit-box-shadow: none;
     font-size: 14px;
     height: 40px;
     font-family: Roboto;
     width: 95px;
   }
-  .grid{
-    padding-top: 0px;
+
+  .grid {
+    padding-top: 0;
   }
-  .col{
-    padding-top: 0px;
+
+  .col {
+    padding-top: 0;
     margin-top: auto;
   }
-  .aceptar{
+
+  .aceptar {
     border-radius: 24px;
     background-color: #FBC02D;
     color: #fff;
-    -webkit-box-shadow : none;
+    -webkit-box-shadow: none;
     font-size: 14px;
     height: 40px;
     font-family: Roboto;
     width: 95px;
   }
-  .Botones{
+
+  .Botones {
     text-align: right;
   }
-  .ion-footer{
+
+  .ion-footer {
     position: fixed;
   }
+
   .toolbar-background-md {
-      background: none;
+    background: none;
   }
-  .header-md::after{
+
+  .header-md::after {
     background-image: none;
-    height: 0px;
+    height: 0;
   }
-  .list-md{
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+
+  .list-md {
+    padding-bottom: 0;
+    margin-bottom: 0;
     padding-right: 16px;
   }
-  .item-md ion-icon[item-start]{
-      margin-bottom: 6px;
-      margin-top: auto;
-      margin-right: 0px;
+
+  .item-md ion-icon[item-start] {
+    margin-bottom: 6px;
+    margin-top: auto;
+    margin-right: 0;
   }
-  .list-md .item-input:last-child{
-      border-bottom: 0px;
+
+  .list-md .item-input:last-child {
+    border-bottom: 0;
   }
-  .grupoinput{
-    padding-left: 0px;
+
+  .grupoinput {
+    padding-left: 0;
   }
-  .cuit{
+
+  .cuit {
     margin-bottom: 1px;
   }
 }
