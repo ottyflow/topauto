@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
+import { ArticulosProvider } from '../../providers/articulos/articulos';
 import { Articulo } from '../../interfaces/articulo.interface';
 
 @Component({
@@ -9,12 +10,7 @@ import { Articulo } from '../../interfaces/articulo.interface';
 })
 export class SeleccionproductosPage {
 
-  currentNumber1 = 0;
-  currentNumber2 = 0;
-  currentNumber3 = 0;
-  currentNumber4 = 0;
-  currentNumber5 = 0;
-  currentNumber6 = 0;
+  currentNumber = 0
   totalCantidades = 0;
   totalPrecio: any;
   precio: any;
@@ -24,8 +20,7 @@ export class SeleccionproductosPage {
   articulocopia = new Articulo();
   nuevoArticulo: Articulo;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _ps: PedidosProvider) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _ps: PedidosProvider, private _as: ArticulosProvider) {
     this.articulocopia = this.navParams.get("articulo");
     if (this.articulocopia != undefined) {
       this.totalPrecio = this.articulocopia.precio;
@@ -73,84 +68,45 @@ export class SeleccionproductosPage {
       this.precio = precio;
       this.totalPrecio = precio;
     }
-
   }
 
-  increment1() {
-    this.currentNumber1++;
-    this.calculaTotal();
-  }
-
-  decrement1() {
-    this.currentNumber1--;
-    this.calculaTotal();
-  }
-
-  increment2() {
-    this.currentNumber2++;
+  increment(item) {
+    if(item.fragancias==0 && item.talles==0){
+      this.articulo.cantidad++;
+      this.totalCantidades++;
+    }else{
+      console.log(item.cantidad);
+      item.cantidad++;
+      this.totalCantidades++;
+    }
     this.calculaTotal();
   }
 
-  decrement2() {
-    this.currentNumber2--;
-    this.calculaTotal();
-  }
-  increment3() {
-    this.currentNumber3++;
-    this.calculaTotal();
-  }
-
-  decrement3() {
-    this.currentNumber3--;
-    this.calculaTotal();
-  }
-  increment4() {
-    this.currentNumber4++;
-    this.calculaTotal();
-  }
-
-  decrement4() {
-    this.currentNumber4--;
-    this.calculaTotal();
-  }
-  increment5() {
-    this.currentNumber5++;
-    this.calculaTotal();
-  }
-
-  decrement5() {
-    this.currentNumber5--;
-    this.calculaTotal();
-  }
-  increment6() {
-    this.currentNumber6++;
-    this.calculaTotal();
-  }
-
-  decrement6() {
-    this.currentNumber6--;
-    this.calculaTotal();
+  decrement(item) {
+    if (item.cantidad > 0){
+      item.cantidad--;
+      this.totalCantidades--;
+      this.calculaTotal();
+    }
   }
 
   calculaTotal() {
-    this.totalCantidades = 0;
-    this.totalCantidades = (this.currentNumber1 + this.currentNumber2 + this.currentNumber3 + this.currentNumber4 + this.currentNumber5 + this.currentNumber6);
     if (this.totalCantidades > 0) {
       this.totalPrecio = 0;
       this.totalPrecio = this.precio * this.totalCantidades;
+      console.log(this.totalPrecio);
     }
   }
 
   cancelar() {
     this.articulo.precio = this.precio;
-    this.currentNumber1 = 0;
-    this.currentNumber2 = 0;
-    this.currentNumber3 = 0;
-    this.currentNumber4 = 0;
-    this.currentNumber5 = 0;
-    this.currentNumber6 = 0;
+    this.currentNumber = 0;
     this.totalCantidades = 0;
     this.totalPrecio = 0;
+  }
+
+  ionViewWillEnter() {
+    this._as.cargar_fragancias(this.articulocopia.codigo);
   }
 
 }

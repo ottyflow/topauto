@@ -11,6 +11,7 @@ export class ArticulosProvider {
 
   articulos = [];
   articulosFinal = [];
+  fragancias = [];
   unarticulo: any;
   codigoarticulo: any;
   count: number = 0;
@@ -37,15 +38,20 @@ export class ArticulosProvider {
     })
   }
 
-  cargar_articulo(codigoarticulo: any) {
-    this.articulos = new Array();
-    let articulo = new Articulo();
-    let url = URL_SERVICIOS + "/productos/articulo/" + codigoarticulo;
+  cargar_fragancias(codigoarticulo: any){
+    this.fragancias = new Array();
+    let url = URL_SERVICIOS + "/productos/fragancias/" + codigoarticulo;
     return this.http.get(url).map(resp => resp.json()).subscribe(data => {
       if (data.error) {
       } else {
-        this.unarticulo.push(...data.articulo);
-        articulo = data.articulo;
+        for (let item of data.fragancias){
+          this.fragancias.push(item);
+        }
+        for(let item of this.fragancias){
+          console.log(item);
+          item.cantidad = 0;
+        }
+        console.log(this.fragancias);
       }
     })
   }
