@@ -22,6 +22,7 @@ export class SeleccionproductosPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _ps: PedidosProvider, private _as: ArticulosProvider) {
     this.articulocopia = this.navParams.get("articulo");
+    console.log(this.articulocopia);
     if (this.articulocopia != undefined) {
       this.totalPrecio = this.articulocopia.precio;
       this.precio = this.articulocopia.precio;
@@ -106,7 +107,11 @@ export class SeleccionproductosPage {
   }
 
   ionViewWillEnter() {
-    this._as.cargar_fragancias(this.articulocopia.codigo);
+    console.log(this.articulocopia.fragancias);
+    if(this.articulocopia.fragancias){
+      console.log("entro");
+      this._as.cargar_fragancias(this.articulocopia.codigo);
+    }
   }
 
 }
