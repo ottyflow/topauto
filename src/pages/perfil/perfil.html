@@ -12,9 +12,6 @@
             Vendedor
           </ion-title>
         </div>
-        <ion-card class="perfilimage">
-          <img class="image" src="../assets/imgs/siliuetaperfil.jpg">
-        </ion-card>
         <div class="vendedornombre"> {{ _us.nombre }}</div>
         <ion-row class="zonas">
           <div class="titulozona">
@@ -51,10 +48,9 @@
           </div>
         </div>
         <ion-footer>
-          <ion-toolbar class="cerrarsesion" (tap)="logOuT()">
+          <ion-toolbar class="cerrarsesion">
             <ion-row>
-              <ion-icon class="iconosesion" name="sync" style="font-size:32px;"></ion-icon>
-              <div class="cerrarsesiontext"> Sincronizar pedidos </div>
+              <div class="cerrarsesiontext"></div>
             </ion-row>
           </ion-toolbar>
         </ion-footer>
