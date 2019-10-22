@@ -44,6 +44,7 @@ export class ArticulosProvider {
     return this.http.get(url).map(resp => resp.json()).subscribe(data => {
       if (data.error) {
       } else {
+        console.log(data);
         for (let item of data.fragancias){
           this.fragancias.push(item);
         }

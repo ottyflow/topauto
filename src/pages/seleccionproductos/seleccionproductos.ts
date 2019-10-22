@@ -108,7 +108,7 @@ export class SeleccionproductosPage {
 
   ionViewWillEnter() {
     console.log(this.articulocopia.fragancias);
-    if(this.articulocopia.fragancias){
+    if(this.articulocopia.fragancias == "1"){
       console.log("entro");
       this._as.cargar_fragancias(this.articulocopia.codigo);
     }
