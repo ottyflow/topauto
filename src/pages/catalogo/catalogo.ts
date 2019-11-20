@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Renderer } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ArticulosProvider } from '../../providers/articulos/articulos';
 import { SeleccionproductosPage } from '../seleccionproductos/seleccionproductos';
 import { Articulo } from '../../interfaces/articulo.interface';
 import { UsuariosProvider } from "../../providers/usuarios/usuarios";
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
+import { Keyboard } from '@ionic-native/keyboard';
 
 @Component({
   selector: 'page-catalogo',
@@ -15,10 +16,12 @@ export class CatalogoPage {
   articulos: any[] = [];
   datosarticulo: any = [];
   count: number = 0;
+  queryText:any;
   public aColor: string = "#ffd400";
   public bColor: string = "rgb(70, 70, 72)";
+  public isSearchBarOpened = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _as: ArticulosProvider, private _ps: PedidosProvider, public _us: UsuariosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _as: ArticulosProvider, private _ps: PedidosProvider, public _us: UsuariosProvider, private keyboard: Keyboard) {
     this._ps.ultimo_numero(this._us.id_usuario);
   }
 
@@ -61,7 +64,11 @@ export class CatalogoPage {
       this._as.articulosFinal = this._as.articulos.filter((item) => {
         return (item.descripcion.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombreMarca.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombreCategoria.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.codigo.toLowerCase().indexOf(serVal.toLowerCase()) > -1);
       })
+      this.queryText = "";
+      this.isSearchBarOpened = false;
     } else {
+      this.queryText = "";
+      this.isSearchBarOpened = false;
       this._as.cargar_articulos();
     }
   }
@@ -103,7 +110,7 @@ export class CatalogoPage {
       infiniteScroll.complete();
     }, 500);
   }
-  public isSearchBarOpened = false;
+
 
   ionViewWillEnter() {
     if (this._as.articulos.length == 0) {

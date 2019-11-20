@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
+import { Keyboard } from '@ionic-native/keyboard';
 import { IonicStorageModule}  from '@ionic/storage';
 import { CatalogoPage} from '../pages/catalogo/catalogo';
 import { PedidoPage } from '../pages/pedido/pedido';
@@ -62,7 +63,8 @@ import { ClientesProvider } from '../providers/clientes/clientes';
     UsuariosProvider,
     ArticulosProvider,
     PedidosProvider,
-    ClientesProvider
+    ClientesProvider,
+    Keyboard
   ]
 })
 export class AppModule {}
