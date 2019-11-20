@@ -16,6 +16,7 @@ export class CatalogoPage {
   datosarticulo: any = [];
   count: number = 0;
   public aColor: string = "#ffd400";
+  public bColor: string = "rgb(70, 70, 72)";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _as: ArticulosProvider, private _ps: PedidosProvider, public _us: UsuariosProvider) {
     this._ps.ultimo_numero(this._us.id_usuario);
@@ -83,6 +84,13 @@ export class CatalogoPage {
             else
               this.aColor = '#464648';
     return this.aColor;
+  }
+
+  changeFondo(item){
+    if ((item.envase_nuevo == '0') && (item.oferta_lanzamiento == '0') && (item.agotar_stock == '0') && (item.oferta_volumen == '0') && (item.escala_descuento == '0')){
+      return "#F6F8F9";
+    }
+    return "#464648";
   }
 
   doInfinite(infiniteScroll) {

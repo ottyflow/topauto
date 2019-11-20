@@ -24,7 +24,7 @@
                 {{ item.descripcion_adicional }}
               </div>
             </div>
-            <div class="valor" [ngStyle]="{'background-color': changeColor(item)}">
+            <div class="valor" [ngStyle]="{'background-color': changeColor(item), 'color': changeFondo(item)}">
               <ion-col col-6 class="codigo">
                 {{ item.codigo }}
               </ion-col>

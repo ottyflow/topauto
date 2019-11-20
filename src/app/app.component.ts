@@ -6,6 +6,7 @@ import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UsuariosProvider } from '../providers/usuarios/usuarios';
 import { ArticulosProvider } from '../providers/articulos/articulos';
+import { Storage } from '@ionic/storage';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,7 +21,7 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
-
+    console.log(this._us.token);
     this.rootPage = this._us.token ? TabsPage : LoginPage;
 
   }

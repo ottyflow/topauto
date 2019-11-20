@@ -21,7 +21,7 @@ export class PedidoPage {
   hideMe3: boolean = false;
   subtotal: number;
   total: number;
-  descuento: number = 0;
+  descuento: number;
   descuentoCalculado: number = 0;
   numero: number = 1;
   medpago: any;

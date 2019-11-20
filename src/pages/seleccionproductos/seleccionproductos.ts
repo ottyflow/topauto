@@ -103,7 +103,7 @@ export class SeleccionproductosPage {
     this.articulo.precio = this.precio;
     this.currentNumber = 0;
     this.totalCantidades = 0;
-    this.totalPrecio = 0;
+    this.totalPrecio = 0.00;
   }
 
   ionViewWillEnter() {
