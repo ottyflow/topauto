@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="dark">
       <ion-title>Clientes</ion-title>
-      <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" [(ngModel)]="queryText" (search)="getClientes($event)" (ionCancel)="isSearchBarOpened=false" placeholder=""></ion-searchbar>
+      <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" [(ngModel)]="queryText" (search)="getClientes($event)" (ionCancel)="onCancel()" placeholder=""></ion-searchbar>
       <ion-buttons end>
         <button ion-button icon-only *ngIf="!isSearchBarOpened" (tap)="isSearchBarOpened=true">
           <ion-icon name="search"></ion-icon>

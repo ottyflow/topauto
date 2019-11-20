@@ -12,6 +12,8 @@ export class ClientesPage {
   accion: any;
   codigo: string = "";
   count: number = 0;
+  queryText:any;
+  public isSearchBarOpened = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _cs: ClientesProvider, public events: Events) {
   }
@@ -47,9 +49,16 @@ export class ClientesPage {
           return (item.razon_social.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombre_fantasia.toLowerCase().indexOf(serVal.toLowerCase()) > -1);
         }
       })
+      ev.target.blur();
     } else {
       this._cs.cargar_clientes();
     }
+  }
+
+  onCancel(ev: any){
+    this.queryText= "";
+    this.isSearchBarOpened = false;
+    this._cs.cargar_clientes();
   }
 
   generateClientes() {

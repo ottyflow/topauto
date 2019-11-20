@@ -9,6 +9,7 @@ import { ClientesProvider } from '../../providers/clientes/clientes';
 export class PopupclientePage {
   clientes: any[] = [];
   count: number = 0;
+  queryText:any;
 
   constructor(public navCtrl: NavController, private view: ViewController, public navParams: NavParams, private modal: ModalController, private _cs: ClientesProvider, public events: Events) {
   }
@@ -43,9 +44,15 @@ export class PopupclientePage {
           return (item.razon_social.toLowerCase().indexOf(serVal.toLowerCase()) > -1 || item.nombre_fantasia.toLowerCase().indexOf(serVal.toLowerCase()) > -1);
         }
       })
+      ev.target.blur();
     } else {
       this._cs.cargar_clientes();
     }
+  }
+
+  onCancel(){
+    this.queryText= "";
+    this._cs.cargar_clientes();
   }
 
   closeModal() {

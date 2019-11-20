@@ -112,4 +112,9 @@ page-perfil {
   .cerrarsesion {
     height: max-content;
   }
+
+  .pedidosTable{
+    display: flex;
+    justify-content: space-between;
+  }
 }

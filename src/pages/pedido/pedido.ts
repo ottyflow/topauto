@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
 import { ToastController } from "ionic-angular";
 import { Pedido } from '../../interfaces/pedido.interface';
@@ -27,7 +27,7 @@ export class PedidoPage {
   medpago: any;
   condpago: any;
   notas: string = "";
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _ps: PedidosProvider, public _us: UsuariosProvider, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _ps: PedidosProvider, public _us: UsuariosProvider, private toastCtrl: ToastController, public alertCtrl: AlertController) {
     this.articulos = this._ps.articulos;
     for (let articulo of this.articulos) {
       this.subtotal = this.subtotal + articulo.precio;
@@ -96,6 +96,23 @@ export class PedidoPage {
   }
 
   cancelarPedido() {
+    if(this.articulos.length > 0){
+      this.alertCtrl.create({
+        subTitle: "¿Desea cancelar el pedido? Se eliminaran todos los items",
+        buttons: [{
+          text: 'Si',
+          handler: () => {
+            this.borrarPedido();
+          }
+        },{
+          text: 'Cancelar',
+          role: 'cancel',
+        }]
+      }).present();
+    }
+  }
+
+  borrarPedido(){
     this.articulos.length = 0;
     this.medpago = null;
     this.condpago = null;

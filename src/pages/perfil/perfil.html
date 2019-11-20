@@ -13,14 +13,6 @@
           </ion-title>
         </div>
         <div class="vendedornombre"> {{ _us.nombre }}</div>
-        <ion-row class="zonas">
-          <div class="titulozona">
-            Zonas asignadas:
-          </div>
-          <div class="zona">
-            ZONA 1; ZONA2; ZONA3.
-          </div>
-        </ion-row>
         <ion-footer>
           <ion-toolbar class="cerrarsesion" (tap)="logOuT()">
             <ion-row>
@@ -36,15 +28,36 @@
             Pedidos
           </ion-title>
         </div>
+        <div>
+          <ion-grid>
+            <ion-row class="pedidosTable">
+              <ion-col col-3>
+              N° PEDIDO
+              </ion-col>
+              <ion-col col-6>
+              CLIENTE
+              </ion-col>
+              <ion-col col-3>
+              TOTAL
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
         <div *ngFor="let pedido of _ps.pedidos">
           <div>
-            <ion-col col-6>
-            </ion-col>
-            Numero : {{ pedido.numero}}
-            {{ pedido.razon_social }}
-            <ion-col col-6>
-              TOTAL : {{ pedido.total }}
-            </ion-col>
+            <ion-grid>
+              <ion-row class="pedidosTable">
+                <ion-col col-3>
+                {{ pedido.numero}}
+                </ion-col>
+                <ion-col col-6>
+                {{ pedido.razon_social }}
+                </ion-col>
+                <ion-col col-3>
+                  $ {{ pedido.total | number:'1.2-2' }}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
           </div>
         </div>
         <ion-footer>
