@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { URL_SERVICIOS } from '../../config/url.servicios';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
-import { Articulo } from '../../interfaces/articulo.interface';
-import { CatalogoPage } from '../../pages/catalogo/catalogo';
 
 @Injectable()
 export class ArticulosProvider {

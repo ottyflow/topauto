@@ -11,7 +11,7 @@ export class PopupclientePage {
   count: number = 0;
   queryText:any;
 
-  constructor(public navCtrl: NavController, private view: ViewController, public navParams: NavParams, private modal: ModalController, private _cs: ClientesProvider, public events: Events) {
+  constructor(public navCtrl: NavController, private view: ViewController, public navParams: NavParams, private _cs: ClientesProvider, public events: Events) {
   }
 
   cargaCliente(item) {
