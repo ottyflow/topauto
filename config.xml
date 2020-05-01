@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="topauto.dafaack.dafaacklabs" version="1.8.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="topauto.dafaack.dafaacklabs" version="1.8.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>topauto</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://localhost:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -89,4 +89,5 @@
     <plugin name="cordova-plugin-advanced-http" spec="2.1.1">
         <variable name="OKHTTP_VERSION" value="3.10.0" />
     </plugin>
+    <allow-navigation href="http://localhost:8100" sessionid="65941531" />
 </widget>
