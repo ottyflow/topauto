@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
+import { NavController, NavParams, ModalController, AlertController, ActionSheetController  } from 'ionic-angular';
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
 import { ToastController } from "ionic-angular";
 import { Pedido } from '../../interfaces/pedido.interface';
@@ -27,7 +27,7 @@ export class PedidoPage {
   medpago: any;
   condpago: any;
   notas: string = "";
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _ps: PedidosProvider, public _us: UsuariosProvider, private toastCtrl: ToastController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController, private _ps: PedidosProvider, public _us: UsuariosProvider, private toastCtrl: ToastController, public alertCtrl: AlertController, public actionSheetCtrl: ActionSheetController) {
     this.articulos = this._ps.articulos;
     for (let articulo of this.articulos) {
       this.subtotal = this.subtotal + articulo.precio;
@@ -79,6 +79,35 @@ export class PedidoPage {
   }
   showHide3() {
     this.hideMe3 = !this.hideMe3;
+  }
+
+  async popupDescuento(articulo){
+    const alert = await this.alertCtrl.create({
+          title: 'Descuento',
+          inputs: [{
+              name: 'descuentolinea',
+              type: 'number',
+              min: 0,
+              max: 100
+          }],
+          buttons: [{
+            text: 'Aceptar',
+            handler: (alertData) => {
+              this.descuentoLinea(articulo, alertData.descuentolinea);
+            }
+          },{
+            text: 'Cancelar',
+            role: 'cancel',
+          }]
+        });
+        await alert.present();
+
+  }
+
+  descuentoLinea(articulo, descuento: number) {
+      var descuentoCalc = (articulo.precio * descuento) / 100 ;
+      articulo.precio = articulo.precio -descuentoCalc;
+      this.calculaSubtotal();
   }
 
   borrar(codigo: any) {
@@ -188,7 +217,7 @@ export class PedidoPage {
             toast.present();
           } else {
             this._ps.grabar_pedido(pedido, this.articulos);
-            this.cancelarPedido();
+            this.borrarPedido();
             this._ps.ultimo_numero(this._us.id_usuario);
           }
         }

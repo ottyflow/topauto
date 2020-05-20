@@ -19,10 +19,11 @@ export class SeleccionproductosPage {
   solocodigo: any;
   articulocopia = new Articulo();
   nuevoArticulo: Articulo;
+  itemCantidad: number = 0;
+  fragancias = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private _ps: PedidosProvider, private _as: ArticulosProvider) {
     this.articulocopia = this.navParams.get("articulo");
-    console.log(this.articulocopia);
     if (this.articulocopia != undefined) {
       this.totalPrecio = this.articulocopia.precio;
       this.precio = this.articulocopia.precio;
@@ -72,14 +73,8 @@ export class SeleccionproductosPage {
   }
 
   increment(item) {
-    if(item.fragancias==0 && item.talles==0){
-      this.articulo.cantidad++;
-      this.totalCantidades++;
-    }else{
-      console.log(item.cantidad);
-      item.cantidad++;
-      this.totalCantidades++;
-    }
+    this.articulo.cantidad++;
+    this.totalCantidades++;
     this.calculaTotal();
   }
 
@@ -91,11 +86,28 @@ export class SeleccionproductosPage {
     }
   }
 
+  recalcula(){
+    this.totalCantidades = 0;
+    if (this.articulo.fragancias == 1 ){
+      for (let fragancia of this._as.fragancias ) {
+        if(fragancia.cantidad > 0) {
+            this.totalCantidades = this.totalCantidades + parseInt(fragancia.cantidad);
+        }
+      }
+    } else if ( this.articulo.talles == 1) {
+      for (let talle of this._as.talles ) {
+        if(talle.cantidad > 0) {
+            this.totalCantidades = this.totalCantidades + parseInt(talle.cantidad);
+        }
+      }
+    }
+    this.calculaTotal();
+  }
+
   calculaTotal() {
     if (this.totalCantidades > 0) {
       this.totalPrecio = 0;
       this.totalPrecio = this.precio * this.totalCantidades;
-      console.log(this.totalPrecio);
     }
   }
 
@@ -107,10 +119,11 @@ export class SeleccionproductosPage {
   }
 
   ionViewWillEnter() {
-    console.log(this.articulocopia.fragancias);
     if(this.articulocopia.fragancias == "1"){
-      console.log("entro");
       this._as.cargar_fragancias(this.articulocopia.codigo);
+    }
+    if(this.articulocopia.talles == "1"){
+      this._as.cargar_talles(this.articulocopia.codigo);
     }
   }
 

@@ -36,13 +36,16 @@
                         <ion-icon name="alert"></ion-icon>
                       </div>
                       <div class="precio">
-                        ${{ articulo.precio }}
+                        ${{ articulo.precio | number:'1.2-2' }}
                       </div>
                     </ion-col>
                   </ion-row>
                 </ion-item>
                 <ion-item-options side="right">
                   <button ion-button color="danger" (tap)="borrar(articulo.codigo)">Borrar</button>
+                </ion-item-options>
+                <ion-item-options side="left">
+                  <button ion-button color="warning" (tap)="popupDescuento(articulo)">Descuento</button>
                 </ion-item-options>
               </ion-item-sliding>
             </ion-list>

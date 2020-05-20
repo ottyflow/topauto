@@ -6,7 +6,6 @@ import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UsuariosProvider } from '../providers/usuarios/usuarios';
 import { ArticulosProvider } from '../providers/articulos/articulos';
-import { Storage } from '@ionic/storage';
 
 @Component({
   templateUrl: 'app.html'

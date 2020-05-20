@@ -127,6 +127,11 @@ page-seleccionproductos {
     background-image: none;
     height: 0;
   }
+
+  .inputcantidad{
+    width: 40px !important;
+  }
+
   @media(max-width:560px) {
     .cancelar {
       color: #FBC02D;

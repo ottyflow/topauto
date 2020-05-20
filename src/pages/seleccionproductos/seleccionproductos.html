@@ -32,77 +32,21 @@
   <ion-list *ngIf="articulo.fragancias==1">
     <ion-item *ngFor="let item of _as.fragancias">
       {{ item.nombre }}
-      <button ion-button item-end class="suma" (tap)="decrement(item)" style="height:32px;" [attr.id]="'decrement' + item.nombre">
-        <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
-      </button>
-      <div item-end>
-        {{ item.cantidad }}
+      <div class="inputcantidad" item-end>
+        <ion-item>
+          <ion-input class="cantidad" type="number" [(ngModel)]="item.cantidad" (ngModelChange)="recalcula()"></ion-input>
+        </ion-item>
       </div>
-      <button ion-button item-end class="resta" (tap)="increment(item)" style="height:32px;" [attr.id]="'increment' + item.nombre">
-        <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
-      </button>
     </ion-item>
   </ion-list>
   <ion-list *ngIf="articulo.talles==1">
-    <ion-item>
-      XS
-      <button ion-button item-end class="suma" (tap)="decrement()" style="height:32px;">
-        <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
-      </button>
-      <div item-end>
-        {{currentNumber1}}
+    <ion-item *ngFor="let item of _as.talles">
+      {{ item.nombre }}
+      <div class="inputcantidad" item-end>
+        <ion-item>
+          <ion-input class="cantidad" type="number" [(ngModel)]="item.cantidad" (ngModelChange)="recalcula()"></ion-input>
+        </ion-item>
       </div>
-      <button ion-button item-end class="resta" (tap)="increment()" style="height:32px;">
-        <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
-      </button>
-    </ion-item>
-    <ion-item>
-      S
-      <button ion-button item-end class="suma" (tap)="decrement()" style="height:32px;">
-        <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
-      </button>
-      <div item-end>
-        {{currentNumber2}}
-      </div>
-      <button ion-button item-end class="resta" (tap)="increment2()" style="height:32px;">
-        <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
-      </button>
-    </ion-item>
-    <ion-item>
-      M
-      <button ion-button item-end class="suma" (tap)="decrement3()" style="height:32px;">
-        <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
-      </button>
-      <div item-end>
-        {{currentNumber3}}
-      </div>
-      <button ion-button item-end class="resta" (tap)="increment3()" style="height:32px;">
-        <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
-      </button>
-    </ion-item>
-    <ion-item>
-      L
-      <button ion-button item-end class="suma" (tap)="decrement4()" style="height:32px;">
-        <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
-      </button>
-      <div item-end>
-        {{currentNumber4}}
-      </div>
-      <button ion-button item-end class="resta" (tap)="increment4()" style="height:32px;">
-        <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
-      </button>
-    </ion-item>
-    <ion-item>
-      XL
-      <button ion-button item-end class="suma" (tap)="decrement5()" style="height:32px;">
-        <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
-      </button>
-      <div item-end>
-        {{currentNumber5}}
-      </div>
-      <button ion-button item-end class="resta" (tap)="increment5()" style="height:32px;">
-        <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
-      </button>
     </ion-item>
   </ion-list>
   <ion-list *ngIf="articulo.fragancias==0 && articulo.talles==0">
@@ -111,8 +55,10 @@
       <button ion-button item-end class="suma" (tap)="decrement(articulo)" style="height:32px;">
         <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
       </button>
-      <div item-end>
-        {{ articulo.cantidad }}
+      <div class="inputcantidad" item-end>
+        <ion-item>
+          <ion-input class="cantidad" type="number" [(ngModel)]="articulo.cantidad" (ngModelChange)="recalcula()">{{ articulo.cantidad}}</ion-input>
+        </ion-item>
       </div>
       <button ion-button item-end class="resta" (tap)="increment(articulo)" style="height:32px;">
         <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
