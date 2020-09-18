@@ -107,7 +107,8 @@ export class SeleccionproductosPage {
   calculaTotal() {
     if (this.totalCantidades > 0) {
       this.totalPrecio = 0;
-      this.totalPrecio = this.precio * this.totalCantidades;
+      this.totalPrecio = (this.precio * this.totalCantidades).toFixed(2);
+      console.log(this.totalPrecio);
     }
   }
 
