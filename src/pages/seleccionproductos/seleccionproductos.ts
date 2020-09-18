@@ -100,6 +100,8 @@ export class SeleccionproductosPage {
             this.totalCantidades = this.totalCantidades + parseInt(talle.cantidad);
         }
       }
+    } else {
+      this.totalCantidades = this.totalCantidades + parseInt(this.articulo.cantidad);
     }
     this.calculaTotal();
   }

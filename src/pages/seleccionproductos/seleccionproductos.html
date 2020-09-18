@@ -52,17 +52,17 @@
   <ion-list *ngIf="articulo.fragancias==0 && articulo.talles==0">
     <ion-item>
       UNIDADES
-      <button ion-button item-end class="suma" (tap)="decrement(articulo)" style="height:32px;">
+      <!-- <button ion-button item-end class="suma" (tap)="decrement(articulo)" style="height:32px;">
         <ion-icon name="remove-circle" style="font-size:32px;"></ion-icon>
-      </button>
+      </button> -->
       <div class="inputcantidad" item-end>
         <ion-item>
-          <ion-input class="cantidad" type="number" [(ngModel)]="articulo.cantidad" (ngModelChange)="recalcula()">{{ articulo.cantidad}}</ion-input>
+          <ion-input class="cantidad" type="number" [(ngModel)]="articulo.cantidad" (ngModelChange)="recalcula()"></ion-input>
         </ion-item>
       </div>
-      <button ion-button item-end class="resta" (tap)="increment(articulo)" style="height:32px;">
+      <!-- <button ion-button item-end class="resta" (tap)="increment(articulo)" style="height:32px;">
         <ion-icon name="add-circle" style="font-size:32px;"></ion-icon>
-      </button>
+      </button> -->
     </ion-item>
   </ion-list>
 </ion-content>
